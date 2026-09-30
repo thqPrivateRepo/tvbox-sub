@@ -1,1323 +1,1323 @@
 {
   "sites": {
     "豆瓣": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Douban': No scheme supplied. Perhaps you meant https://csp_Doub)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "dyttzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "wwzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ruyi": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "bfzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "tyyszy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ffzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "zy360": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "maotaizy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "wolong": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(405)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "jisu": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "dbzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ckzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "mdzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "zuid": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "yinghua": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "wujin": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "heimuer": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ikun": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "lzi": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(403)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "suonizy": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(403)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "配置中心": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Config': No scheme supplied. Perhaps you meant https://csp_Conf)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "本地": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_LocalFile': No scheme supplied. Perhaps you meant https://csp_L)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "预告": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_YGP': No scheme supplied. Perhaps you meant https://csp_YGP?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "热播影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppRJ': No scheme supplied. Perhaps you meant https://csp_AppRJ)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "三秋影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App3Q': No scheme supplied. Perhaps you meant https://csp_App3Q)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "韩圈": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Hxq': No scheme supplied. Perhaps you meant https://csp_Hxq?)",
         "ext/jar不可达(HTTPConnectionPool(host='www.xn--ihq545aq7p.com', port=80): Max retries exceeded)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "咕噜": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "无极99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "听心99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "橙子99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "剧圈99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "双星99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "顾我99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "天堂": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "橘汁": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "华谊": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "苹果": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "薯条": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "久久": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppYsV2': No scheme supplied. Perhaps you meant https://csp_App)",
         "ext/jar不可达(HTTPConnectionPool(host='99cms.jj99.icu', port=8199): Max retries exceeded with )"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "闪影": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppYsV2': No scheme supplied. Perhaps you meant https://csp_App)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "飞飞": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppYsV2': No scheme supplied. Perhaps you meant https://csp_App)",
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "湘漓": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "嘉禾": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)",
         "ext/jar不可达(HTTPSConnectionPool(host='www.baidukuaiy.top', port=443): Max retries exceeded w)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "猎鹰": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)",
         "ext/jar不可达(HTTPSConnectionPool(host='444421.xyz', port=443): Read timed out. (read timeout=)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "玫瑰": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)",
         "ext/jar不可达(HTTPConnectionPool(host='43.251.227.45', port=3688): Max retries exceeded with u)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "峥嵘": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)",
         "ext/jar不可达(HTTPSConnectionPool(host='api2026.hboqy.cn', port=443): Max retries exceeded wit)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "首发": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "金牌": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "老鹰": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "蓝鹰": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "猎豹": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "王子": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "秒看": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "茉莉": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "灵虎": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩视频": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_BiliYS': No scheme supplied. Perhaps you meant https://csp_Bili)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "三六零": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_SP360': No scheme supplied. Perhaps you meant https://csp_SP360)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "玩偶": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Wogg': No scheme supplied. Perhaps you meant https://csp_Wogg?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "快映": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "木偶": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "蜡笔": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "至臻": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "多多": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "欧哥": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "二小": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "虎斑": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "夸父": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShareKF': No scheme supplied. Perhaps you meant https://c)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "盘它": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebSharePT': No scheme supplied. Perhaps you meant https://c)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "123": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanWebShare123': No scheme supplied. Perhaps you meant https://)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "指南": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_4KZhinan': No scheme supplied. Perhaps you meant https://csp_4K)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "人人": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_RenRen': No scheme supplied. Perhaps you meant https://csp_RenR)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "即刻": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Jike': No scheme supplied. Perhaps you meant https://csp_Jike?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "双星": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_ShuangXing': No scheme supplied. Perhaps you meant https://csp_)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "河马短剧": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_HemaDJ': No scheme supplied. Perhaps you meant https://csp_Hema)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "好看短剧": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_HaokanDJ': No scheme supplied. Perhaps you meant https://csp_Ha)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "围观短剧": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_WeiguanDJ': No scheme supplied. Perhaps you meant https://csp_W)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "星芽短剧": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/星芽短剧.py': No scheme supplied. Perhaps you meant https://./api)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "独播影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Duboku': No scheme supplied. Perhaps you meant https://csp_Dubo)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "厂长影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Czsapp': No scheme supplied. Perhaps you meant https://csp_Czsa)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "金牌影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Jpys': No scheme supplied. Perhaps you meant https://csp_Jpys?)",
         "ext/jar不可达(HTTPSConnectionPool(host='y2s52n7.com,https', port=443): Max retries exceeded wi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "修罗影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Xlys': No scheme supplied. Perhaps you meant https://csp_Xlys?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "瓜子影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Gz360': No scheme supplied. Perhaps you meant https://csp_Gz360)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "云播影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Tvyb': No scheme supplied. Perhaps you meant https://csp_Tvyb?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "骚火影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_SaoHuo': No scheme supplied. Perhaps you meant https://csp_SaoH)",
         "ext/jar不可达(522)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "农民影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Wwys': No scheme supplied. Perhaps you meant https://csp_Wwys?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "爱看机器人": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Ikanbot': No scheme supplied. Perhaps you meant https://csp_Ika)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "小镇影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "面包影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "永乐影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "剧圈影视": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XYQHiker': No scheme supplied. Perhaps you meant https://csp_XY)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "1905": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Web1905': No scheme supplied. Perhaps you meant https://csp_Web)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哆啦新番社": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "Anime1": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/ec67b9045d393737f073d2c9365533f0.js': No scheme supplied. Per)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "漫国动漫": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppSy': No scheme supplied. Perhaps you meant https://csp_AppSy)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "方舟动漫": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "曼波动漫": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "咕咕动漫": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "巴士动漫": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XYQHiker': No scheme supplied. Perhaps you meant https://csp_XY)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "路漫漫": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/ec67b9045d393737f073d2c9365533f0.js': No scheme supplied. Per)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "去看吧": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/ec67b9045d393737f073d2c9365533f0.js': No scheme supplied. Per)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "荐片": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_JianPian': No scheme supplied. Perhaps you meant https://csp_Ji)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "七味": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_QnMp4': No scheme supplied. Perhaps you meant https://csp_QnMp4)",
         "ext/jar不可达(HTTPSConnectionPool(host='www.qwshow.com,https', port=443): Max retries exceeded)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "New6v": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_New6v': No scheme supplied. Perhaps you meant https://csp_New6v)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "美剧迷": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_MeijuMi': No scheme supplied. Perhaps you meant https://csp_Mei)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "迅雷吧": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Xunlei8': No scheme supplied. Perhaps you meant https://csp_Xun)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "电影港": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_XYQHiker': No scheme supplied. Perhaps you meant https://csp_XY)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "阿里云盘": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanAli': No scheme supplied. Perhaps you meant https://csp_PanA)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "夸克网盘": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanQuark': No scheme supplied. Perhaps you meant https://csp_Pa)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "UC网盘": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanUC': No scheme supplied. Perhaps you meant https://csp_PanUC)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "百度网盘": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_PanBaidu': No scheme supplied. Perhaps you meant https://csp_Pa)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "88看球": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Kanqiu': No scheme supplied. Perhaps you meant https://csp_Kanq)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "球通体育": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_QiutongTY': No scheme supplied. Perhaps you meant https://csp_Q)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "瓜子体育": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_GuaziTY': No scheme supplied. Perhaps you meant https://csp_Gua)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "咖啡体育": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_KafeiTY': No scheme supplied. Perhaps you meant https://csp_Kaf)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "919体育": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_919TY': No scheme supplied. Perhaps you meant https://csp_919TY)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "呦呦DJ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Djuu': No scheme supplied. Perhaps you meant https://csp_Djuu?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "轮回DJ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Djlh': No scheme supplied. Perhaps you meant https://csp_Djlh?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "蜻蜓FM": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_QingtingFM': No scheme supplied. Perhaps you meant https://csp_)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "世界听书": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_TingShijie': No scheme supplied. Perhaps you meant https://csp_)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "戏曲多多": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppLY': No scheme supplied. Perhaps you meant https://csp_AppLY)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "爱听音乐": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/爱听音乐.py': No scheme supplied. Perhaps you meant https://./api)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "网络直播": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/WLZB.py': No scheme supplied. Perhaps you meant https://./api)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩直播": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL './api/BLZB.py': No scheme supplied. Perhaps you meant https://./api)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩合集": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩哔哩演唱会": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩哔哩听书": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩哔哩相声": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩哔哩小品": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "哔哩哔哩戏曲": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "少儿教育": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "小学课堂": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "初中课堂": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "高中课堂": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "急救教学": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_FirstAid': No scheme supplied. Perhaps you meant https://csp_Fi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "养生堂": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_YST': No scheme supplied. Perhaps you meant https://csp_YST?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "push_agent": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Push': No scheme supplied. Perhaps you meant https://csp_Push?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ϋ▒ΗύΥμ": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ίνσίνσ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppRJ': No scheme supplied. Perhaps you meant https://csp_AppRJ)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_Wwys": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Wwys': No scheme supplied. Perhaps you meant https://csp_Wwys?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_Music": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Music': No scheme supplied. Perhaps you meant https://csp_Music)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "88ύεΜύΡΔ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Kanqiu': No scheme supplied. Perhaps you meant https://csp_Kanq)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ύΥείφΡ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_GuaziTY': No scheme supplied. Perhaps you meant https://csp_Gua)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_Bili": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ϋΣτϋΛο": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)",
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "όΨ░ώοΨίΠΣ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)",
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ίδδίΠ╢ϋΞΚ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)",
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ύΙ▒ϋΡξ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)",
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "3QQQ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App3Q': No scheme supplied. Perhaps you meant https://csp_App3Q)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_SaoHuo": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_SaoHuo': No scheme supplied. Perhaps you meant https://csp_SaoH)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ώ║ούΦ░": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_AppV6': No scheme supplied. Perhaps you meant https://csp_AppV6)",
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ίΤΧίβε": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ίΡυί┐Δ99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ίΚπίεΙ99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ώκ╛όΙΣ99": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "ϋΞΡύΚΘ": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Jianpian': No scheme supplied. Perhaps you meant https://csp_Ji)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "Huya": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Huya': No scheme supplied. Perhaps you meant https://csp_Huya?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "Douyu": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Douyu': No scheme supplied. Perhaps you meant https://csp_Douyu)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_duanju": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_DuanJu': No scheme supplied. Perhaps you meant https://csp_Duan)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_Gz360": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Gz360': No scheme supplied. Perhaps you meant https://csp_Gz360)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_Jpys": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_Jpys': No scheme supplied. Perhaps you meant https://csp_Jpys?)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "csp_TingBook": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_TingBook': No scheme supplied. Perhaps you meant https://csp_Ti)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     },
     "Aid": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "api不可达(Invalid URL 'csp_FirstAid': No scheme supplied. Perhaps you meant https://csp_Fi)"
       ],
-      "last_check": "2026-09-30 10:55:44"
+      "last_check": "2026-09-30 11:05:19"
     }
   },
   "lives": {
     "bf83a48e6aa2136e02928937c201bec4": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "无url"
       ],
-      "last_check": "2026-09-30 10:55:52"
+      "last_check": "2026-09-30 11:05:23"
     },
     "640dc798778018538dfc3bb17d882aee": {
-      "fail_count": 2,
+      "fail_count": 3,
       "ok": false,
       "issues": [
         "无url"
       ],
-      "last_check": "2026-09-30 10:55:52"
+      "last_check": "2026-09-30 11:05:23"
     },
     "d59767609b8c7d13965e4fafc668a810": {
       "fail_count": 0,
       "ok": true,
       "issues": [
-        "抽样3/3通过"
+        "抽样2/3通过",
+        "流不可达(404)"
       ],
-      "last_check": "2026-09-30 10:55:52"
+      "last_check": "2026-09-30 11:05:23"
     },
     "cdf7a2f736965266942850a2ea0c7977": {
-      "fail_count": 1,
-      "ok": false,
+      "fail_count": 0,
+      "ok": true,
       "issues": [
-        "抽样1/3通过",
-        "流不可达(400)",
+        "抽样2/3通过",
         "流不可达(HTTPConnectionPool(host='wfenf.x3322.net', port=7788): Max retries exceeded with)"
       ],
-      "last_check": "2026-09-30 10:55:52"
+      "last_check": "2026-09-30 11:05:23"
     }
   },
   "last_good": {
@@ -1826,7 +1826,7 @@
       }
     ],
     "wallpaper": "",
-    "update_time": "2026-09-30 10:55:52",
+    "update_time": "2026-09-30 11:05:23",
     "version": "2.0"
   }
 }
