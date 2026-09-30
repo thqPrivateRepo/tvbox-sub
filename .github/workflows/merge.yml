@@ -2,7 +2,6 @@ name: TVBox Source Merger
 
 on:
   schedule:
-    # 每3天检测一次，北京时间凌晨2点（= UTC 18:00）
     - cron: '0 18 */3 * *'
   workflow_dispatch:
 
@@ -23,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install
-        run: pip install requests
+        run: pip install requests coscmd
 
       - name: Run merge
         run: python merge.py
@@ -47,6 +46,6 @@ jobs:
           COS_BUCKET: ${{ secrets.COS_BUCKET }}
           COS_REGION: ${{ secrets.COS_REGION }}
         run: |
-          pip install coscmd
           coscmd config -a $COS_SECRET_ID -s $COS_SECRET_KEY -b $COS_BUCKET -r $COS_REGION
           coscmd upload merged.json merged.json
+          coscmd upload live.txt live.txt
