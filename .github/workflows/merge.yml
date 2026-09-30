@@ -40,8 +40,4 @@ jobs:
             git push
           fi
 
-      - name: Sync to Gitee
-        continue-on-error: true
-        run: |
-          git remote add gitee https://${{ secrets.GITEE_USER }}:${{ secrets.GITEE_TOKEN }}@gitee.com/${{ secrets.GITEE_USER }}/tvbox-sub.git
-          git push gitee HEAD:main
+    
