@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.1
+TVBox 订阅源合并与健康检测 v3.2
 - 点播：多源合并、并发检测死链、缓存兜底
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
+- 排序：CCTV 按数字升序，卫视按拼音 A-Z
 """
-import json, os, re, time, random, hashlib, configparser
+import json, os, re, time, random, hashlib, configparser, sys, subprocess
 from datetime import datetime, timezone, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
@@ -121,6 +122,29 @@ def parse_live_text(text):
     return channels
 
 def process_live_sources(live_urls):
+    try:
+        from pypinyin import lazy_pinyin
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "pypinyin", "-q"])
+        from pypinyin import lazy_pinyin
+
+    def cctv_sort_key(name):
+        m = re.match(r'^CCTV(\d+)(.*)$', name)
+        if m:
+            num = int(m.group(1))
+            rest = m.group(2)
+            if rest == "+":
+                return (num, 0, rest)
+            if rest in ("欧洲", "美洲"):
+                return (num, 1, rest)
+            if "K" in rest:
+                return (100, 0, rest)
+            return (num, 0, rest)
+        return (999, 0, name)
+
+    def weishi_sort_key(name):
+        return "".join(lazy_pinyin(name))
+
     all_channels = {}
     for live_url in live_urls:
         ok, code, text = http_get(live_url, timeout=15)
@@ -142,13 +166,13 @@ def process_live_sources(live_urls):
     lines = []
     if cctv:
         lines.append("央视频道,#genre#")
-        for ch in sorted(cctv.keys()):
+        for ch in sorted(cctv.keys(), key=cctv_sort_key):
             for u in cctv[ch]:
                 lines.append(f"{ch},{u}")
         lines.append("")
     if weishi:
         lines.append("卫视频道,#genre#")
-        for ch in sorted(weishi.keys()):
+        for ch in sorted(weishi.keys(), key=weishi_sort_key):
             for u in weishi[ch]:
                 lines.append(f"{ch},{u}")
     with open(LIVE_FILE, "w", encoding="utf-8") as f:
@@ -260,7 +284,6 @@ def main():
     timeout = settings["http_timeout"]
     workers = settings["concurrency"]
 
-    # 1. 拉点播源
     print("并发拉取点播源...")
     all_sites, all_parses, jar_candidates = [], [], []
     errors = []
@@ -282,12 +305,10 @@ def main():
     parses = merge_named(all_parses)
     best_jar = pick_best_jar(jar_candidates)
 
-    # 2. 处理直播
     print("处理直播源（过滤央视卫视+合并多线路）...")
     live_urls = [lv["url"] for lv in extra_lives]
     live_count, live_line_count = process_live_sources(live_urls)
 
-    # 3. 点发展开检测
     print("并发展开检测...")
     new_state = {"sites": {}, "lives": {}, "last_good": state.get("last_good")}
     site_results = {}
@@ -310,13 +331,11 @@ def main():
         else:
             failed_sites.append((site, fc, issues))
 
-    # 4. lives 指向处理后的 live.txt
     live_cos_url = settings.get("live_cos_url", "")
     lives_field = [{"name": "央视+卫视", "type": 0, "url": live_cos_url}] if live_cos_url else extra_lives
 
     print(f"合并后: 站点{len(good_sites)}/{len(sites)}, 直播{live_count}个频道/{live_line_count}条线路")
 
-    # 5. 缓存兜底
     if len(good_sites) == 0 and state.get("last_good"):
         print("!! 全部站点不可用，回退到上次版本")
         merged = state["last_good"]
@@ -328,7 +347,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.1"
+            "version": "3.2"
         }
         new_state["last_good"] = merged
 
