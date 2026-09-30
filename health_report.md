@@ -1,327 +1,56 @@
 # TVBox 订阅源健康报告
 
-**检测时间**: 2026-09-30 11:05:23
+**检测时间**: 2026-09-30 11:15:45
 
-**可用站点**: 18 / 163
+**可用站点**: 146 / 163
 
 **可用直播**: 2 / 4
 
-**spider jar**: `https://gitee.com/lwlxh/tvhome/raw/master/pg.jar`
+**spider jar**: `https://gitee.com/starlinkapi/jar/raw/master/jar/spider.jar`
 
-**总耗时**: 13 秒
+**总耗时**: 24 秒
 
 
 ## 已剔除或容忍中的站点
 
-- **访问网站【api.starlink.fan】获取更多接口** (key=豆瓣) 连续失败=3
-  - api不可达(Invalid URL 'csp_Douban': No scheme supplied. Perhaps you meant https://csp_Doub)
-- **卧龙资源** (key=wolong) 连续失败=3
-  - api不可达(405)
-- **量子资源** (key=lzi) 连续失败=3
-  - api不可达(403)
-- **索尼资源** (key=suonizy) 连续失败=3
-  - api不可达(403)
-- **配置｜中心** (key=配置中心) 连续失败=3
-  - api不可达(Invalid URL 'csp_Config': No scheme supplied. Perhaps you meant https://csp_Conf)
-- **本地｜视频** (key=本地) 连续失败=3
-  - api不可达(Invalid URL 'csp_LocalFile': No scheme supplied. Perhaps you meant https://csp_L)
-- **新片｜预告** (key=预告) 连续失败=3
-  - api不可达(Invalid URL 'csp_YGP': No scheme supplied. Perhaps you meant https://csp_YGP?)
-- **热播｜APP** (key=热播影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppRJ': No scheme supplied. Perhaps you meant https://csp_AppRJ)
-- **三秋｜APP** (key=三秋影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_App3Q': No scheme supplied. Perhaps you meant https://csp_App3Q)
-- **韩圈｜APP** (key=韩圈) 连续失败=3
-  - api不可达(Invalid URL 'csp_Hxq': No scheme supplied. Perhaps you meant https://csp_Hxq?)
+- **韩圈｜APP** (key=韩圈) 连续失败=4
   - ext/jar不可达(HTTPConnectionPool(host='www.xn--ihq545aq7p.com', port=80): Max retries exceeded)
-- **咕噜丨APP** (key=咕噜) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **无极丨APP** (key=无极99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **听心｜APP** (key=听心99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **橙子丨APP** (key=橙子99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **剧圈丨APP** (key=剧圈99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **双星丨APP** (key=双星99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **顾我丨APP** (key=顾我99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **天堂｜APP** (key=天堂) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)
-- **橘汁｜APP** (key=橘汁) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)
-- **华谊｜APP** (key=华谊) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)
-- **苹果｜APP** (key=苹果) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)
-- **薯条｜APP** (key=薯条) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppDrama': No scheme supplied. Perhaps you meant https://csp_Ap)
-- **久久｜APP** (key=久久) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppYsV2': No scheme supplied. Perhaps you meant https://csp_App)
+- **久久｜APP** (key=久久) 连续失败=4
   - ext/jar不可达(HTTPConnectionPool(host='99cms.jj99.icu', port=8199): Max retries exceeded with )
-- **闪影｜APP** (key=闪影) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppYsV2': No scheme supplied. Perhaps you meant https://csp_App)
-- **飞飞丨APP** (key=飞飞) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppYsV2': No scheme supplied. Perhaps you meant https://csp_App)
+- **飞飞丨APP** (key=飞飞) 连续失败=4
   - ext/jar不可达(404)
-- **湘漓｜APP** (key=湘漓) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)
-- **嘉禾｜APP** (key=嘉禾) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)
+- **嘉禾｜APP** (key=嘉禾) 连续失败=4
   - ext/jar不可达(HTTPSConnectionPool(host='www.baidukuaiy.top', port=443): Max retries exceeded w)
-- **猎鹰｜APP** (key=猎鹰) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)
+- **猎鹰｜APP** (key=猎鹰) 连续失败=4
   - ext/jar不可达(HTTPSConnectionPool(host='444421.xyz', port=443): Read timed out. (read timeout=)
-- **玫瑰｜APP** (key=玫瑰) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)
+- **玫瑰｜APP** (key=玫瑰) 连续失败=4
   - ext/jar不可达(HTTPConnectionPool(host='43.251.227.45', port=3688): Max retries exceeded with u)
-- **峥嵘｜APP** (key=峥嵘) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppFox': No scheme supplied. Perhaps you meant https://csp_AppF)
+- **峥嵘｜APP** (key=峥嵘) 连续失败=4
   - ext/jar不可达(HTTPSConnectionPool(host='api2026.hboqy.cn', port=443): Max retries exceeded wit)
-- **首发｜APP** (key=首发) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)
-- **金牌｜APP** (key=金牌) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)
-- **老鹰｜APP** (key=老鹰) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)
-- **蓝鹰｜APP** (key=蓝鹰) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppQi': No scheme supplied. Perhaps you meant https://csp_AppQi)
-- **猎豹｜APP** (key=猎豹) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **王子｜APP** (key=王子) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **秒看｜APP** (key=秒看) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **茉莉｜APP** (key=茉莉) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **灵虎｜APP** (key=灵虎) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **哔哩｜视频** (key=哔哩视频) 连续失败=3
-  - api不可达(Invalid URL 'csp_BiliYS': No scheme supplied. Perhaps you meant https://csp_Bili)
-- **三六零｜视频** (key=三六零) 连续失败=3
-  - api不可达(Invalid URL 'csp_SP360': No scheme supplied. Perhaps you meant https://csp_SP360)
-- **玩偶｜4K** (key=玩偶) 连续失败=3
-  - api不可达(Invalid URL 'csp_Wogg': No scheme supplied. Perhaps you meant https://csp_Wogg?)
-- **快映｜4K** (key=快映) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **木偶｜4K** (key=木偶) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **蜡笔｜4K** (key=蜡笔) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **至臻｜4K** (key=至臻) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **多多｜4K** (key=多多) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **欧哥｜4K** (key=欧哥) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **二小｜4K** (key=二小) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **虎斑｜4K** (key=虎斑) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare': No scheme supplied. Perhaps you meant https://csp)
-- **夸父｜4K** (key=夸父) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShareKF': No scheme supplied. Perhaps you meant https://c)
-- **盘它｜4K** (key=盘它) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebSharePT': No scheme supplied. Perhaps you meant https://c)
-- **123｜4K** (key=123) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanWebShare123': No scheme supplied. Perhaps you meant https://)
-- **指南｜4K** (key=指南) 连续失败=3
-  - api不可达(Invalid URL 'csp_4KZhinan': No scheme supplied. Perhaps you meant https://csp_4K)
-- **人人｜4K** (key=人人) 连续失败=3
-  - api不可达(Invalid URL 'csp_RenRen': No scheme supplied. Perhaps you meant https://csp_RenR)
-- **即刻｜4K** (key=即刻) 连续失败=3
-  - api不可达(Invalid URL 'csp_Jike': No scheme supplied. Perhaps you meant https://csp_Jike?)
-- **双星｜4K** (key=双星) 连续失败=3
-  - api不可达(Invalid URL 'csp_ShuangXing': No scheme supplied. Perhaps you meant https://csp_)
-- **河马｜短剧** (key=河马短剧) 连续失败=3
-  - api不可达(Invalid URL 'csp_HemaDJ': No scheme supplied. Perhaps you meant https://csp_Hema)
-- **好看｜短剧** (key=好看短剧) 连续失败=3
-  - api不可达(Invalid URL 'csp_HaokanDJ': No scheme supplied. Perhaps you meant https://csp_Ha)
-- **围观｜短剧** (key=围观短剧) 连续失败=3
-  - api不可达(Invalid URL 'csp_WeiguanDJ': No scheme supplied. Perhaps you meant https://csp_W)
-- **星芽｜短剧** (key=星芽短剧) 连续失败=3
-  - api不可达(Invalid URL './api/星芽短剧.py': No scheme supplied. Perhaps you meant https://./api)
-- **独播｜影视** (key=独播影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Duboku': No scheme supplied. Perhaps you meant https://csp_Dubo)
-- **厂长｜影视** (key=厂长影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Czsapp': No scheme supplied. Perhaps you meant https://csp_Czsa)
-- **金牌｜影视** (key=金牌影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Jpys': No scheme supplied. Perhaps you meant https://csp_Jpys?)
+- **金牌｜影视** (key=金牌影视) 连续失败=4
   - ext/jar不可达(HTTPSConnectionPool(host='y2s52n7.com,https', port=443): Max retries exceeded wi)
-- **修罗｜影视** (key=修罗影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Xlys': No scheme supplied. Perhaps you meant https://csp_Xlys?)
-- **瓜子｜影视** (key=瓜子影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Gz360': No scheme supplied. Perhaps you meant https://csp_Gz360)
-- **云播｜影视** (key=云播影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Tvyb': No scheme supplied. Perhaps you meant https://csp_Tvyb?)
-- **骚火｜影视** (key=骚火影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_SaoHuo': No scheme supplied. Perhaps you meant https://csp_SaoH)
+- **骚火｜影视** (key=骚火影视) 连续失败=4
   - ext/jar不可达(522)
-- **农民｜影视** (key=农民影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_Wwys': No scheme supplied. Perhaps you meant https://csp_Wwys?)
-- **爱看｜影视** (key=爱看机器人) 连续失败=3
-  - api不可达(Invalid URL 'csp_Ikanbot': No scheme supplied. Perhaps you meant https://csp_Ika)
-- **小镇｜影视** (key=小镇影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)
-- **面包｜影视** (key=面包影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)
-- **永乐｜影视** (key=永乐影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)
-- **剧圈｜影视** (key=剧圈影视) 连续失败=3
-  - api不可达(Invalid URL 'csp_XYQHiker': No scheme supplied. Perhaps you meant https://csp_XY)
-- **1905｜影视** (key=1905) 连续失败=3
-  - api不可达(Invalid URL 'csp_Web1905': No scheme supplied. Perhaps you meant https://csp_Web)
-- **哆啦｜新番社** (key=哆啦新番社) 连续失败=3
-  - api不可达(Invalid URL 'csp_XBPQ': No scheme supplied. Perhaps you meant https://csp_XBPQ?)
-- **A1｜动漫** (key=Anime1) 连续失败=3
-  - api不可达(Invalid URL './api/ec67b9045d393737f073d2c9365533f0.js': No scheme supplied. Per)
-- **漫国丨动漫** (key=漫国动漫) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppSy': No scheme supplied. Perhaps you meant https://csp_AppSy)
-- **方舟丨动漫** (key=方舟动漫) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **曼波｜动漫** (key=曼波动漫) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **咕咕｜动漫** (key=咕咕动漫) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
-- **巴士｜动漫** (key=巴士动漫) 连续失败=3
-  - api不可达(Invalid URL 'csp_XYQHiker': No scheme supplied. Perhaps you meant https://csp_XY)
-- **路漫漫｜动漫** (key=路漫漫) 连续失败=3
-  - api不可达(Invalid URL './api/ec67b9045d393737f073d2c9365533f0.js': No scheme supplied. Per)
-- **去看吧｜动漫** (key=去看吧) 连续失败=3
-  - api不可达(Invalid URL './api/ec67b9045d393737f073d2c9365533f0.js': No scheme supplied. Per)
-- **荐片｜磁力** (key=荐片) 连续失败=3
-  - api不可达(Invalid URL 'csp_JianPian': No scheme supplied. Perhaps you meant https://csp_Ji)
-- **七味｜磁力** (key=七味) 连续失败=3
-  - api不可达(Invalid URL 'csp_QnMp4': No scheme supplied. Perhaps you meant https://csp_QnMp4)
+- **七味｜磁力** (key=七味) 连续失败=4
   - ext/jar不可达(HTTPSConnectionPool(host='www.qwshow.com,https', port=443): Max retries exceeded)
-- **New6V｜磁力** (key=New6v) 连续失败=3
-  - api不可达(Invalid URL 'csp_New6v': No scheme supplied. Perhaps you meant https://csp_New6v)
-- **美剧迷｜磁力** (key=美剧迷) 连续失败=3
-  - api不可达(Invalid URL 'csp_MeijuMi': No scheme supplied. Perhaps you meant https://csp_Mei)
-- **迅雷吧｜磁力** (key=迅雷吧) 连续失败=3
-  - api不可达(Invalid URL 'csp_Xunlei8': No scheme supplied. Perhaps you meant https://csp_Xun)
-- **电影港｜磁力** (key=电影港) 连续失败=3
-  - api不可达(Invalid URL 'csp_XYQHiker': No scheme supplied. Perhaps you meant https://csp_XY)
-- **阿里｜云盘** (key=阿里云盘) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanAli': No scheme supplied. Perhaps you meant https://csp_PanA)
-- **夸克｜网盘** (key=夸克网盘) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanQuark': No scheme supplied. Perhaps you meant https://csp_Pa)
-- **UC｜网盘** (key=UC网盘) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanUC': No scheme supplied. Perhaps you meant https://csp_PanUC)
-- **百度｜网盘** (key=百度网盘) 连续失败=3
-  - api不可达(Invalid URL 'csp_PanBaidu': No scheme supplied. Perhaps you meant https://csp_Pa)
-- **88｜看球** (key=88看球) 连续失败=3
-  - api不可达(Invalid URL 'csp_Kanqiu': No scheme supplied. Perhaps you meant https://csp_Kanq)
-- **球通｜体育** (key=球通体育) 连续失败=3
-  - api不可达(Invalid URL 'csp_QiutongTY': No scheme supplied. Perhaps you meant https://csp_Q)
-- **瓜子｜体育** (key=瓜子体育) 连续失败=3
-  - api不可达(Invalid URL 'csp_GuaziTY': No scheme supplied. Perhaps you meant https://csp_Gua)
-- **咖啡｜体育** (key=咖啡体育) 连续失败=3
-  - api不可达(Invalid URL 'csp_KafeiTY': No scheme supplied. Perhaps you meant https://csp_Kaf)
-- **919｜体育** (key=919体育) 连续失败=3
-  - api不可达(Invalid URL 'csp_919TY': No scheme supplied. Perhaps you meant https://csp_919TY)
-- **呦呦｜DJ** (key=呦呦DJ) 连续失败=3
-  - api不可达(Invalid URL 'csp_Djuu': No scheme supplied. Perhaps you meant https://csp_Djuu?)
-- **轮回｜DJ** (key=轮回DJ) 连续失败=3
-  - api不可达(Invalid URL 'csp_Djlh': No scheme supplied. Perhaps you meant https://csp_Djlh?)
-- **蜻蜓｜FM** (key=蜻蜓FM) 连续失败=3
-  - api不可达(Invalid URL 'csp_QingtingFM': No scheme supplied. Perhaps you meant https://csp_)
-- **世界｜听书** (key=世界听书) 连续失败=3
-  - api不可达(Invalid URL 'csp_TingShijie': No scheme supplied. Perhaps you meant https://csp_)
-- **戏曲｜多多** (key=戏曲多多) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppLY': No scheme supplied. Perhaps you meant https://csp_AppLY)
-- **爱听｜音乐** (key=爱听音乐) 连续失败=3
-  - api不可达(Invalid URL './api/爱听音乐.py': No scheme supplied. Perhaps you meant https://./api)
-- **网络｜直播** (key=网络直播) 连续失败=3
-  - api不可达(Invalid URL './api/WLZB.py': No scheme supplied. Perhaps you meant https://./api)
-- **哔哩｜直播** (key=哔哩直播) 连续失败=3
-  - api不可达(Invalid URL './api/BLZB.py': No scheme supplied. Perhaps you meant https://./api)
-- **哔哩｜合集** (key=哔哩合集) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **哔哩｜音乐** (key=哔哩哔哩演唱会) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **哔哩｜听书** (key=哔哩哔哩听书) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **哔哩｜相声** (key=哔哩哔哩相声) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **哔哩｜小品** (key=哔哩哔哩小品) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **哔哩｜戏曲** (key=哔哩哔哩戏曲) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **少儿｜教育** (key=少儿教育) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **小学｜课堂** (key=小学课堂) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **初中｜课堂** (key=初中课堂) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **高中｜课堂** (key=高中课堂) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **急救｜教学** (key=急救教学) 连续失败=3
-  - api不可达(Invalid URL 'csp_FirstAid': No scheme supplied. Perhaps you meant https://csp_Fi)
-- **养生｜知识** (key=养生堂) 连续失败=3
-  - api不可达(Invalid URL 'csp_YST': No scheme supplied. Perhaps you meant https://csp_YST?)
-- **手机｜推送** (key=push_agent) 连续失败=3
-  - api不可达(Invalid URL 'csp_Push': No scheme supplied. Perhaps you meant https://csp_Push?)
-- **ύπΤόΤφέΦΔ1080P** (key=ίνσίνσ) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppRJ': No scheme supplied. Perhaps you meant https://csp_AppRJ)
-- **ίΗεό░ΣέΦΔ1080P** (key=csp_Wwys) 连续失败=3
-  - api不可达(Invalid URL 'csp_Wwys': No scheme supplied. Perhaps you meant https://csp_Wwys?)
-- **ώθ│ϊ╣ΡέΦΔίερύ║┐** (key=csp_Music) 连续失败=3
-  - api不可达(Invalid URL 'csp_Music': No scheme supplied. Perhaps you meant https://csp_Music)
-- **ίΠφίΠφέΦΔϊ╜ΥϋΓ▓** (key=88ύεΜύΡΔ) 连续失败=3
-  - api不可达(Invalid URL 'csp_Kanqiu': No scheme supplied. Perhaps you meant https://csp_Kanq)
-- **ύΥείφΡέΦΔϊ╜ΥϋΓ▓** (key=ύΥείφΡ) 连续失败=3
-  - api不可达(Invalid URL 'csp_GuaziTY': No scheme supplied. Perhaps you meant https://csp_Gua)
-- **ίΥΦίΥσέΦΔίΥΦίΥσ** (key=csp_Bili) 连续失败=3
-  - api不可达(Invalid URL 'csp_Bili': No scheme supplied. Perhaps you meant https://csp_Bili?)
-- **ϋΣτϋΛοέΦΔ1080P** (key=ϋΣτϋΛο) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
+- **ϋΣτϋΛοέΦΔ1080P** (key=ϋΣτϋΛο) 连续失败=4
   - ext/jar不可达(404)
-- **όιΘό╕ΖέΦΔ1080P** (key=όΨ░ώοΨίΠΣ) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
+- **όιΘό╕ΖέΦΔ1080P** (key=όΨ░ώοΨίΠΣ) 连续失败=4
   - ext/jar不可达(404)
-- **ί╣╕ϋ┐ΡέΦΔ1080P** (key=ίδδίΠ╢ϋΞΚ) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
+- **ί╣╕ϋ┐ΡέΦΔ1080P** (key=ίδδίΠ╢ϋΞΚ) 连续失败=4
   - ext/jar不可达(404)
-- **ύΙ▒ί╜▒έΦΔ1080P** (key=ύΙ▒ϋΡξ) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppGet': No scheme supplied. Perhaps you meant https://csp_AppG)
+- **ύΙ▒ί╜▒έΦΔ1080P** (key=ύΙ▒ϋΡξ) 连续失败=4
   - ext/jar不可达(404)
-- **ίνπώ╣ΖέΦΔ1080P** (key=3QQQ) 连续失败=3
-  - api不可达(Invalid URL 'csp_App3Q': No scheme supplied. Perhaps you meant https://csp_App3Q)
-- **ύΒτύΒτέΦΔ1080P** (key=csp_SaoHuo) 连续失败=3
-  - api不可达(Invalid URL 'csp_SaoHuo': No scheme supplied. Perhaps you meant https://csp_SaoH)
-- **ώ║ούΦ░έΦΔ1080P** (key=ώ║ούΦ░) 连续失败=3
-  - api不可达(Invalid URL 'csp_AppV6': No scheme supplied. Perhaps you meant https://csp_AppV6)
+- **ώ║ούΦ░έΦΔ1080P** (key=ώ║ούΦ░) 连续失败=4
   - ext/jar不可达(404)
-- **ίΤΧίβεέΦΔ1080P** (key=ίΤΧίβε) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **όυμόυμέΦΔ1080P** (key=ίΡυί┐Δ99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **ίΚπίεΙέΦΔAPP** (key=ίΚπίεΙ99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **Ύ╕Πώκ╛όΙΣέΦΔAPP** (key=ώκ╛όΙΣ99) 连续失败=3
-  - api不可达(Invalid URL 'csp_App99': No scheme supplied. Perhaps you meant https://csp_App99)
-- **ϋΞΡύΚΘέΦΔ1080P** (key=ϋΞΡύΚΘ) 连续失败=3
-  - api不可达(Invalid URL 'csp_Jianpian': No scheme supplied. Perhaps you meant https://csp_Ji)
-- **ϋβΟύΚβέΦΔ1080P** (key=Huya) 连续失败=3
-  - api不可达(Invalid URL 'csp_Huya': No scheme supplied. Perhaps you meant https://csp_Huya?)
-- **όΨΩώ▒╝έΦΔ1080P** (key=Douyu) 连续失败=3
-  - api不可达(Invalid URL 'csp_Douyu': No scheme supplied. Perhaps you meant https://csp_Douyu)
-- **ύθφίΚπέΦΔ1080P** (key=csp_duanju) 连续失败=3
-  - api不可达(Invalid URL 'csp_DuanJu': No scheme supplied. Perhaps you meant https://csp_Duan)
-- **ύΥείφΡέΦΔ1080P** (key=csp_Gz360) 连续失败=3
-  - api不可达(Invalid URL 'csp_Gz360': No scheme supplied. Perhaps you meant https://csp_Gz360)
-- **ώΘΣύΚΝέΦΔ1080P** (key=csp_Jpys) 连续失败=3
-  - api不可达(Invalid URL 'csp_Jpys': No scheme supplied. Perhaps you meant https://csp_Jpys?)
-- **ίΡυϊ╣οέΦΔίρ▒ϊ╣Ρ** (key=csp_TingBook) 连续失败=3
-  - api不可达(Invalid URL 'csp_TingBook': No scheme supplied. Perhaps you meant https://csp_Ti)
-- **όΑξόΧΣέΦΔύθξϋψΗ** (key=Aid) 连续失败=3
-  - api不可达(Invalid URL 'csp_FirstAid': No scheme supplied. Perhaps you meant https://csp_Fi)
+- **量子资源** (key=lzi) 连续失败=4
+  - api不可达(403)
+- **索尼资源** (key=suonizy) 连续失败=4
+  - api不可达(403)
 
 ## 已剔除或容忍中的直播
 
-- **直播源** 连续失败=3
+- **直播源** 连续失败=4
   - 无url
-- **ΏθΥ║ ί╣│ίΠ░ύδ┤όΤφ** 连续失败=3
+- **ΏθΥ║ ί╣│ίΠ░ύδ┤όΤφ** 连续失败=4
   - 无url
