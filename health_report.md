@@ -1,6 +1,6 @@
 # TVBox 订阅源健康报告
 
-**检测时间**: 2026-09-30 17:31:42
+**检测时间**: 2026-09-30 22:47:46
 
 **可用站点**: 139 / 156
 
@@ -8,42 +8,42 @@
 
 **spider jar**: `https://gitee.com/lwlxh/tvhome/raw/master/pg.jar`
 
-**总耗时**: 14 秒
+**总耗时**: 17 秒
 
 
 ## 已剔除或容忍中的站点
 
-- **量子资源** (key=lzi) 连续失败=7
+- **量子资源** (key=lzi) 连续失败=8
   - api不可达(403)
-- **索尼资源** (key=suonizy) 连续失败=7
+- **索尼资源** (key=suonizy) 连续失败=8
   - api不可达(403)
-- **韩圈｜APP** (key=韩圈) 连续失败=7
+- **葫芦┃1080P** (key=葫芦) 连续失败=4
+  - ext/jar不可达(404)
+- **标清┃1080P** (key=新首发) 连续失败=4
+  - ext/jar不可达(404)
+- **幸运┃1080P** (key=四叶草) 连续失败=4
+  - ext/jar不可达(404)
+- **爱影┃1080P** (key=爱营) 连续失败=4
+  - ext/jar不可达(404)
+- **麦田┃1080P** (key=麦田) 连续失败=4
+  - ext/jar不可达(404)
+- **韩圈｜APP** (key=韩圈) 连续失败=8
   - ext/jar不可达(HTTPConnectionPool(host='www.xn--ihq545aq7p.com', port=80): Max retries exceeded)
-- **久久｜APP** (key=久久) 连续失败=7
+- **久久｜APP** (key=久久) 连续失败=8
   - ext/jar不可达(HTTPConnectionPool(host='99cms.jj99.icu', port=8199): Max retries exceeded with )
-- **飞飞丨APP** (key=飞飞) 连续失败=7
+- **飞飞丨APP** (key=飞飞) 连续失败=8
   - ext/jar不可达(404)
-- **嘉禾｜APP** (key=嘉禾) 连续失败=7
+- **嘉禾｜APP** (key=嘉禾) 连续失败=8
   - ext/jar不可达(HTTPSConnectionPool(host='www.baidukuaiy.top', port=443): Max retries exceeded w)
-- **猎鹰｜APP** (key=猎鹰) 连续失败=7
+- **猎鹰｜APP** (key=猎鹰) 连续失败=8
   - ext/jar不可达(HTTPSConnectionPool(host='444421.xyz', port=443): Read timed out. (read timeout=)
-- **玫瑰｜APP** (key=玫瑰) 连续失败=7
+- **玫瑰｜APP** (key=玫瑰) 连续失败=8
   - ext/jar不可达(HTTPConnectionPool(host='43.251.227.45', port=3688): Max retries exceeded with u)
-- **峥嵘｜APP** (key=峥嵘) 连续失败=7
+- **峥嵘｜APP** (key=峥嵘) 连续失败=8
   - ext/jar不可达(HTTPSConnectionPool(host='api2026.hboqy.cn', port=443): Max retries exceeded wit)
-- **金牌｜影视** (key=金牌影视) 连续失败=7
+- **金牌｜影视** (key=金牌影视) 连续失败=8
   - ext/jar不可达(HTTPSConnectionPool(host='y2s52n7.com,https', port=443): Max retries exceeded wi)
-- **骚火｜影视** (key=骚火影视) 连续失败=7
+- **骚火｜影视** (key=骚火影视) 连续失败=8
   - ext/jar不可达(522)
-- **七味｜磁力** (key=七味) 连续失败=7
+- **七味｜磁力** (key=七味) 连续失败=8
   - ext/jar不可达(HTTPSConnectionPool(host='www.qwshow.com,https', port=443): Max retries exceeded)
-- **葫芦┃1080P** (key=葫芦) 连续失败=3
-  - ext/jar不可达(404)
-- **标清┃1080P** (key=新首发) 连续失败=3
-  - ext/jar不可达(404)
-- **幸运┃1080P** (key=四叶草) 连续失败=3
-  - ext/jar不可达(404)
-- **爱影┃1080P** (key=爱营) 连续失败=3
-  - ext/jar不可达(404)
-- **麦田┃1080P** (key=麦田) 连续失败=3
-  - ext/jar不可达(404)

@@ -4,971 +4,971 @@
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "dyttzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "wwzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "ruyi": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "bfzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "tyyszy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "ffzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "zy360": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "maotaizy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "wolong": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "jisu": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "dbzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "ckzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "mdzy": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "zuid": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "yinghua": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "wujin": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "heimuer": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "ikun": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "lzi": {
-      "fail_count": 7,
+      "fail_count": 8,
       "ok": false,
       "issues": [
         "api不可达(403)"
       ],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "suonizy": {
-      "fail_count": 7,
+      "fail_count": 8,
       "ok": false,
       "issues": [
         "api不可达(403)"
       ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "配置中心": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "本地": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "预告": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "热播影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "三秋影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "韩圈": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPConnectionPool(host='www.xn--ihq545aq7p.com', port=80): Max retries exceeded)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "咕噜": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "无极99": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "听心99": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "橙子99": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "剧圈99": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "双星99": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "顾我99": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "天堂": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "橘汁": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "华谊": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "苹果": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "薯条": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "久久": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPConnectionPool(host='99cms.jj99.icu', port=8199): Max retries exceeded with )"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "闪影": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "飞飞": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(404)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "湘漓": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "嘉禾": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPSConnectionPool(host='www.baidukuaiy.top', port=443): Max retries exceeded w)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "猎鹰": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPSConnectionPool(host='444421.xyz', port=443): Read timed out. (read timeout=)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "玫瑰": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPConnectionPool(host='43.251.227.45', port=3688): Max retries exceeded with u)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "峥嵘": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPSConnectionPool(host='api2026.hboqy.cn', port=443): Max retries exceeded wit)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "首发": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "金牌": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "老鹰": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "蓝鹰": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "猎豹": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "王子": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "秒看": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "茉莉": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "灵虎": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩视频": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "三六零": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "玩偶": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "快映": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "木偶": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "蜡笔": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "至臻": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "多多": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "欧哥": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "二小": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "虎斑": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "夸父": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "盘它": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "123": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "指南": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "人人": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "即刻": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "双星": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "河马短剧": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "好看短剧": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "围观短剧": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "星芽短剧": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "独播影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "厂长影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "金牌影视": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPSConnectionPool(host='y2s52n7.com,https', port=443): Max retries exceeded wi)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "修罗影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "瓜子影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "云播影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "骚火影视": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(522)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "农民影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "爱看机器人": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "小镇影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "面包影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "永乐影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "剧圈影视": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "1905": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哆啦新番社": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "Anime1": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "漫国动漫": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "方舟动漫": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "曼波动漫": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "咕咕动漫": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "巴士动漫": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "路漫漫": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "去看吧": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "荐片": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "七味": {
-      "fail_count": 7,
-      "ok": false,
-      "issues": [
-        "ext/jar不可达(HTTPSConnectionPool(host='www.qwshow.com,https', port=443): Max retries exceeded)"
-      ],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "New6v": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "美剧迷": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "迅雷吧": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "电影港": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "阿里云盘": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "夸克网盘": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "UC网盘": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "百度网盘": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "88看球": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "球通体育": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "瓜子体育": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "咖啡体育": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "919体育": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "呦呦DJ": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "轮回DJ": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "蜻蜓FM": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "世界听书": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "戏曲多多": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "爱听音乐": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "网络直播": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩直播": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩合集": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩哔哩演唱会": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩哔哩听书": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩哔哩相声": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩哔哩小品": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "哔哩哔哩戏曲": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "少儿教育": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "小学课堂": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "初中课堂": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "高中课堂": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "急救教学": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "养生堂": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
-    },
-    "push_agent": {
-      "fail_count": 0,
-      "ok": true,
-      "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "天天": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_Wwys": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_Music": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "88看球": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
     },
     "瓜子": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_Bili": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "葫芦": {
-      "fail_count": 3,
+      "fail_count": 4,
       "ok": false,
       "issues": [
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "新首发": {
-      "fail_count": 3,
+      "fail_count": 4,
       "ok": false,
       "issues": [
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "四叶草": {
-      "fail_count": 3,
+      "fail_count": 4,
       "ok": false,
       "issues": [
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "爱营": {
-      "fail_count": 3,
+      "fail_count": 4,
       "ok": false,
       "issues": [
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "3QQQ": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_SaoHuo": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "麦田": {
-      "fail_count": 3,
+      "fail_count": 4,
       "ok": false,
       "issues": [
         "ext/jar不可达(404)"
       ],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "咕噜": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "听心99": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "剧圈99": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "顾我99": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "荐片": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
     },
     "Huya": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "Douyu": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_duanju": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_Gz360": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_Jpys": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "csp_TingBook": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
     },
     "Aid": {
       "fail_count": 0,
       "ok": true,
       "issues": [],
-      "last_check": "2026-09-30 17:31:42"
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "push_agent": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "配置中心": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "本地": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "预告": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "热播影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "三秋影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "韩圈": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPConnectionPool(host='www.xn--ihq545aq7p.com', port=80): Max retries exceeded)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "无极99": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "橙子99": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "双星99": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "天堂": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "橘汁": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "华谊": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "苹果": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "薯条": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "久久": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPConnectionPool(host='99cms.jj99.icu', port=8199): Max retries exceeded with )"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "闪影": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "飞飞": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(404)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "湘漓": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "嘉禾": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPSConnectionPool(host='www.baidukuaiy.top', port=443): Max retries exceeded w)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "猎鹰": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPSConnectionPool(host='444421.xyz', port=443): Read timed out. (read timeout=)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "玫瑰": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPConnectionPool(host='43.251.227.45', port=3688): Max retries exceeded with u)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "峥嵘": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPSConnectionPool(host='api2026.hboqy.cn', port=443): Max retries exceeded wit)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "首发": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "金牌": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "老鹰": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "蓝鹰": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "猎豹": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "王子": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "秒看": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "茉莉": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "灵虎": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩视频": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "三六零": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "玩偶": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "快映": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "木偶": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "蜡笔": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "至臻": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "多多": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "欧哥": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "二小": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "虎斑": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "夸父": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "盘它": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "123": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "指南": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "人人": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "即刻": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "双星": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "河马短剧": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "好看短剧": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "围观短剧": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "星芽短剧": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "独播影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "厂长影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "金牌影视": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPSConnectionPool(host='y2s52n7.com,https', port=443): Max retries exceeded wi)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "修罗影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "瓜子影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "云播影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "骚火影视": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(522)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "农民影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "爱看机器人": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "小镇影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "面包影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "永乐影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "剧圈影视": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "1905": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哆啦新番社": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "Anime1": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "漫国动漫": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "方舟动漫": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "曼波动漫": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "咕咕动漫": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "巴士动漫": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "路漫漫": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "去看吧": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "七味": {
+      "fail_count": 8,
+      "ok": false,
+      "issues": [
+        "ext/jar不可达(HTTPSConnectionPool(host='www.qwshow.com,https', port=443): Max retries exceeded)"
+      ],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "New6v": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "美剧迷": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "迅雷吧": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "电影港": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "阿里云盘": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "夸克网盘": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "UC网盘": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "百度网盘": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "球通体育": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "瓜子体育": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "咖啡体育": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "919体育": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "呦呦DJ": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "轮回DJ": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "蜻蜓FM": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "世界听书": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "戏曲多多": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "爱听音乐": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "网络直播": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩直播": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩合集": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩哔哩演唱会": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩哔哩听书": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩哔哩相声": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩哔哩小品": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "哔哩哔哩戏曲": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "少儿教育": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "小学课堂": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "初中课堂": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "高中课堂": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "急救教学": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
+    },
+    "养生堂": {
+      "fail_count": 0,
+      "ok": true,
+      "issues": [],
+      "last_check": "2026-09-30 22:47:46"
     }
   },
   "lives": {},
@@ -977,7 +977,7 @@
     "sites": [
       {
         "key": "豆瓣",
-        "name": "访问网站【api.starlink.fan】获取更多接口",
+        "name": "小乌龟",
         "type": 3,
         "api": "csp_Douban",
         "searchable": 0
@@ -1361,6 +1361,267 @@
         ]
       },
       {
+        "key": "天天",
+        "name": "秒播┃1080P",
+        "type": 3,
+        "quickSearch": 1,
+        "searchable": 1,
+        "api": "csp_AppRJ",
+        "timeout": 12,
+        "ext": "vxw35/hHSj07Q+maxQzOVMq1rjRCOTXpUCx8iKu5jIg="
+      },
+      {
+        "key": "csp_Wwys",
+        "name": "农民┃1080P",
+        "type": 3,
+        "api": "csp_Wwys",
+        "timeout": 12,
+        "ext": "https://vip.wwgz.cn:5200"
+      },
+      {
+        "key": "csp_Music",
+        "name": "音乐┃在线",
+        "type": 3,
+        "api": "csp_Music",
+        "quickSearch": 0,
+        "timeout": 12,
+        "searchable": 0,
+        "style": {
+          "type": "rect",
+          "ratio": 1.333
+        },
+        "ext": ""
+      },
+      {
+        "key": "88看球",
+        "name": "叭叭┃体育",
+        "type": 3,
+        "api": "csp_Kanqiu",
+        "style": {
+          "type": "rect",
+          "ratio": 1.333
+        },
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 1,
+        "timeout": 12,
+        "order_num": 0,
+        "changeable": 0
+      },
+      {
+        "key": "瓜子",
+        "name": "瓜子┃体育",
+        "type": 3,
+        "api": "csp_GuaziTY",
+        "style": {
+          "type": "rect",
+          "ratio": 1.333
+        },
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 1,
+        "timeout": 12,
+        "order_num": 0,
+        "changeable": 0
+      },
+      {
+        "key": "csp_Bili",
+        "name": "哔哩┃哔哩",
+        "type": 3,
+        "api": "csp_Bili",
+        "quickSearch": 0,
+        "timeout": 12,
+        "searchable": 1,
+        "ext": {
+          "json": "https://cik07-cos.7moor-fs2.com/im/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/50e4430df0b5644f/bilibil.json",
+          "cookie": ""
+        },
+        "style": {
+          "type": "rect",
+          "ratio": 1.333
+        }
+      },
+      {
+        "key": "3QQQ",
+        "name": "大鹅┃1080P",
+        "type": 3,
+        "timeout": 15,
+        "api": "csp_App3Q",
+        "ext": "https://duoduozhuiju.com"
+      },
+      {
+        "key": "csp_SaoHuo",
+        "name": "火火┃1080P",
+        "type": 3,
+        "api": "csp_SaoHuo"
+      },
+      {
+        "key": "咕噜",
+        "name": "咕噜┃1080P",
+        "type": 3,
+        "api": "csp_App99",
+        "ext": {
+          "host": "http://103.45.132.22:19987/app/bn",
+          "LoginPath": "/app/log",
+          "appkey": "d1f0c269eab74d93821fffc9befdbbba",
+          "versionName": "1.9.5",
+          "name": "咕噜咕噜",
+          "package": "com.bd.tool.gulu",
+          "buildNumber": "2001",
+          "buildSignature": "B07C8F6DBEBD3ABEE6A4A4DE2BFBBF29A0AC3F984D532A39448EC3BF5DD36311"
+        }
+      },
+      {
+        "key": "听心99",
+        "name": "欣欣┃1080P",
+        "type": 3,
+        "api": "csp_App99",
+        "ext": {
+          "host": "https://api.12321app.com/api",
+          "LoginPath": "/app/log",
+          "version": "0b4328287a5d953e",
+          "appkey": "a0a18659a9977a47e53442cd084b536c",
+          "versionName": "2.8.1",
+          "name": "听心视频",
+          "package": "com.iksp.adsys.jjsp",
+          "buildNumber": "2001",
+          "buildSignature": "03DD38CE4C3D62D0F0DEFACC06768D14EB382C7BD77A05B2EBF4D66E154A0D47"
+        }
+      },
+      {
+        "key": "剧圈99",
+        "name": "剧圈┃APP",
+        "type": 3,
+        "api": "csp_App99",
+        "ext": {
+          "host": "http://124.221.3.182:19987/app/bn",
+          "appkey": "d1f0c269eab74d93821fffc9befdbbba",
+          "versionName": "1.2.0",
+          "name": "剧圈圈",
+          "package": "com.qingtangxiaozhuan.xyz",
+          "buildNumber": "2002",
+          "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
+        }
+      },
+      {
+        "key": "顾我99",
+        "name": "️顾我┃APP",
+        "type": 3,
+        "api": "csp_App99",
+        "ext": {
+          "host": "http://117.50.200.113:19987/app/bn",
+          "LoginPath": "/app/log",
+          "appkey": "040f9b1bc5e942569b5c3e63943306ab",
+          "versionName": "4.3.1",
+          "name": "顾我追剧",
+          "package": "com.guwozhuijux.app",
+          "buildNumber": "2001",
+          "buildSignature": "5AD4436C4730FFE26910C86278B80F3E661C317FFC3616F702D20A729262624A"
+        }
+      },
+      {
+        "key": "荐片",
+        "name": "荐片┃1080P",
+        "quickSearch": 0,
+        "changeable": "0",
+        "searchable": 1,
+        "timeout": 15,
+        "type": 3,
+        "api": "csp_Jianpian",
+        "style": {
+          "type": "rect",
+          "ratio": 1.333
+        },
+        "ext": "https://api.ztcgi.com"
+      },
+      {
+        "key": "Huya",
+        "name": "虎牙┃1080P",
+        "type": 3,
+        "jar": "./jars/Huya.jar",
+        "api": "csp_Huya",
+        "searchable": 0,
+        "quickSearch": 0,
+        "changeable": 0,
+        "filterable": 1,
+        "timeout": 10,
+        "style": {
+          "type": "rect",
+          "ratio": 1.433
+        }
+      },
+      {
+        "key": "Douyu",
+        "name": "斗鱼┃1080P",
+        "type": 3,
+        "api": "csp_Douyu",
+        "jar": "./jars/Huya.jar",
+        "searchable": 0,
+        "quickSearch": 0,
+        "changeable": 0,
+        "filterable": 1,
+        "timeout": 10,
+        "style": {
+          "type": "rect",
+          "ratio": 1.433
+        }
+      },
+      {
+        "key": "csp_duanju",
+        "name": "短剧┃1080P",
+        "type": 3,
+        "timeout": 12,
+        "api": "csp_DuanJu"
+      },
+      {
+        "key": "csp_Gz360",
+        "name": "瓜子┃1080P",
+        "type": 3,
+        "timeout": 12,
+        "searchable": 1,
+        "quickSearch": 0,
+        "api": "csp_Gz360"
+      },
+      {
+        "key": "csp_Jpys",
+        "name": "金牌┃1080P",
+        "type": 3,
+        "timeout": 12,
+        "searchable": 1,
+        "quickSearch": 0,
+        "api": "csp_Jpys",
+        "ext": "https://y2s52n7.com"
+      },
+      {
+        "key": "csp_TingBook",
+        "name": "听书┃娱乐",
+        "type": 3,
+        "api": "csp_TingBook"
+      },
+      {
+        "key": "Aid",
+        "name": "急救┃知识",
+        "type": 3,
+        "api": "csp_FirstAid",
+        "searchable": 0,
+        "quickSearch": 0,
+        "style": {
+          "type": "rect",
+          "ratio": 3.8
+        }
+      },
+      {
+        "key": "push_agent",
+        "name": "推送┃播放",
+        "type": 3,
+        "filterable": 0,
+        "changeable": 0,
+        "api": "csp_Push",
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": ""
+      },
+      {
         "key": "配置中心",
         "name": "配置｜中心",
         "type": 3,
@@ -1405,22 +1666,6 @@
         "api": "csp_App3Q"
       },
       {
-        "key": "咕噜",
-        "name": "咕噜丨APP",
-        "type": 3,
-        "api": "csp_App99",
-        "ext": {
-          "host": "http://103.45.132.22:19987/app/bn",
-          "LoginPath": "/app/log",
-          "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-          "versionName": "1.9.5",
-          "name": "咕噜咕噜",
-          "package": "com.bd.tool.gulu",
-          "buildNumber": "2001",
-          "buildSignature": "B07C8F6DBEBD3ABEE6A4A4DE2BFBBF29A0AC3F984D532A39448EC3BF5DD36311"
-        }
-      },
-      {
         "key": "无极99",
         "name": "无极丨APP",
         "type": 3,
@@ -1435,22 +1680,6 @@
           "package": "com.wujiys.app",
           "buildNumber": "2001",
           "buildSignature": "A0859BDC35AD3E81D4051E2A4678C77C62773EDB3423DDF1DEFF94CB331D398E"
-        }
-      },
-      {
-        "key": "听心99",
-        "name": "听心｜APP",
-        "type": 3,
-        "api": "csp_App99",
-        "ext": {
-          "host": "https://api.12321app.com/api",
-          "LoginPath": "/app/log",
-          "appkey": "a0a18659a9977a47e53442cd084b536c",
-          "versionName": "2.8.1",
-          "name": "听心视频",
-          "package": "com.iksp.adsys.jjsp",
-          "buildNumber": "2001",
-          "buildSignature": "03DD38CE4C3D62D0F0DEFACC06768D14EB382C7BD77A05B2EBF4D66E154A0D47"
         }
       },
       {
@@ -1470,21 +1699,6 @@
         }
       },
       {
-        "key": "剧圈99",
-        "name": "剧圈丨APP",
-        "type": 3,
-        "api": "csp_App99",
-        "ext": {
-          "host": "http://124.221.3.182:19987/app/bn",
-          "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-          "versionName": "1.2.0",
-          "name": "剧圈圈",
-          "package": "com.qingtangxiaozhuan.xyz",
-          "buildNumber": "2002",
-          "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
-        }
-      },
-      {
         "key": "双星99",
         "name": "双星丨APP",
         "type": 3,
@@ -1498,22 +1712,6 @@
           "package": "com.yingfu.mobile.android.pgsp",
           "buildNumber": "2003",
           "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
-        }
-      },
-      {
-        "key": "顾我99",
-        "name": "顾我丨APP",
-        "type": 3,
-        "api": "csp_App99",
-        "ext": {
-          "host": "http://117.50.200.113:19987/app/bn",
-          "LoginPath": "/app/log",
-          "appkey": "040f9b1bc5e942569b5c3e63943306ab",
-          "versionName": "4.3.1",
-          "name": "顾我追剧",
-          "package": "com.guwozhuijux.app",
-          "buildNumber": "2001",
-          "buildSignature": "5AD4436C4730FFE26910C86278B80F3E661C317FFC3616F702D20A729262624A"
         }
       },
       {
@@ -2262,12 +2460,6 @@
         "ext": "./js/QKB.js"
       },
       {
-        "key": "荐片",
-        "name": "荐片｜磁力",
-        "api": "csp_JianPian",
-        "type": 3
-      },
-      {
         "key": "New6v",
         "name": "New6V｜磁力",
         "type": 3,
@@ -2356,16 +2548,6 @@
         "style": {
           "type": "list",
           "ratio": 1.433
-        }
-      },
-      {
-        "key": "88看球",
-        "name": "88｜看球",
-        "type": 3,
-        "api": "csp_Kanqiu",
-        "gridview": 3,
-        "style": {
-          "type": "list"
         }
       },
       {
@@ -2664,170 +2846,6 @@
           "type": "rect",
           "ratio": 1.597
         }
-      },
-      {
-        "key": "push_agent",
-        "name": "手机｜推送",
-        "type": 3,
-        "api": "csp_Push",
-        "searchable": 0,
-        "filterable": 0,
-        "changeable": 0
-      },
-      {
-        "key": "天天",
-        "name": "秒播┃1080P",
-        "type": 3,
-        "quickSearch": 1,
-        "searchable": 1,
-        "api": "csp_AppRJ",
-        "timeout": 12,
-        "ext": "vxw35/hHSj07Q+maxQzOVMq1rjRCOTXpUCx8iKu5jIg="
-      },
-      {
-        "key": "csp_Wwys",
-        "name": "农民┃1080P",
-        "type": 3,
-        "api": "csp_Wwys",
-        "timeout": 12,
-        "ext": "https://vip.wwgz.cn:5200"
-      },
-      {
-        "key": "csp_Music",
-        "name": "音乐┃在线",
-        "type": 3,
-        "api": "csp_Music",
-        "quickSearch": 0,
-        "timeout": 12,
-        "searchable": 0,
-        "style": {
-          "type": "rect",
-          "ratio": 1.333
-        },
-        "ext": ""
-      },
-      {
-        "key": "瓜子",
-        "name": "瓜子┃体育",
-        "type": 3,
-        "api": "csp_GuaziTY",
-        "style": {
-          "type": "rect",
-          "ratio": 1.333
-        },
-        "searchable": 0,
-        "quickSearch": 0,
-        "filterable": 1,
-        "timeout": 12,
-        "order_num": 0,
-        "changeable": 0
-      },
-      {
-        "key": "csp_Bili",
-        "name": "哔哩┃哔哩",
-        "type": 3,
-        "api": "csp_Bili",
-        "quickSearch": 0,
-        "timeout": 12,
-        "searchable": 1,
-        "ext": {
-          "json": "https://cik07-cos.7moor-fs2.com/im/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/50e4430df0b5644f/bilibil.json",
-          "cookie": ""
-        },
-        "style": {
-          "type": "rect",
-          "ratio": 1.333
-        }
-      },
-      {
-        "key": "3QQQ",
-        "name": "大鹅┃1080P",
-        "type": 3,
-        "timeout": 15,
-        "api": "csp_App3Q",
-        "ext": "https://duoduozhuiju.com"
-      },
-      {
-        "key": "csp_SaoHuo",
-        "name": "火火┃1080P",
-        "type": 3,
-        "api": "csp_SaoHuo"
-      },
-      {
-        "key": "Huya",
-        "name": "虎牙┃1080P",
-        "type": 3,
-        "jar": "./jars/Huya.jar",
-        "api": "csp_Huya",
-        "searchable": 0,
-        "quickSearch": 0,
-        "changeable": 0,
-        "filterable": 1,
-        "timeout": 10,
-        "style": {
-          "type": "rect",
-          "ratio": 1.433
-        }
-      },
-      {
-        "key": "Douyu",
-        "name": "斗鱼┃1080P",
-        "type": 3,
-        "api": "csp_Douyu",
-        "jar": "./jars/Huya.jar",
-        "searchable": 0,
-        "quickSearch": 0,
-        "changeable": 0,
-        "filterable": 1,
-        "timeout": 10,
-        "style": {
-          "type": "rect",
-          "ratio": 1.433
-        }
-      },
-      {
-        "key": "csp_duanju",
-        "name": "短剧┃1080P",
-        "type": 3,
-        "timeout": 12,
-        "api": "csp_DuanJu"
-      },
-      {
-        "key": "csp_Gz360",
-        "name": "瓜子┃1080P",
-        "type": 3,
-        "timeout": 12,
-        "searchable": 1,
-        "quickSearch": 0,
-        "api": "csp_Gz360"
-      },
-      {
-        "key": "csp_Jpys",
-        "name": "金牌┃1080P",
-        "type": 3,
-        "timeout": 12,
-        "searchable": 1,
-        "quickSearch": 0,
-        "api": "csp_Jpys",
-        "ext": "https://y2s52n7.com"
-      },
-      {
-        "key": "csp_TingBook",
-        "name": "听书┃娱乐",
-        "type": 3,
-        "api": "csp_TingBook"
-      },
-      {
-        "key": "Aid",
-        "name": "急救┃知识",
-        "type": 3,
-        "api": "csp_FirstAid",
-        "searchable": 0,
-        "quickSearch": 0,
-        "style": {
-          "type": "rect",
-          "ratio": 3.8
-        }
       }
     ],
     "lives": [
@@ -2838,6 +2856,41 @@
       }
     ],
     "parses": [
+      {
+        "name": "Json聚合",
+        "type": 3,
+        "url": "Demo"
+      },
+      {
+        "name": "🎬 影视聚合",
+        "type": 3,
+        "url": "影视"
+      },
+      {
+        "name": "🐮 牛牛解析",
+        "type": 1,
+        "url": "",
+        "ext": {
+          "flag": [
+            "QD4K",
+            "iyf",
+            "duanju",
+            "gzcj",
+            "GTV",
+            "GZYS",
+            "weggz",
+            "Ace"
+          ],
+          "header": {
+            "User-Agent": "okhttp/4.9.1"
+          }
+        }
+      },
+      {
+        "name": "🌃 夜幕解析",
+        "type": 0,
+        "url": ""
+      },
       {
         "name": "聚合",
         "type": 3,
@@ -2922,45 +2975,10 @@
             "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
           }
         }
-      },
-      {
-        "name": "Json聚合",
-        "type": 3,
-        "url": "Demo"
-      },
-      {
-        "name": "🎬 影视聚合",
-        "type": 3,
-        "url": "影视"
-      },
-      {
-        "name": "🐮 牛牛解析",
-        "type": 1,
-        "url": "",
-        "ext": {
-          "flag": [
-            "QD4K",
-            "iyf",
-            "duanju",
-            "gzcj",
-            "GTV",
-            "GZYS",
-            "weggz",
-            "Ace"
-          ],
-          "header": {
-            "User-Agent": "okhttp/4.9.1"
-          }
-        }
-      },
-      {
-        "name": "🌃 夜幕解析",
-        "type": 0,
-        "url": ""
       }
     ],
     "wallpaper": "",
-    "update_time": "2026-09-30 17:31:42",
-    "version": "3.2"
+    "update_time": "2026-09-30 22:47:46",
+    "version": "3.3"
   }
 }
