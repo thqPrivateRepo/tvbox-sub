@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.2
+TVBox 订阅源合并与健康检测 v3.3
 - 点播：多源合并、并发检测死链、缓存兜底
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
 - 排序：CCTV 按数字升序，卫视按拼音 A-Z
+- 站点名敏感词替换：含"访问/网站/获取/接口/公众号/starlink/更多"的改名为"小乌龟"
 """
 import json, os, re, time, random, hashlib, configparser, sys, subprocess
 from datetime import datetime, timezone, timedelta
@@ -38,6 +39,14 @@ def http_get(url, timeout=15):
         return r.status_code < 400, r.status_code, r.text
     except Exception as e:
         return False, str(e)[:80], ""
+
+# ============ 站点名敏感词替换 ============
+BLOCK_WORDS = ["访问", "网站", "获取", "接口", "公众号", "starlink", "更多"]
+
+def sanitize_site_name(name):
+    if any(w in name.lower() for w in BLOCK_WORDS):
+        return "小乌龟"
+    return name
 
 # ============ 频道名归一化 ============
 ALLOWED_CCTV = {f"CCTV{i}" for i in range(1, 18)} | {
@@ -302,6 +311,12 @@ def main():
             print(f"  OK {name}")
 
     sites = merge_sites(all_sites)
+
+    # 站点名敏感词替换
+    for site in sites:
+        old = site.get("name", "")
+        site["name"] = sanitize_site_name(old)
+
     parses = merge_named(all_parses)
     best_jar = pick_best_jar(jar_candidates)
 
@@ -347,7 +362,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.2"
+            "version": "3.3"
         }
         new_state["last_good"] = merged
 
