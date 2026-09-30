@@ -1,0 +1,40 @@
+name: TVBox Source Merger
+
+on:
+  schedule:
+    # 每5天 UTC 0点 = 北京时间 8:00
+    # 想改频率就改这个 cron:
+    #   每3天:  0 0 */3 * *
+    #   每2天:  0 0 */2 * *
+    #   每天:   0 0 * * *
+    - cron: '0 0 */5 * *'
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python merge.py
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "auto: merge $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')"
+            git push
+          fi
+      - name: Sync to Gitee
+        continue-on-error: true
+        run: |
+          git remote add gitee https://${{ secrets.GITEE_USER }}:${{ secrets.GITEE_TOKEN }}@gitee.com/${{ secrets.GITEE_USER }}/tvbox-sub.git
+          git push gitee HEAD:main
