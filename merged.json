@@ -1,12 +1,313 @@
 {
-  "spider": "https://gitee.com/starlinkapi/jar/raw/master/jar/spider.jar",
+  "spider": "https://gitee.com/starlinkapi/jar/raw/master/mijar/mi.jar",
   "sites": [
     {
       "key": "豆瓣",
-      "name": "访问网站【api.starlink.fan】获取更多接口",
+      "name": "接口已经更新【api.starlink.fan】",
       "type": 3,
-      "api": "csp_Douban",
-      "searchable": 0
+      "api": "http://124.223.214.31:16/api/lib/drpy2.min.js",
+      "ext": "http://124.223.214.31:16/api/lib/douban.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "天天",
+      "name": "秒播┃1080P",
+      "type": 3,
+      "quickSearch": 1,
+      "searchable": 1,
+      "api": "csp_AppRJ",
+      "timeout": 12,
+      "ext": "vxw35/hHSj07Q+maxQzOVMq1rjRCOTXpUCx8iKu5jIg="
+    },
+    {
+      "key": "csp_Wwys",
+      "name": "农民┃1080P",
+      "type": 3,
+      "api": "csp_Wwys",
+      "timeout": 12,
+      "ext": "https://vip.wwgz.cn:5200"
+    },
+    {
+      "key": "csp_Music",
+      "name": "音乐┃在线",
+      "type": 3,
+      "api": "csp_Music",
+      "quickSearch": 0,
+      "timeout": 12,
+      "searchable": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 1.333
+      },
+      "ext": ""
+    },
+    {
+      "key": "88看球",
+      "name": "叭叭┃体育",
+      "type": 3,
+      "api": "csp_Kanqiu",
+      "style": {
+        "type": "rect",
+        "ratio": 1.333
+      },
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 1,
+      "timeout": 12,
+      "order_num": 0,
+      "changeable": 0
+    },
+    {
+      "key": "瓜子",
+      "name": "瓜子┃体育",
+      "type": 3,
+      "api": "csp_GuaziTY",
+      "style": {
+        "type": "rect",
+        "ratio": 1.333
+      },
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 1,
+      "timeout": 12,
+      "order_num": 0,
+      "changeable": 0
+    },
+    {
+      "key": "csp_Bili",
+      "name": "哔哩┃哔哩",
+      "type": 3,
+      "api": "csp_Bili",
+      "quickSearch": 0,
+      "timeout": 12,
+      "searchable": 1,
+      "ext": {
+        "json": "https://cik07-cos.7moor-fs2.com/im/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/50e4430df0b5644f/bilibil.json",
+        "cookie": ""
+      },
+      "style": {
+        "type": "rect",
+        "ratio": 1.333
+      }
+    },
+    {
+      "key": "葫芦",
+      "name": "葫芦┃1080P",
+      "type": 3,
+      "api": "csp_AppGet",
+      "ext": "https://mobile-1251126973.cos.ap-guangzhou.myqcloud.com/maccos_config.txt|8R33VQSxzmCaHpEX|V122|okhttp/3.10.0"
+    },
+    {
+      "key": "新首发",
+      "name": "标清┃1080P",
+      "type": 3,
+      "api": "csp_AppGet",
+      "ext": "https://yun-1316442804.cos.ap-guangzhou.myqcloud.com/601.txt|FTgP4Gq8zPiqbt7M|V122|okhttp/3.10.0"
+    },
+    {
+      "key": "四叶草",
+      "name": "幸运┃1080P",
+      "type": 3,
+      "api": "csp_AppGet",
+      "ext": "https://yzysap.oss-cn-hangzhou.aliyuncs.com/sss.txt|wNCwbXzr0Bm6cS2C|V122|okhttp/3.10.0"
+    },
+    {
+      "key": "爱营",
+      "name": "爱影┃1080P",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "api": "csp_AppGet",
+      "ext": "https://aysappto.oss-cn-chengdu.aliyuncs.com/q23.txt|nzEqOgYk3QzHuEP8|V122|okhttp/3.10.0"
+    },
+    {
+      "key": "3QQQ",
+      "name": "大鹅┃1080P",
+      "type": 3,
+      "timeout": 15,
+      "api": "csp_App3Q",
+      "ext": "https://duoduozhuiju.com"
+    },
+    {
+      "key": "csp_SaoHuo",
+      "name": "火火┃1080P",
+      "type": 3,
+      "api": "csp_SaoHuo"
+    },
+    {
+      "key": "麦田",
+      "name": "麦田┃1080P",
+      "type": 3,
+      "api": "csp_AppV6",
+      "ext": "http://172.247.227.203:25321/mtys.php"
+    },
+    {
+      "key": "咕噜",
+      "name": "咕噜┃1080P",
+      "type": 3,
+      "api": "csp_App99",
+      "ext": {
+        "host": "http://103.45.132.22:19987/app/bn",
+        "LoginPath": "/app/log",
+        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
+        "versionName": "1.9.5",
+        "name": "咕噜咕噜",
+        "package": "com.bd.tool.gulu",
+        "buildNumber": "2001",
+        "buildSignature": "B07C8F6DBEBD3ABEE6A4A4DE2BFBBF29A0AC3F984D532A39448EC3BF5DD36311"
+      }
+    },
+    {
+      "key": "听心99",
+      "name": "欣欣┃1080P",
+      "type": 3,
+      "api": "csp_App99",
+      "ext": {
+        "host": "https://api.12321app.com/api",
+        "LoginPath": "/app/log",
+        "version": "0b4328287a5d953e",
+        "appkey": "a0a18659a9977a47e53442cd084b536c",
+        "versionName": "2.8.1",
+        "name": "听心视频",
+        "package": "com.iksp.adsys.jjsp",
+        "buildNumber": "2001",
+        "buildSignature": "03DD38CE4C3D62D0F0DEFACC06768D14EB382C7BD77A05B2EBF4D66E154A0D47"
+      }
+    },
+    {
+      "key": "剧圈99",
+      "name": "剧圈┃APP",
+      "type": 3,
+      "api": "csp_App99",
+      "ext": {
+        "host": "http://124.221.3.182:19987/app/bn",
+        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
+        "versionName": "1.2.0",
+        "name": "剧圈圈",
+        "package": "com.qingtangxiaozhuan.xyz",
+        "buildNumber": "2002",
+        "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
+      }
+    },
+    {
+      "key": "顾我99",
+      "name": "️顾我┃APP",
+      "type": 3,
+      "api": "csp_App99",
+      "ext": {
+        "host": "http://117.50.200.113:19987/app/bn",
+        "LoginPath": "/app/log",
+        "appkey": "040f9b1bc5e942569b5c3e63943306ab",
+        "versionName": "4.3.1",
+        "name": "顾我追剧",
+        "package": "com.guwozhuijux.app",
+        "buildNumber": "2001",
+        "buildSignature": "5AD4436C4730FFE26910C86278B80F3E661C317FFC3616F702D20A729262624A"
+      }
+    },
+    {
+      "key": "荐片",
+      "name": "荐片┃1080P",
+      "quickSearch": 0,
+      "changeable": "0",
+      "searchable": 1,
+      "timeout": 15,
+      "type": 3,
+      "api": "csp_Jianpian",
+      "style": {
+        "type": "rect",
+        "ratio": 1.333
+      },
+      "ext": "https://api.ztcgi.com"
+    },
+    {
+      "key": "Huya",
+      "name": "虎牙┃1080P",
+      "type": 3,
+      "jar": "./jars/Huya.jar",
+      "api": "csp_Huya",
+      "searchable": 0,
+      "quickSearch": 0,
+      "changeable": 0,
+      "filterable": 1,
+      "timeout": 10,
+      "style": {
+        "type": "rect",
+        "ratio": 1.433
+      }
+    },
+    {
+      "key": "Douyu",
+      "name": "斗鱼┃1080P",
+      "type": 3,
+      "api": "csp_Douyu",
+      "jar": "./jars/Huya.jar",
+      "searchable": 0,
+      "quickSearch": 0,
+      "changeable": 0,
+      "filterable": 1,
+      "timeout": 10,
+      "style": {
+        "type": "rect",
+        "ratio": 1.433
+      }
+    },
+    {
+      "key": "csp_duanju",
+      "name": "短剧┃1080P",
+      "type": 3,
+      "timeout": 12,
+      "api": "csp_DuanJu"
+    },
+    {
+      "key": "csp_Gz360",
+      "name": "瓜子┃1080P",
+      "type": 3,
+      "timeout": 12,
+      "searchable": 1,
+      "quickSearch": 0,
+      "api": "csp_Gz360"
+    },
+    {
+      "key": "csp_Jpys",
+      "name": "金牌┃1080P",
+      "type": 3,
+      "timeout": 12,
+      "searchable": 1,
+      "quickSearch": 0,
+      "api": "csp_Jpys",
+      "ext": "https://y2s52n7.com"
+    },
+    {
+      "key": "csp_TingBook",
+      "name": "听书┃娱乐",
+      "type": 3,
+      "api": "csp_TingBook"
+    },
+    {
+      "key": "Aid",
+      "name": "急救┃知识",
+      "type": 3,
+      "api": "csp_FirstAid",
+      "searchable": 0,
+      "quickSearch": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 3.8
+      }
+    },
+    {
+      "key": "push_agent",
+      "name": "推送┃播放",
+      "type": 3,
+      "filterable": 0,
+      "changeable": 0,
+      "api": "csp_Push",
+      "searchable": 1,
+      "quickSearch": 1,
+      "ext": ""
     },
     {
       "key": "配置中心",
@@ -53,22 +354,6 @@
       "api": "csp_App3Q"
     },
     {
-      "key": "咕噜",
-      "name": "咕噜丨APP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://103.45.132.22:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-        "versionName": "1.9.5",
-        "name": "咕噜咕噜",
-        "package": "com.bd.tool.gulu",
-        "buildNumber": "2001",
-        "buildSignature": "B07C8F6DBEBD3ABEE6A4A4DE2BFBBF29A0AC3F984D532A39448EC3BF5DD36311"
-      }
-    },
-    {
       "key": "无极99",
       "name": "无极丨APP",
       "type": 3,
@@ -83,22 +368,6 @@
         "package": "com.wujiys.app",
         "buildNumber": "2001",
         "buildSignature": "A0859BDC35AD3E81D4051E2A4678C77C62773EDB3423DDF1DEFF94CB331D398E"
-      }
-    },
-    {
-      "key": "听心99",
-      "name": "听心｜APP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "https://api.12321app.com/api",
-        "LoginPath": "/app/log",
-        "appkey": "a0a18659a9977a47e53442cd084b536c",
-        "versionName": "2.8.1",
-        "name": "听心视频",
-        "package": "com.iksp.adsys.jjsp",
-        "buildNumber": "2001",
-        "buildSignature": "03DD38CE4C3D62D0F0DEFACC06768D14EB382C7BD77A05B2EBF4D66E154A0D47"
       }
     },
     {
@@ -118,21 +387,6 @@
       }
     },
     {
-      "key": "剧圈99",
-      "name": "剧圈丨APP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://124.221.3.182:19987/app/bn",
-        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-        "versionName": "1.2.0",
-        "name": "剧圈圈",
-        "package": "com.qingtangxiaozhuan.xyz",
-        "buildNumber": "2002",
-        "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
-      }
-    },
-    {
       "key": "双星99",
       "name": "双星丨APP",
       "type": 3,
@@ -146,22 +400,6 @@
         "package": "com.yingfu.mobile.android.pgsp",
         "buildNumber": "2003",
         "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
-      }
-    },
-    {
-      "key": "顾我99",
-      "name": "顾我丨APP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://117.50.200.113:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "040f9b1bc5e942569b5c3e63943306ab",
-        "versionName": "4.3.1",
-        "name": "顾我追剧",
-        "package": "com.guwozhuijux.app",
-        "buildNumber": "2001",
-        "buildSignature": "5AD4436C4730FFE26910C86278B80F3E661C317FFC3616F702D20A729262624A"
       }
     },
     {
@@ -910,12 +1148,6 @@
       "ext": "./js/QKB.js"
     },
     {
-      "key": "荐片",
-      "name": "荐片｜磁力",
-      "api": "csp_JianPian",
-      "type": 3
-    },
-    {
       "key": "New6v",
       "name": "New6V｜磁力",
       "type": 3,
@@ -1004,16 +1236,6 @@
       "style": {
         "type": "list",
         "ratio": 1.433
-      }
-    },
-    {
-      "key": "88看球",
-      "name": "88｜看球",
-      "type": 3,
-      "api": "csp_Kanqiu",
-      "gridview": 3,
-      "style": {
-        "type": "list"
       }
     },
     {
@@ -1311,275 +1533,6 @@
       "style": {
         "type": "rect",
         "ratio": 1.597
-      }
-    },
-    {
-      "key": "push_agent",
-      "name": "手机｜推送",
-      "type": 3,
-      "api": "csp_Push",
-      "searchable": 0,
-      "filterable": 0,
-      "changeable": 0
-    },
-    {
-      "key": "ϋ▒ΗύΥμ",
-      "name": "όΟξίΠμί╖▓ύ╗Πόδ┤όΨ░ήΑΡapi.starlink.fanήΑΣ",
-      "type": 3,
-      "api": "http://124.223.214.31:16/api/lib/drpy2.min.js",
-      "ext": "http://124.223.214.31:16/api/lib/douban.js",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
-    },
-    {
-      "key": "ίνσίνσ",
-      "name": "ύπΤόΤφέΦΔ1080P",
-      "type": 3,
-      "quickSearch": 1,
-      "searchable": 1,
-      "api": "csp_AppRJ",
-      "timeout": 12,
-      "ext": "vxw35/hHSj07Q+maxQzOVMq1rjRCOTXpUCx8iKu5jIg="
-    },
-    {
-      "key": "csp_Wwys",
-      "name": "ίΗεό░ΣέΦΔ1080P",
-      "type": 3,
-      "api": "csp_Wwys",
-      "timeout": 12,
-      "ext": "https://vip.wwgz.cn:5200"
-    },
-    {
-      "key": "csp_Music",
-      "name": "ώθ│ϊ╣ΡέΦΔίερύ║┐",
-      "type": 3,
-      "api": "csp_Music",
-      "quickSearch": 0,
-      "timeout": 12,
-      "searchable": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 1.333
-      },
-      "ext": ""
-    },
-    {
-      "key": "88ύεΜύΡΔ",
-      "name": "ίΠφίΠφέΦΔϊ╜ΥϋΓ▓",
-      "type": 3,
-      "api": "csp_Kanqiu",
-      "style": {
-        "type": "rect",
-        "ratio": 1.333
-      },
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 1,
-      "timeout": 12,
-      "order_num": 0,
-      "changeable": 0
-    },
-    {
-      "key": "ύΥείφΡ",
-      "name": "ύΥείφΡέΦΔϊ╜ΥϋΓ▓",
-      "type": 3,
-      "api": "csp_GuaziTY",
-      "style": {
-        "type": "rect",
-        "ratio": 1.333
-      },
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 1,
-      "timeout": 12,
-      "order_num": 0,
-      "changeable": 0
-    },
-    {
-      "key": "csp_Bili",
-      "name": "ίΥΦίΥσέΦΔίΥΦίΥσ",
-      "type": 3,
-      "api": "csp_Bili",
-      "quickSearch": 0,
-      "timeout": 12,
-      "searchable": 1,
-      "ext": {
-        "json": "https://cik07-cos.7moor-fs2.com/im/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/50e4430df0b5644f/bilibil.json",
-        "cookie": ""
-      },
-      "style": {
-        "type": "rect",
-        "ratio": 1.333
-      }
-    },
-    {
-      "key": "3QQQ",
-      "name": "ίνπώ╣ΖέΦΔ1080P",
-      "type": 3,
-      "timeout": 15,
-      "api": "csp_App3Q",
-      "ext": "https://duoduozhuiju.com"
-    },
-    {
-      "key": "csp_SaoHuo",
-      "name": "ύΒτύΒτέΦΔ1080P",
-      "type": 3,
-      "api": "csp_SaoHuo"
-    },
-    {
-      "key": "ίΤΧίβε",
-      "name": "ίΤΧίβεέΦΔ1080P",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://103.45.132.22:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-        "versionName": "1.9.5",
-        "name": "ίΤΧίβείΤΧίβε",
-        "package": "com.bd.tool.gulu",
-        "buildNumber": "2001",
-        "buildSignature": "B07C8F6DBEBD3ABEE6A4A4DE2BFBBF29A0AC3F984D532A39448EC3BF5DD36311"
-      }
-    },
-    {
-      "key": "ίΡυί┐Δ99",
-      "name": "όυμόυμέΦΔ1080P",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "https://api.12321app.com/api",
-        "LoginPath": "/app/log",
-        "version": "0b4328287a5d953e",
-        "appkey": "a0a18659a9977a47e53442cd084b536c",
-        "versionName": "2.8.1",
-        "name": "ίΡυί┐ΔϋπΗώλΣ",
-        "package": "com.iksp.adsys.jjsp",
-        "buildNumber": "2001",
-        "buildSignature": "03DD38CE4C3D62D0F0DEFACC06768D14EB382C7BD77A05B2EBF4D66E154A0D47"
-      }
-    },
-    {
-      "key": "ίΚπίεΙ99",
-      "name": "ίΚπίεΙέΦΔAPP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://124.221.3.182:19987/app/bn",
-        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-        "versionName": "1.2.0",
-        "name": "ίΚπίεΙίεΙ",
-        "package": "com.qingtangxiaozhuan.xyz",
-        "buildNumber": "2002",
-        "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
-      }
-    },
-    {
-      "key": "ώκ╛όΙΣ99",
-      "name": "Ύ╕Πώκ╛όΙΣέΦΔAPP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://117.50.200.113:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "040f9b1bc5e942569b5c3e63943306ab",
-        "versionName": "4.3.1",
-        "name": "ώκ╛όΙΣϋ┐╜ίΚπ",
-        "package": "com.guwozhuijux.app",
-        "buildNumber": "2001",
-        "buildSignature": "5AD4436C4730FFE26910C86278B80F3E661C317FFC3616F702D20A729262624A"
-      }
-    },
-    {
-      "key": "ϋΞΡύΚΘ",
-      "name": "ϋΞΡύΚΘέΦΔ1080P",
-      "quickSearch": 0,
-      "changeable": "0",
-      "searchable": 1,
-      "timeout": 15,
-      "type": 3,
-      "api": "csp_Jianpian",
-      "style": {
-        "type": "rect",
-        "ratio": 1.333
-      },
-      "ext": "https://api.ztcgi.com"
-    },
-    {
-      "key": "Huya",
-      "name": "ϋβΟύΚβέΦΔ1080P",
-      "type": 3,
-      "jar": "./jars/Huya.jar",
-      "api": "csp_Huya",
-      "searchable": 0,
-      "quickSearch": 0,
-      "changeable": 0,
-      "filterable": 1,
-      "timeout": 10,
-      "style": {
-        "type": "rect",
-        "ratio": 1.433
-      }
-    },
-    {
-      "key": "Douyu",
-      "name": "όΨΩώ▒╝έΦΔ1080P",
-      "type": 3,
-      "api": "csp_Douyu",
-      "jar": "./jars/Huya.jar",
-      "searchable": 0,
-      "quickSearch": 0,
-      "changeable": 0,
-      "filterable": 1,
-      "timeout": 10,
-      "style": {
-        "type": "rect",
-        "ratio": 1.433
-      }
-    },
-    {
-      "key": "csp_duanju",
-      "name": "ύθφίΚπέΦΔ1080P",
-      "type": 3,
-      "timeout": 12,
-      "api": "csp_DuanJu"
-    },
-    {
-      "key": "csp_Gz360",
-      "name": "ύΥείφΡέΦΔ1080P",
-      "type": 3,
-      "timeout": 12,
-      "searchable": 1,
-      "quickSearch": 0,
-      "api": "csp_Gz360"
-    },
-    {
-      "key": "csp_Jpys",
-      "name": "ώΘΣύΚΝέΦΔ1080P",
-      "type": 3,
-      "timeout": 12,
-      "searchable": 1,
-      "quickSearch": 0,
-      "api": "csp_Jpys",
-      "ext": "https://y2s52n7.com"
-    },
-    {
-      "key": "csp_TingBook",
-      "name": "ίΡυϊ╣οέΦΔίρ▒ϊ╣Ρ",
-      "type": 3,
-      "api": "csp_TingBook"
-    },
-    {
-      "key": "Aid",
-      "name": "όΑξόΧΣέΦΔύθξϋψΗ",
-      "type": 3,
-      "api": "csp_FirstAid",
-      "searchable": 0,
-      "quickSearch": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 3.8
       }
     },
     {
@@ -1963,6 +1916,11 @@
   ],
   "lives": [
     {
+      "name": "📺 平台直播",
+      "type": 0,
+      "ua": "okhttp/3.15"
+    },
+    {
       "name": "最新直播接口",
       "url": "https://zb.7778.uk/",
       "type": 0
@@ -1974,6 +1932,41 @@
     }
   ],
   "parses": [
+    {
+      "name": "Json聚合",
+      "type": 3,
+      "url": "Demo"
+    },
+    {
+      "name": "🎬 影视聚合",
+      "type": 3,
+      "url": "影视"
+    },
+    {
+      "name": "🐮 牛牛解析",
+      "type": 1,
+      "url": "",
+      "ext": {
+        "flag": [
+          "QD4K",
+          "iyf",
+          "duanju",
+          "gzcj",
+          "GTV",
+          "GZYS",
+          "weggz",
+          "Ace"
+        ],
+        "header": {
+          "User-Agent": "okhttp/4.9.1"
+        }
+      }
+    },
+    {
+      "name": "🌃 夜幕解析",
+      "type": 0,
+      "url": ""
+    },
     {
       "name": "聚合",
       "type": 3,
@@ -2058,44 +2051,9 @@
           "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
         }
       }
-    },
-    {
-      "name": "JsonϋΒγίΡΙ",
-      "type": 3,
-      "url": "Demo"
-    },
-    {
-      "name": "ΏθΟυ ί╜▒ϋπΗϋΒγίΡΙ",
-      "type": 3,
-      "url": "ί╜▒ϋπΗ"
-    },
-    {
-      "name": "ΏθΡχ ύΚδύΚδϋπμόηΡ",
-      "type": 1,
-      "url": "",
-      "ext": {
-        "flag": [
-          "QD4K",
-          "iyf",
-          "duanju",
-          "gzcj",
-          "GTV",
-          "GZYS",
-          "weggz",
-          "Ace"
-        ],
-        "header": {
-          "User-Agent": "okhttp/4.9.1"
-        }
-      }
-    },
-    {
-      "name": "ΏθΝΔ ίνεί╣ΧϋπμόηΡ",
-      "type": 0,
-      "url": ""
     }
   ],
   "wallpaper": "",
-  "update_time": "2026-09-30 11:15:45",
+  "update_time": "2026-09-30 15:25:27",
   "version": "2.1"
 }
