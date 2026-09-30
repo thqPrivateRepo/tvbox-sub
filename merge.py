@@ -28,7 +28,7 @@ def http_head(url, timeout=8):
     except Exception as e:
         return (False, str(e)[:80], 0)
 
-def http_get(url, timeout=15):
+def http_get(url, timeout=10):
     try:
         r = requests.get(url, timeout=timeout, headers=UA)
         return r.status_code < 400, r.status_code, r.text
@@ -36,7 +36,6 @@ def http_get(url, timeout=15):
         return False, str(e)[:80], ""
 
 def load_sources():
-    """读取 sources.txt"""
     remote, lives = [], []
     with open(SOURCES_FILE, "r", encoding="utf-8") as f:
         for line in f:
@@ -102,15 +101,25 @@ def pick_best_jar(jar_list):
     return Counter(jar_list).most_common(1)[0][0]
 
 def check_site(site, timeout=8):
-    """检测一个点播站：api 可达 + ext jar 可达"""
+    """检测一个点播站：
+    - api 如果是 http/https 地址才测连通性
+    - csp_xxx 等是 TVBox 内部爬虫标识，服务端无法检测，默认保留
+    - 405 不支持 HEAD 时改用 GET 重试
+    """
     issues = []
     api = site.get("api", "")
-    if api:
+    if api and (api.startswith("http://") or api.startswith("https://")):
         ok, code, _ = http_head(api, timeout=timeout)
         if not ok:
-            issues.append(f"api不可达({code})")
+            # 405 = 服务器不支持 HEAD，用 GET 再试
+            if code == 405:
+                ok2, code2, _ = http_get(api, timeout=timeout)
+                if not ok2:
+                    issues.append(f"api不可达({code2})")
+            else:
+                issues.append(f"api不可达({code})")
     ext = site.get("ext", "")
-    if ext and isinstance(ext, str) and ext.startswith("http"):
+    if ext and isinstance(ext, str) and ext.startswith(("http://", "https://")):
         ok, code, _ = http_head(ext, timeout=timeout)
         if not ok:
             issues.append(f"ext/jar不可达({code})")
@@ -170,7 +179,6 @@ def main():
     timeout = settings["http_timeout"]
     workers = settings["concurrency"]
 
-    # 1. 并发拉取所有源
     print("并发拉取源...")
     all_sites, all_lives, all_parses, jar_candidates = [], [], [], []
     errors = []
@@ -192,14 +200,12 @@ def main():
     for ls in extra_lives:
         all_lives.append([ls])
 
-    # 2. 合并
     sites = merge_sites(all_sites)
     lives = merge_named(all_lives)
     parses = merge_named(all_parses)
     best_jar = pick_best_jar(jar_candidates)
     print(f"合并后: 站点{len(sites)} 直播{len(lives)} 解析{len(parses)}")
 
-    # 3. 并发展点播检测
     print("并发展点播检测...")
     new_state = {"sites": {}, "lives": {}, "last_good": state.get("last_good")}
     site_results = {}
@@ -222,7 +228,6 @@ def main():
         else:
             failed_sites.append((site, fc, issues))
 
-    # 4. 并发测直播
     print("并发展直播检测...")
     live_results = {}
     with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -246,7 +251,6 @@ def main():
         else:
             failed_lives.append((live, fc, issues))
 
-    # 5. 缓存兜底
     if len(good_sites) == 0 and state.get("last_good"):
         print("!! 全部站点不可用，回退到上次版本")
         merged = state["last_good"]
@@ -258,7 +262,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "2.0"
+            "version": "2.1"
         }
         new_state["last_good"] = merged
 
@@ -267,7 +271,6 @@ def main():
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(new_state, f, ensure_ascii=False, indent=2)
 
-    # 健康报告
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
         f.write(f"# TVBox 订阅源健康报告\n\n**检测时间**: {now_str()}\n\n")
         f.write(f"**可用站点**: {len(good_sites)} / {len(sites)}\n\n")
