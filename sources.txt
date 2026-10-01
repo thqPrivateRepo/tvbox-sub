@@ -6,10 +6,62 @@
 # ============================================
 
 # --- 点播源（TVBox JSON 接口）---
-点播|【1080P】高速接口地址【支持弹幕】|http://124.223.214.31:16/8888
-点播|最新4K影视仓高速接口地址【9月17日】更新|http://124.223.214.31:55316/9981
-点播|爱奇艺 腾讯 优酷 高速接口|http://47.96.82.41:5188/config.json
+点播|【4K】高清高速接口【支持弹幕】|http://124.223.214.31:924/924
+点播|最新4K影视仓高速接口【9月24日】|http://124.223.214.31:20271/pps.bmp
+点播|爱奇艺腾讯优酷 高速接口【V3】|http://47.96.82.41:5188/config.json
+点播|饭太硬备用接口|http://www.饭太硬.net/tv
+点播|聚合资源接口|https://jihulab.com/xuanzhuapp/xzys/-/raw/main/xzvip.json
+点播|TVBOX多接口|https://tv.sxi.qzz.io/jsm.json
+点播|饭太硬|http://www.饭太硬.cc/tv
+点播|私人3|https://gh-proxy.com/https://raw.githubusercontent.com/qist/tvbox/master/jsm.json
+点播|短剧频道|https://play.iptv365.org/短剧频道/api.json
+点播|讴歌|https://欧歌.e.nxog.top/apitv.php?id=20
+点播|小米|http://47.96.82.41:8/api.json
+点播|多多优选仓|https://jihulab.com/duomv/apps/-/raw/main/a.txt
+点播|R|https://gist.githubusercontent.com/zzlinlang/0cd81fd0a55ae912f89f1a2fa297fabc/raw/76d609aff2b57e67dc2d3aa3776612c4f2d2dbbf/zlinlang.json
+点播|小二|https://9280.kstore.vip/newwex.json
+点播|多仓|https://play.iptv365.org/tvbox.txt
+点播|聚玩盒子4K|http://xhztv.top/4k.json
+点播|接口4（茄子）|shturl.cc/90LTSi6d0StKAZDYZoZIt0d5MmjBCQ9jzGBQ9
+点播|宝盒4K|http://xn--6orr3pi6g9uu.top/
+点播|资源路线|http://47.96.82.41:5188
+点播|papa|https://ghfast.top/https://raw.githubusercontent.com/aliluya1977/TVBox/refs/heads/master/papa.json
+点播|欧歌|https://xn--anna-wn6lw489o.v.nxog.top/m
+点播|ok|https://xn--vssv-wn6lw489o.v.nxog.top/apib?id=11
+点播|菜妮丝接口|https://tv.xn--yhqu5zs87a.top
+点播|天外天影视3号|http://47.96.82.41:5188/api.json
+点播|tv2|https://tv.nxog.top/apitv.php?id=2
+点播|gitlab|https://gitlab.com/noimank/tvbox/-/raw/main/tvboxmuti.json
+点播|饭太硬二|http://fty.xxooo.cf/tv
+点播|短剧|https://xn--zssz-wn6lw489o.v.nxog.top/apib?id=13
+点播|小哥哥影视仓（我要分享）|https://v.51fxiang.com/v/common/tvbox/json/xggysc.json
+点播|雄哥|https://bitbucket.org/xduo/duoapi/raw/master/xpg.json
+点播|少儿教育|https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer
+点播|影音天堂|https://jihulab.com/dimaston1/4k/-/raw/main/tongyong.json
+点播|影视仓|https://jihulab.com/z-blog/vip/-/raw/main/xm/t.json
+点播|地盘专属I挺好线路|http://ztha.top/TVBox/GYCK.json
+点播|XB（苹果CMS）|https://xingba111.com/api.php/provide/vod/?ac=list
+点播|饭太硬|http://fty.333232.xyz/tv
+点播|饭备用2|http://www.饭太硬.art/tv
+点播|直播点播（zbzdb.js）|https://jihulab.com/dimaston1/4k/-/raw/main/js/zbzdb.js
+点播|菠萝库|http://vip.boluo.live
+点播|装歌|https://xn--onno-wn6lw489o.v.nxog.top/apia?id=3
+点播|卧龙资源|https://pastebin.com/raw/gtbKvnE1
+点播|星河|http://116.196.116.76/tv
+点播|box|https://raw.liucn.cc/box/m.json
+点播|2356|http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌
+点播|饭太硬魔改版【影视仓】|http://api.tvbox.xin/
+点播|驸马影视|http://fmys.top/fmys.json
+点播|E接口-SVIP|http://cjczydby.top/svip.json
+点播|自用1|http://xn--dkw0c.v.nxog.top
+点播|讴歌多仓|http://tv.nxog.top/
+点播|饭太硬4|http://fty.888484.xyz/tv
 
 # --- 直播线路（m3u 或 txt）---
-直播|最新直播接口|https://zb.7778.uk/
-直播|最新直播接口地址|https://zb.7778.uk/starlink.m3u
+直播|最新直播接口【影视仓/OK影视/TVBOX】|https://zb.7778.uk/
+直播|最新直播接口地址【9月17日】|https://zb.7778.uk/starlink.m3u
+直播|ipv4直播|https://iptv.yanshi666.cc.cd/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u
+直播|港澳台直播|http://rihou.cc:567/gggg.nzk
+直播|直播2（ipv6）|https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u
+直播|直播接口|https://live.zhoujie218.top/tv/iptv4.m3u
+直播|台湾频道1|https://epg.pw/test_channels_taiwan.m3u
