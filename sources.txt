@@ -32,9 +32,6 @@
 点播|tv2|https://tv.nxog.top/apitv.php?id=2
 点播|gitlab|https://gitlab.com/noimank/tvbox/-/raw/main/tvboxmuti.json
 点播|饭太硬二|http://fty.xxooo.cf/tv
-点播|短剧|https://xn--zssz-wn6lw489o.v.nxog.top/apib?id=13
-点播|小哥哥影视仓（我要分享）|https://v.51fxiang.com/v/common/tvbox/json/xggysc.json
-点播|雄哥|https://bitbucket.org/xduo/duoapi/raw/master/xpg.json
 点播|少儿教育|https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer
 点播|影音天堂|https://jihulab.com/dimaston1/4k/-/raw/main/tongyong.json
 点播|影视仓|https://jihulab.com/z-blog/vip/-/raw/main/xm/t.json
@@ -51,8 +48,6 @@
 点播|2356|http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌
 点播|饭太硬魔改版【影视仓】|http://api.tvbox.xin/
 点播|驸马影视|http://fmys.top/fmys.json
-点播|E接口-SVIP|http://cjczydby.top/svip.json
-点播|自用1|http://xn--dkw0c.v.nxog.top
 点播|讴歌多仓|http://tv.nxog.top/
 点播|饭太硬4|http://fty.888484.xyz/tv
 
