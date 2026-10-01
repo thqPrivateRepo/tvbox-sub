@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.3
+TVBox 订阅源合并与健康检测 v3.5
 - 点播：多源合并、并发检测死链、缓存兜底
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
+- 直播检测：全部线路检测，全挂频道剔除，死线路单独剔除
 - 排序：CCTV 按数字升序，卫视按拼音 A-Z
 - 站点名敏感词替换：含"访问/网站/获取/接口/公众号/starlink/更多"的改名为"小乌龟"
 """
@@ -39,6 +40,16 @@ def http_get(url, timeout=15):
         return r.status_code < 400, r.status_code, r.text
     except Exception as e:
         return False, str(e)[:80], ""
+
+def check_live_url(url, timeout=5):
+    """检测直播线路是否可用（GET 流式请求，只看状态码）"""
+    try:
+        r = requests.get(url, timeout=timeout, stream=True, headers=UA)
+        ok = r.status_code < 400
+        r.close()
+        return ok
+    except Exception:
+        return False
 
 # ============ 站点名敏感词替换 ============
 BLOCK_WORDS = ["访问", "网站", "获取", "接口", "公众号", "starlink", "更多"]
@@ -172,6 +183,37 @@ def process_live_sources(live_urls):
                     all_channels[norm].append(u)
     cctv = {k:v for k,v in all_channels.items() if k.upper().startswith("CCTV")}
     weishi = {k:v for k,v in all_channels.items() if "卫视" in k and not k.upper().startswith("CCTV")}
+
+    # 直播线路检测：全部线路检测，全挂频道剔除，死线路单独剔除
+    total_before = len(cctv) + len(weishi)
+    total_lines = sum(len(v) for v in cctv.values()) + sum(len(v) for v in weishi.values())
+    print(f"  检测直播线路可用性（{total_before}个频道/{total_lines}条线路）...")
+    check_urls = []
+    for ch_name, urls in {**cctv, **weishi}.items():
+        for url in urls:
+            check_urls.append((ch_name, url))
+
+    channel_ok = {}
+    dead_lines = set()
+    with ThreadPoolExecutor(max_workers=15) as ex:
+        futs = {ex.submit(check_live_url, url): (ch, url) for ch, url in check_urls}
+        for fut in as_completed(futs):
+            ch_name, url = futs[fut]
+            if fut.result():
+                channel_ok[ch_name] = True
+            else:
+                dead_lines.add((ch_name, url))
+
+    # 剔除全挂的频道
+    cctv = {k:v for k,v in cctv.items() if k in channel_ok}
+    weishi = {k:v for k,v in weishi.items() if k in channel_ok}
+    # 剔除死掉的线路
+    cctv = {k:[u for u in v if (k,u) not in dead_lines] for k,v in cctv.items()}
+    weishi = {k:[u for u in v if (k,u) not in dead_lines] for k,v in weishi.items()}
+    removed = total_before - len(channel_ok)
+    dead_count = len(dead_lines)
+    print(f"  直播检测完成: {len(channel_ok)}个频道可用, 剔除{removed}个无可用频道, 剔除{dead_count}条死线路")
+
     lines = []
     if cctv:
         lines.append("央视频道,#genre#")
@@ -362,7 +404,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.3"
+            "version": "3.5"
         }
         new_state["last_good"] = merged
 
