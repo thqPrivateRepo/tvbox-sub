@@ -13,7 +13,6 @@
 点播|聚合资源接口|https://jihulab.com/xuanzhuapp/xzys/-/raw/main/xzvip.json
 点播|TVBOX多接口|https://tv.sxi.qzz.io/jsm.json
 点播|饭太硬|http://www.饭太硬.cc/tv
-点播|私人3|https://gh-proxy.com/https://raw.githubusercontent.com/qist/tvbox/master/jsm.json
 点播|短剧频道|https://play.iptv365.org/短剧频道/api.json
 点播|讴歌|https://欧歌.e.nxog.top/apitv.php?id=20
 点播|小米|http://47.96.82.41:8/api.json
