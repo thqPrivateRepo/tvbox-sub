@@ -17,16 +17,13 @@
 点播|讴歌|https://欧歌.e.nxog.top/apitv.php?id=20
 点播|小米|http://47.96.82.41:8/api.json
 点播|多多优选仓|https://jihulab.com/duomv/apps/-/raw/main/a.txt
-点播|R|https://gist.githubusercontent.com/zzlinlang/0cd81fd0a55ae912f89f1a2fa297fabc/raw/76d609aff2b57e67dc2d3aa3776612c4f2d2dbbf/zlinlang.json
 点播|小二|https://9280.kstore.vip/newwex.json
 点播|多仓|https://play.iptv365.org/tvbox.txt
 点播|聚玩盒子4K|http://xhztv.top/4k.json
 点播|接口4（茄子）|shturl.cc/90LTSi6d0StKAZDYZoZIt0d5MmjBCQ9jzGBQ9
 点播|宝盒4K|http://xn--6orr3pi6g9uu.top/
 点播|资源路线|http://47.96.82.41:5188
-点播|papa|https://ghfast.top/https://raw.githubusercontent.com/aliluya1977/TVBox/refs/heads/master/papa.json
 点播|欧歌|https://xn--anna-wn6lw489o.v.nxog.top/m
-点播|ok|https://xn--vssv-wn6lw489o.v.nxog.top/apib?id=11
 点播|菜妮丝接口|https://tv.xn--yhqu5zs87a.top
 点播|天外天影视3号|http://47.96.82.41:5188/api.json
 点播|tv2|https://tv.nxog.top/apitv.php?id=2
