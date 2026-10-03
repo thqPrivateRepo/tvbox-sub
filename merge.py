@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.5
-- 点播：多源合并、并发检测死链、缓存兜底
+TVBox 订阅源合并与健康检测 v3.6
+- 点播：多源全部保留不去重、并发检测死链、缓存兜底
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
 - 直播检测：全部线路检测，全挂频道剔除，死线路单独剔除
 - 排序：CCTV 按数字升序，卫视按拼音 A-Z
@@ -204,10 +204,8 @@ def process_live_sources(live_urls):
             else:
                 dead_lines.add((ch_name, url))
 
-    # 剔除全挂的频道
     cctv = {k:v for k,v in cctv.items() if k in channel_ok}
     weishi = {k:v for k,v in weishi.items() if k in channel_ok}
-    # 剔除死掉的线路
     cctv = {k:[u for u in v if (k,u) not in dead_lines] for k,v in cctv.items()}
     weishi = {k:[u for u in v if (k,u) not in dead_lines] for k,v in weishi.items()}
     removed = total_before - len(channel_ok)
@@ -274,14 +272,12 @@ def fetch_source(item):
         return name, None, f"JSON解析失败: {e}"
 
 def merge_sites(sites_list):
-    merged, order = {}, []
+    """不去重，保留全部站点"""
+    result = []
     for src in sites_list:
         for site in src:
-            key = site.get("key", "")
-            if key and key not in merged:
-                merged[key] = site
-                order.append(key)
-    return [merged[k] for k in order]
+            result.append(site)
+    return result
 
 def merge_named(items_list):
     merged, order = {}, []
@@ -374,15 +370,19 @@ def main():
         for fut in as_completed(futs):
             site = futs[fut]
             ok, issues = fut.result()
-            site_results[site.get("key", "")] = (ok, issues)
+            # 用 序号+key 做唯一标识，避免同名key冲突
+            uid = f"{id(site)}"
+            site_results[uid] = (ok, issues)
 
     good_sites, failed_sites = [], []
-    for site in sites:
-        key = site.get("key", "")
-        ok, issues = site_results.get(key, (False, ["检测异常"]))
-        prev = state["sites"].get(key, {"fail_count": 0})
+    for idx, site in enumerate(sites):
+        uid = f"{id(site)}"
+        ok, issues = site_results.get(uid, (False, ["检测异常"]))
+        # 用 site key + 序号 做状态key
+        sk = f"{site.get('key','')}_{idx}"
+        prev = state["sites"].get(sk, {"fail_count": 0})
         fc = 0 if ok else prev.get("fail_count", 0) + 1
-        new_state["sites"][key] = {"fail_count": fc, "ok": ok, "issues": issues, "last_check": now_str()}
+        new_state["sites"][sk] = {"fail_count": fc, "ok": ok, "issues": issues, "last_check": now_str()}
         if fc < max_fail:
             good_sites.append(site)
         else:
@@ -404,7 +404,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.5"
+            "version": "3.6"
         }
         new_state["last_good"] = merged
 
