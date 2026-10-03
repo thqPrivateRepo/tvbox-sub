@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.8
-- 支持多仓嵌套格式（仅一层递归）
+TVBox 订阅源合并与健康检测 v3.7
+- 支持多仓嵌套格式（{urls:[{url,name}]}）
 - 点播：多源全部保留不去重、并发检测死链、缓存兜底
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
 - 直播检测：全部线路检测，全挂频道剔除，死线路单独剔除
@@ -51,6 +51,7 @@ def check_live_url(url, timeout=5):
     except Exception:
         return False
 
+# ============ 站点名敏感词替换 ============
 BLOCK_WORDS = ["访问", "网站", "获取", "接口", "公众号", "starlink", "更多"]
 
 def sanitize_site_name(name):
@@ -58,6 +59,7 @@ def sanitize_site_name(name):
         return "小乌龟"
     return name
 
+# ============ 频道名归一化 ============
 ALLOWED_CCTV = {f"CCTV{i}" for i in range(1, 18)} | {
     "CCTV5+", "CCTV4欧洲", "CCTV4美洲",
     "CCTV4K超高清", "CCTV8K超高清"
@@ -104,6 +106,7 @@ def is_wanted_channel(name):
         return True
     return False
 
+# ============ 直播解析（支持 txt + m3u）============
 def parse_live_text(text):
     channels = {}
     lines = text.splitlines()
@@ -227,6 +230,7 @@ def process_live_sources(live_urls):
     print(f"  直播合并完成: {tc} 个频道, {tl} 条线路")
     return tc, tl
 
+# ============ 点播源处理 ============
 def load_sources():
     remote, lives = [], []
     with open(SOURCES_FILE, "r", encoding="utf-8") as f:
@@ -256,8 +260,8 @@ def load_config():
         "live_cos_url": s.get("live_cos_url", ""),
     }
 
-def fetch_source_recursive(source_item):
-    """拉取点播源，支持多仓嵌套格式（仅一层递归）"""
+def fetch_source_recursive(source_item, depth=0):
+    """拉取点播源，支持多仓嵌套格式"""
     name, url = source_item["name"], source_item["url"]
     ok, code, text = http_get(url, timeout=15)
     if not ok:
@@ -267,8 +271,10 @@ def fetch_source_recursive(source_item):
     except Exception as e:
         return name, None, f"JSON解析失败: {e}"
 
-    # 多仓格式：{urls: [{url, name}]}，仅拉取一层子源
+    # 多仓格式：{urls: [{url, name}]}，递归拉取子源
     if isinstance(data, dict) and "urls" in data and isinstance(data["urls"], list):
+        if depth >= 2:
+            return name, None, "多仓嵌套太深"
         all_sites, all_parses = [], []
         sub_jars = []
         for sub in data["urls"]:
@@ -276,25 +282,23 @@ def fetch_source_recursive(source_item):
             sub_name = sub.get("name", sub_url[:20])
             if not sub_url:
                 continue
-            ok2, code2, text2 = http_get(sub_url, timeout=15)
-            if not ok2:
-                print(f"    X {sub_name}: HTTP {code2}")
+            sub_name2, sub_data, sub_err = fetch_source_recursive({"name": sub_name, "url": sub_url}, depth+1)
+            if sub_err:
+                print(f"    X {sub_name}: {sub_err}")
                 continue
-            try:
-                sub_data = json.loads(text2)
-            except Exception as e:
-                print(f"    X {sub_name}: JSON解析失败")
-                continue
-            all_sites.extend(sub_data.get("sites", []))
-            all_parses.extend(sub_data.get("parses", []))
-            if sub_data.get("spider"):
-                sub_jars.append(sub_data["spider"])
-            print(f"    OK {sub_name} ({len(sub_data.get('sites',[]))}站)")
+            if sub_data:
+                all_sites.extend(sub_data.get("sites", []))
+                all_parses.extend(sub_data.get("parses", []))
+                if sub_data.get("spider"):
+                    sub_jars.append(sub_data["spider"])
+                print(f"    OK {sub_name} ({len(sub_data.get('sites',[]))}站)")
         return name, {"sites": all_sites, "parses": all_parses, "spider": None, "_sub_jars": sub_jars}, None
 
+    # 标准 TVBox JSON
     return name, data, None
 
 def merge_sites(sites_list):
+    """不去重，保留全部站点"""
     result = []
     for src in sites_list:
         for site in src:
@@ -368,12 +372,14 @@ def main():
             all_parses.append(data.get("parses", []))
             if data.get("spider"):
                 jar_candidates.append(data["spider"])
+            # 多仓子源的 jar 也收集
             for j in data.get("_sub_jars", []):
                 jar_candidates.append(j)
             print(f"  OK {name}: {len(data.get('sites',[]))}站")
 
     sites = merge_sites(all_sites)
 
+    # 站点名敏感词替换
     for site in sites:
         old = site.get("name", "")
         site["name"] = sanitize_site_name(old)
@@ -425,7 +431,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.8"
+            "version": "3.7"
         }
         new_state["last_good"] = merged
 
