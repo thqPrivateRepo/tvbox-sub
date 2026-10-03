@@ -3,6 +3,7 @@ CCTV1,http://smzb.bypbwxx.top/lvdou/zhibojm-yangshi.php?token=6607337aa8fa6d6cd9
 CCTV1,http://120.76.248.139/live/bfgd/4200000489.m3u8
 CCTV1,http://120.76.248.139/live/bfgd/4200000488.m3u8
 CCTV1,http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009
+CCTV1,http://38.75.136.137:98/gslb/dsdqpub/cctv1hd.m3u8?auth=testpub
 CCTV1,http://192.151.150.154/live/cctv1hd.m3u8
 CCTV1,http://107.150.60.122/live/cctv1hd.m3u8
 CCTV1,http://198.204.228.26/live/cctv1hd.m3u8
@@ -16,6 +17,7 @@ CCTV2,http://smzb.bypbwxx.top/lvdou/zhibojm-yangshi.php?token=8b1ef854627b2932a0
 CCTV2,http://120.76.248.139/live/bfgd/4200000061.m3u8
 CCTV2,http://112.46.85.60:8009/hls/502/index.m3u8
 CCTV2,http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20251009
+CCTV2,http://38.75.136.137:98/gslb/dsdqpub/cctv2hd.m3u8?auth=testpub
 CCTV2,http://192.151.150.154/live/cctv2hd.m3u8
 CCTV2,http://107.150.60.122/live/cctv2hd.m3u8
 CCTV2,http://bztv.tvbus.cc:8081/cdnlive/cctv2.m3u8
@@ -35,6 +37,7 @@ CCTV3,http://198.204.228.26/live/cctv3hd.m3u8
 CCTV3,http://bztv.tvbus.cc:8081/cdnlive/cctv3.m3u8
 CCTV3,http://173.208.212.130:8181/720p/cctv3.m3u8
 CCTV3,http://173.208.212.130:8181/1080p/cctv3.m3u8
+CCTV3,http://mg.cttv.vip/624878271
 CCTV3,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv3hd
 CCTV3,http://74.91.26.218:82/live/cctv3hd.m3u8
 CCTV3,http://69.30.245.50/live/cctv3.m3u8
@@ -79,7 +82,10 @@ CCTV5+,http://bztv.tvbus.cc:8081/cdnlive/cctv5p.m3u8
 CCTV5+,http://rihou.cc:555/tv/[mg]CCTV-5+
 CCTV6,http://smzb.bypbwxx.top/lvdou/zhibojm-yangshi.php?token=d2ae3660e2dc1987d37e10061e65d8
 CCTV6,http://183.11.239.36:808/hls/94/index.m3u8
+CCTV6,http://182.150.23.74:808/hls/6/index.m3u8
 CCTV6,http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009
+CCTV6,http://38.75.136.137:98/gslb/dsdqpub/cctv6hd.m3u8?auth=testpub
+CCTV6,http://j.s.bkpcp.top/jj/cctv6
 CCTV6,http://192.151.150.154/live/cctv6hd.m3u8
 CCTV6,http://107.150.60.122/live/cctv6hd.m3u8
 CCTV6,http://198.204.228.26/live/cctv6hd.m3u8
@@ -107,7 +113,6 @@ CCTV8,http://smzb.bypbwxx.top/lvdou/zhibojm-yangshi.php?token=7641ec47b2d136a8fe
 CCTV8,http://gmxw.7766.org:808/hls/96/index.m3u8
 CCTV8,http://183.11.239.36:808/hls/96/index.m3u8
 CCTV8,http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009
-CCTV8,http://38.75.136.137:98/gslb/dsdqpub/cctv8hd.m3u8?auth=testpub
 CCTV8,http://192.151.150.154/live/cctv8hd.m3u8
 CCTV8,http://107.150.60.122/live/cctv8hd.m3u8
 CCTV8,http://198.204.228.26/live/cctv8hd.m3u8
@@ -188,7 +193,6 @@ CCTV13,http://rihou.cc:555/tv/[mg]CCTV-13
 CCTV14,http://smzb.bypbwxx.top/lvdou/zhibojm-yangshi.php?token=8770d121e6e93b991fa0e2c0966a59
 CCTV14,https://event.pull.hebtv.com/jishi/cp2.m3u8
 CCTV14,http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009
-CCTV14,http://j.s.bkpcp.top/jj/cctv14
 CCTV14,http://192.151.150.154/live/cctv14hd.m3u8
 CCTV14,http://107.150.60.122/live/cctv14hd.m3u8
 CCTV14,http://198.204.228.26/live/cctv14hd.m3u8
@@ -250,7 +254,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 
 卫视频道,#genre#
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8
-安徽卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=7795bb84dbda4acf48d6b44bca6748
 安徽卫视,http://182.150.23.74:808/hls/25/index.m3u8
 安徽卫视,http://61.136.172.236:9901/tsfile/live/0130_1.m3u8
 安徽卫视,http://61.136.172.236:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0$LR•IPV4『线路75』
@@ -262,7 +265,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 安徽卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ahwshd
 安徽卫视,http://104.152.209.49:8181/720p/ahws.m3u8
 安徽卫视,http://204.12.221.218:8181/3m1080p/ahws.m3u8
-北京卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=236844036bf99dc93315e92b0e7c2e
 北京卫视,http://38.75.136.137:98/gslb/dsdqpub/bjwshd.m3u8?auth=testpub
 北京卫视,http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009
 北京卫视,http://103.72.172.253:8041/hls/345649569/index.m3u8
@@ -281,7 +283,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 兵团卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=e1f8ab6aa6a840c041990b4ff518b6
 兵团卫视,http://38.75.136.137:98/gslb/dsdqpub/btws.m3u8?auth=testpub
 兵团卫视,http://j.s.bkpcp.top/jj/btws
-重庆卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=03b607528f65a8026d06544dacd973
 重庆卫视,http://38.75.136.137:98/gslb/dsdqpub/cqwshd.m3u8?auth=testpub
 重庆卫视,http://107.150.60.122/live/cqwshd.m3u8
 重庆卫视,http://192.151.150.154/live/cqwshd.m3u8
@@ -296,7 +297,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 大湾区卫视,http://198.204.228.26/live/nfws.m3u8
 大湾区卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=nfws
 大湾区卫视,http://107.150.60.122/live/nfws.m3u8
-东方卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=686c3375c1924de4ce12857db6d1c3
 东方卫视,http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
 东方卫视,http://112.46.85.60:8009/hls/31/index.m3u8
 东方卫视,http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
@@ -322,14 +322,12 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 福建海峡卫视,http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
 福建海峡卫视,http://38.64.72.148/hls/modn/list/4009/playlist.m3u8
 福建海峡卫视,https://m.italkbbtv.com/live/6a30f74820a80832dc74e2c7
-甘肃卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=56f338f40bb838f06c469ff7600515
 甘肃卫视,http://183.11.239.36:808/hls/119/index.m3u8
 甘肃卫视,http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub
 甘肃卫视,https://live.264788.xyz/channel/gansuweishi?streamid=466083ee6981dccb38d23b5556b27f6e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 甘肃卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gswshd
 甘肃卫视,http://120.76.248.139/live/bfgd/4200000119.m3u8
 甘肃卫视,http://218.13.170.98:9901/tsfile/live/0141_1.m3u8
-广东卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=8d3f4fd6315174a3c3529ffb8d8e85
 广东卫视,http://61.136.172.236:9901/tsfile/live/0125_1.m3u8
 广东卫视,https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4
 广东卫视,http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
@@ -341,7 +339,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 广东卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdwshd
 广东卫视,http://120.76.248.139/live/bfgd/4200000092.m3u8
 广东卫视咪咕,http://rihou.cc:555/tv/[mg]广东卫视
-广西卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=b7d7c4fa4106f21c79f5a14740b77b
 广西卫视,http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub
 广西卫视,http://107.150.60.122/live/gxwshd.m3u8
 广西卫视,http://192.151.150.154/live/gxwshd.m3u8
@@ -352,7 +349,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 广西卫视,http://198.204.228.26/live/gxwshd.m3u8
 贵州卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=58562c3c333b9bfd16f4b11230b6a0
 贵州卫视,http://59.39.89.130:60901/tsfile/live/0125_15.m3u8?key=txiptv&playlive=1&authid=0
-贵州卫视,http://182.150.23.74:808/hls/26/index.m3u8
 贵州卫视,http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub
 贵州卫视,http://107.150.60.122/live/gzwshd.m3u8
 贵州卫视,http://192.151.150.154/live/gzwshd.m3u8
@@ -361,13 +357,11 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 贵州卫视,https://live.264788.xyz/channel/guizhouweishi?streamid=091bd59ea031989839c23459bb8cc9d4&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 贵州卫视,http://204.12.221.218:8181/3m1080p/gzws.m3u8
 贵州卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gzwshd
-海南卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=820d861de497965c9393dc8bfcf2dd
 海南卫视,http://183.11.239.36:808/hls/124/index.m3u8
 海南卫视,http://nn.7x9d.cn/地方台8563/海南.php?id=hnws
 海南卫视,http://120.76.248.139/live/bfgd/4200000473.m3u8
 海南卫视咪咕,http://rihou.cc:555/tv/[mg]海南卫视
 海峡卫视,http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
-河北卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=f0dc71a1ee6d696e34b7b5ad698a9a
 河北卫视,http://38.75.136.137:98/gslb/dsdqpub/hewshd.m3u8?auth=testpub
 河北卫视,http://107.150.60.122/live/hewshd.m3u8
 河北卫视,http://192.151.150.154/live/hewshd.m3u8
@@ -376,7 +370,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 河北卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hewshd
 河北卫视,http://120.76.248.139/live/bfgd/4200000108.m3u8
 河北卫视,http://204.12.221.218:8181/3m1080p/hews.m3u8
-黑龙江卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=02ccc806e2c2a48bc93c8b51e5fa83
 黑龙江卫视,http://218.13.170.98:9901/tsfile/live/1006_1.m3u8
 黑龙江卫视,http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub
 黑龙江卫视,http://192.151.150.154/live/hljwshd.m3u8
@@ -395,7 +388,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 河南卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hawshd
 河南卫视,http://173.208.212.130:8181/720p/haws.m3u8
 河南卫视,http://111.59.139.82:11888/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
-湖北卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=cba0ddb3025df53ce4255196c1a026
 湖北卫视,http://59.39.89.130:60901/tsfile/live/0125_12.m3u8?key=txiptv&playlive=1&authid=0
 湖北卫视,http://182.150.23.74:808/hls/28/index.m3u8
 湖北卫视,http://38.75.136.137:98/gslb/dsdqpub/hbwshd.m3u8?auth=testpub
@@ -411,6 +403,7 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 湖南卫视,http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
 湖南卫视,http://218.13.170.98:9901/tsfile/live/1001_1.m3u8
 湖南卫视,http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
+湖南卫视,http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009
 湖南卫视,http://107.150.60.122/live/hnwshd.m3u8
 湖南卫视,http://192.151.150.154/live/hnwshd.m3u8
 湖南卫视,http://bztv.tvbus.cc:8081/cdnlive/hnws.m3u8
@@ -421,7 +414,7 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 湖南卫视,http://74.91.26.218:82/live/hnwshd.m3u8
 湖南卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hnwshd
 湖南卫视咪咕,http://rihou.cc:555/tv/[mg]湖南卫视
-江苏卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=41f364a1f36f1e7625b070d487eaf2
+江苏卫视,http://218.13.170.98:9901/tsfile/live/1003_1.m3u8
 江苏卫视,http://112.46.85.60:8009/hls/33/index.m3u8
 江苏卫视,http://182.150.23.74:808/hls/18/index.m3u8
 江苏卫视,http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub
@@ -434,7 +427,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 江苏卫视,http://38.75.136.137:98/gslb/dsdqbv/jswshd.m3u8?auth=test20251009
 江苏卫视,http://104.152.209.49:8181/720p/jsws.m3u8
 江苏卫视咪咕,http://rihou.cc:555/tv/[mg]江苏卫视
-江西卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=e557f77c90953fdad282157d6c0da2
 江西卫视,http://59.39.89.130:60901/tsfile/live/0125_10.m3u8?key=txiptv&playlive=1&authid=0
 江西卫视,http://182.150.23.74:808/hls/30/index.m3u8
 江西卫视,http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub
@@ -444,14 +436,13 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 江西卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jxwshd
 江西卫视,http://107.150.60.122/live/jxwshd.m3u8
 江西卫视,http://112.27.5.218:9901/tsfile/live/faacts/0138_1.m3u8?key=txiptv&playlive=1&authid=0
-吉林卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=0606737fe446bda9841c32d96435cf
 吉林卫视,http://59.39.89.130:60901/tsfile/live/0125_19.m3u8?key=txiptv&playlive=1&authid=0
+吉林卫视,http://183.11.239.36:808/hls/10/index.m3u8
 吉林卫视,http://182.150.23.74:808/hls/35/index.m3u8
 吉林卫视,http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub
 吉林卫视,http://107.150.60.122/live/jlwshd.m3u8
 吉林卫视,http://198.204.228.26/live/jlwshd.m3u8
 吉林卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jlwshd
-辽宁卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=7f26f659c6a6b9d5241c032ff7124c
 辽宁卫视,http://59.39.89.130:60901/tsfile/live/0125_13.m3u8?key=txiptv&playlive=1&authid=0
 辽宁卫视,http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub
 辽宁卫视,http://107.150.60.122/live/lnwshd.m3u8
@@ -459,9 +450,9 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 辽宁卫视,http://198.204.228.26/live/lnwshd.m3u8
 辽宁卫视,http://bztv.tvbus.cc:8081/cdnlive/lnws.m3u8
 辽宁卫视,https://live.264788.xyz/channel/liaoningweishi?streamid=0c788b01c7fa1a38fee180bf3638a6ab&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+辽宁卫视,http://mg.cttv.vip/630291707
 辽宁卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnwshd
 辽宁卫视,http://204.12.221.218:8181/3m1080p/lnws.m3u8
-内蒙古卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=8b785dcbb44476f1990253a53541c9
 内蒙古卫视,http://cssbyd.imwork.net:8082/hls/44/index.m3u8
 内蒙古卫视,http://182.150.23.74:808/hls/37/index.m3u8
 内蒙古卫视,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8
@@ -473,7 +464,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 内蒙古卫视,https://live.264788.xyz/channel/neimengguweishi?streamid=3e7340acf8869ac1c7dad1bb836dcd35&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 内蒙古卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=nmgws
 内蒙古卫视,http://play1-qk.nmtv.cn/live/1769652018126032.m3u8
-宁夏卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=1aebcf48d1f1fc0d2dd9f385f8425f
 宁夏卫视,http://cssbyd.imwork.net:8082/hls/45/index.m3u8
 宁夏卫视,http://38.75.136.137:98/gslb/dsdqpub/nxws.m3u8?auth=testpub
 宁夏卫视,http://107.150.60.122/live/nxws.m3u8
@@ -482,7 +472,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 宁夏卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=551474d02bee1c160e1692e22c45ddba&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 宁夏卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=1b2952717a920173e66d4a348f9dcb5c&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 宁夏卫视,http://198.204.228.26/live/nxws.m3u8
-青海卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=e2f3355104f5f2c6dffeabac6d14c7
 青海卫视,http://38.75.136.137:98/gslb/dsdqpub/qhws.m3u8?auth=testpub
 青海卫视,http://107.150.60.122/live/qhws.m3u8
 青海卫视,http://192.151.150.154/live/qhws.m3u8
@@ -495,7 +484,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 三沙卫视,http://192.151.150.154/live/ssws.m3u8
 三沙卫视,http://198.204.228.26/live/ssws.m3u8
 三沙卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ssws
-山东卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=d0787ee989df92fc711830a0088cca
 山东卫视,http://182.150.23.74:808/hls/23/index.m3u8
 山东卫视,http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub
 山东卫视,http://192.151.150.154/live/sdwshd.m3u8
@@ -505,7 +493,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 山东卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sdwshd
 山东卫视,http://107.150.60.122/live/sdwshd.m3u8
 山东卫视,http://120.76.248.139/live/bfgd/4200000099.m3u8
-山西卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=2cf22581b8a439ae76eea3a8e4edbf
 山西卫视,http://119.39.9.8:9901/tsfile/live/0118_1.m3u8
 山西卫视,http://38.75.136.137:98/gslb/dsdqpub/sxwshd.m3u8?auth=testpub
 山西卫视,http://192.151.150.154/live/sxwshd.m3u8
@@ -515,7 +502,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 山西卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sxwshd
 山西卫视,http://107.150.60.122/live/sxwshd.m3u8
 山西卫视,http://204.12.221.218:8181/3m1080p/sxws.m3u8
-陕西卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=a32b900b43a900a4dbcfc35478bc5e
 陕西卫视,http://38.75.136.137:98/gslb/dsdqpub/snwshd.m3u8?auth=testpub
 陕西卫视,http://107.150.60.122/live/snwshd.m3u8
 陕西卫视,http://192.151.150.154/live/snwshd.m3u8
@@ -537,8 +523,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 深圳卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=szwshd
 深圳卫视,http://120.76.248.139/live/bfgd/4200000100.m3u8
 深圳卫视咪咕,http://rihou.cc:555/tv/[mg]深圳卫视
-四川卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=69387da4efbaeb81a8cb31db6ff08a
-四川卫视,http://182.150.23.74:808/hls/38/index.m3u8
 四川卫视,http://38.75.136.137:98/gslb/dsdqpub/scwshd.m3u8?auth=testpub
 四川卫视,http://192.151.150.154/live/scwshd.m3u8
 四川卫视,http://198.204.228.26/live/scwshd.m3u8
@@ -546,7 +530,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 四川卫视,https://live.264788.xyz/channel/sichuanweishi4k?streamid=401bf692a1a8b91298f26077d53316d6&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 四川卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=scwshd
 四川卫视,http://107.150.60.122/live/scwshd.m3u8
-天津卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=c6908e83b743c16f66ce15e3980dad
 天津卫视,http://112.46.85.60:8009/hls/44/index.m3u8
 天津卫视,http://61.136.172.236:9901/tsfile/live/0135_1.m3u8
 天津卫视,http://61.136.172.236:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -566,7 +549,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 厦门卫视,http://198.204.228.26/live/xmws.m3u8
 厦门卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xmws
 香港卫视频道,http://webcast.hkstv.tv/livestream/mutfysrq/playlist.m3u8
-新疆卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=e26723c80fb928b4cdaba7a2778d1c
 新疆卫视,http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub
 新疆卫视,http://107.150.60.122/live/xjws.m3u8
 新疆卫视,http://192.151.150.154/live/xjws.m3u8
@@ -575,7 +557,6 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 新疆卫视,https://live.264788.xyz/channel/xinjiangweishi?streamid=4f481f56ae39ce5d24203471de9df635&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 新疆卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xjws
 新疆卫视,http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd
-西藏卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=a9316b2aec869ede0ebed0775f04fd
 西藏卫视,http://cssbyd.imwork.net:8082/hls/46/index.m3u8
 西藏卫视,http://38.75.136.137:98/gslb/dsdqpub/xzws.m3u8?auth=testpub
 西藏卫视,https://live.264788.xyz/channel/xizangweishi?streamid=4b4e8ea919f1cfd5e43deed1d1675251&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
@@ -589,15 +570,12 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 延边卫视,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8
 延边卫视,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8$LR•IPV4『线路20』
 亚洲卫视频道,http://rihou.cc:555/tv/NTD
-云南卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=5a5ad4e047817840d02ba6266a7d4f
 云南卫视,http://59.39.89.130:60901/tsfile/live/0125_18.m3u8?key=txiptv&playlive=1&authid=0
-云南卫视,http://182.150.23.74:808/hls/29/index.m3u8
 云南卫视,http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8?auth=testpub
 云南卫视,http://107.150.60.122/live/ynwshd.m3u8
 云南卫视,http://192.151.150.154/live/ynwshd.m3u8
 云南卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ynwshd
 云南卫视,http://120.76.248.139/live/bfgd/4200000482.m3u8
-浙江卫视,http://smzb.bypbwxx.top/lvdou/zhibojm-weishi-ws.php?token=c79ad674991e06d5a440af7e66455f
 浙江卫视,http://ali-m-l.cztv.com:80/channels/lantian/channel001/1080p.m3u8
 浙江卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
@@ -613,3 +591,4 @@ CCTV8K超高清,http://198.204.228.26/live/cctv8k.m3u8
 浙江卫视,https://live.264788.xyz/channel/zhejiangweishi4k?streamid=a5b6e60170ee8c69290def1c2fe00cc8&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 浙江卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=zjwshd
 浙江卫视咪咕,http://rihou.cc:555/tv/[mg]浙江卫视
+中国农林卫视,http://mg.cttv.vip/956904896
