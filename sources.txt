@@ -47,6 +47,7 @@
 点播|驸马影视|http://fmys.top/fmys.json
 点播|讴歌多仓|http://tv.nxog.top/
 点播|饭太硬4|http://fty.888484.xyz/tv
+点播|奇奇多仓|http://z.qiqiv.cn/123.txt
 
 # --- 直播线路（m3u 或 txt）---
 直播|最新直播接口【影视仓/OK影视/TVBOX】|https://zb.7778.uk/
