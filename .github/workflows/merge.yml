@@ -5,11 +5,17 @@ on:
     - cron: '0 18 */3 * *'
   workflow_dispatch:
 
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
 jobs:
   merge:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,3 +55,18 @@ jobs:
           coscmd config -a $COS_SECRET_ID -s $COS_SECRET_KEY -b $COS_BUCKET -r $COS_REGION
           coscmd upload merged.json merged.json
           coscmd upload live.txt live.txt
+
+      - name: Prepare Pages files
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp merge_health.json _site/merge_health.json || echo "merge_health.json not generated this run"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

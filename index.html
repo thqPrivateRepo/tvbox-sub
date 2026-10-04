@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVBox 订阅源健康看板</title>
+<style>
+  :root{
+    --bg:#0f1420; --card:#1a2233; --card2:#212c42; --text:#e6edf7;
+    --muted:#8ba0bd; --line:#2c3a55;
+    --ok:#34d399; --fail:#f87171; --warn:#fbbf24; --blue:#60a5fa;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+       background:linear-gradient(160deg,#0b1018,#132031);color:var(--text);min-height:100vh}
+  header{padding:22px 28px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  header h1{margin:0;font-size:22px;font-weight:700}
+  header .sub{color:var(--muted);font-size:13px}
+  .container{max-width:1260px;margin:0 auto;padding:22px}
+  /* 顶部卡片 */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card .num{font-size:28px;font-weight:700;line-height:1.2}
+  .card .lbl{color:#8ba0bd;font-size:12px;margin-top:4px}
+  /* 布局 */
+  .layout{display:grid;grid-template-columns:300px 1fr;gap:18px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .panel h2{margin:0 0 12px;font-size:15px;color:#8ba0bd;font-weight:600}
+  /* 源列表 */
+  .src-item{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:9px;
+       cursor:pointer;border:1px solid transparent;margin-bottom:6px}
+  .src-item:hover{background:var(--card2)}
+  .src-item.active{background:var(--card2);border-color:var(--blue)}
+  .src-item .nm{font-size:13px;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .src-item .meta{font-size:11px;color:#8ba0bd}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .dot.ok{background:var(--ok)} .dot.fail{background:var(--fail)} .dot.part{background:var(--warn)}
+  .src-item .bar{flex:1;max-width:64px;margin:0 8px}
+  .bar-track{background:var(--card2);border-radius:4px;height:6px;overflow:hidden}
+  .bar-fill{height:100%;background:var(--ok)}
+  .bar-fill.f{background:var(--fail)}
+  .bar-fill.p{background:var(--warn)}
+  /* 表格 */
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{color:#8ba0bd;font-weight:600;position:sticky;top:0;background:var(--card)}
+  .tb-wrap{max-height:640px;overflow:auto}
+  .badge{padding:2px 9px;border-radius:20px;font-size:11px;white-space:nowrap}
+  .badge.ok{background:rgba(52,211,153,.15);color:var(--ok)}
+  .badge.fail{background:rgba(248,113,113,.15);color:var(--fail)}
+  .api{color:#8ba0bd;font-size:12px;word-break:break-all}
+  .err{color:var(--fail);font-size:12px}
+  .empty{color:#8ba0bd;text-align:center;padding:40px 0;font-size:14px}
+  .muted{color:#8ba0bd}
+  /* 过滤条 */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+  select,input[type=search]{background:var(--card2);border:1px solid var(--line);color:var(--text);
+       border-radius:8px;padding:7px 10px;font-size:13px;outline:none}
+  select:focus,input:focus{border-color:var(--blue)}
+  .seg{display:inline-flex;background:var(--card2);border-radius:8px;overflow:hidden}
+  .seg button{border:0;background:transparent;color:#8ba0bd;padding:7px 14px;font-size:13px;cursor:pointer}
+  .seg button.active{background:var(--blue);color:#fff}
+  .toolbar-btn{background:var(--card2);border:1px solid var(--line);color:var(--text);border-radius:8px;
+       padding:7px 12px;font-size:13px;cursor:pointer}
+  .toolbar-btn:hover{border-color:var(--blue)}
+  .numok{color:var(--ok)} .numfail{color:var(--fail)}
+  @media (max-width:860px){.layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="loader" style="position:fixed;inset:0;background:#0b1018;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+  <div style="width:40px;height:40px;border:4px solid #2c3a55;border-top-color:#60a5fa;border-radius:50%;animation:spin 0.9s linear infinite"></div>
+  <div style="color:#8ba0bd;font-size:14px">正在加载订阅源健康数据…</div>
+</div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<header>
+  <h1>📡 TVBox 点播源合并健康看板</h1>
+  <span class="sub" id="updated"></span>
+</header>
+
+<div class="container">
+  <!-- 总览卡片 -->
+  <div class="cards">
+    <div class="card"><div class="num" id="cSources">–</div><div class="lbl">订阅源总数</div></div>
+    <div class="card"><div class="num numok" id="cOkSrc">–</div><div class="lbl">全部站点健康的源</div></div>
+    <div class="card"><div class="num numfail" id="cFailSrc">–</div><div class="lbl">存在失败站点的源</div></div>
+    <div class="card"><div class="num" id="cSites">–</div><div class="lbl">站点总数</div></div>
+    <div class="card"><div class="num numok" id="cOkSite">–</div><div class="lbl">站点健康</div></div>
+    <div class="card"><div class="num numfail" id="cFailSite">–</div><div class="lbl">站点失败</div></div>
+  </div>
+
+  <div class="layout">
+    <!-- 左侧：源目录 -->
+    <div>
+      <div class="panel">
+        <h2>点播源目录</h2>
+        <input type="search" id="srcSearch" placeholder="筛选源名…" style="width:100%;margin-bottom:10px">
+        <div id="srcList" style="max-height:580px;overflow:auto"></div>
+      </div>
+    </div>
+
+    <!-- 右侧：站点明细 -->
+    <div class="panel">
+      <h2 id="detailTitle">站点明细（点击左侧源查看）</h2>
+      <div class="filters">
+        <div class="seg" id="statusSeg">
+          <button data-v="all" class="active">全部</button>
+          <button data-v="ok">健康</button>
+          <button data-v="fail">失败</button>
+        </div>
+        <input type="search" id="siteSearch" placeholder="搜索站点名 / API…">
+        <button class="toolbar-btn" id="exportCsv">导出 CSV</button>
+      </div>
+      <div class="tb-wrap">
+        <table>
+          <thead><tr><th>站名</th><th>状态</th><th>API / Ext / Jar</th><th>详情</th></tr></thead>
+          <tbody id="siteBody"></tbody>
+        </table>
+      </div>
+      <div class="empty" id="emptyHint" style="display:none">无匹配站点</div>
+    </div>
+  </div>
+</div>
+
+<script>
+let DATA = null;
+let curSourceName = null;
+let statusFilter = "all";
+let searchFilter = "";
+
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+async function load(){
+  try{
+    const r = await fetch("merge_health.json",{cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    DATA = await r.json();
+    document.getElementById("loader").style.display = "none";
+    $("updated").textContent = "更新于 " + (DATA.updated_at||"未知");
+    render();
+  }catch(e){
+    document.getElementById("loader").style.display = "none";
+    $("updated").textContent = "加载 merge_health.json 失败";
+    $("srcList").innerHTML =
+      '<div class="empty">无法读取数据：'+esc(String(e&&e.message?e.message:e))+'<br><br>'+
+      '请通过 HTTP 访问（如 GitHub Pages 或本地<br><code>python -m http.server</code>），<br>'+
+      '并确认同目录存在 <code>merge_health.json</code>（由 merge.py 生成）。</div>';
+  }
+}
+
+function render(){
+  if(!DATA) return;
+  const srcs = DATA.sources||[];
+  const sites = srcs.reduce((a,s)=>a.concat(s.sites||[]),[]);
+  const okS = sites.filter(x=>x.ok).length;
+  const allOkSrc = srcs.filter(s=>s.fail===0).length;
+
+  $("cSources").textContent = srcs.length;
+  $("cOkSrc").textContent = allOkSrc;
+  $("cFailSrc").textContent = srcs.length - allOkSrc;
+  $("cSites").textContent = sites.length;
+  $("cOkSite").textContent = okS;
+  $("cFailSite").textContent = sites.length - okS;
+  renderSrcList();
+}
+
+function renderSrcList(){
+  const kw = $("srcSearch").value.trim().toLowerCase();
+  const srcs = (DATA.sources||[]).filter(s=>!kw || s.name.toLowerCase().includes(kw));
+  const box = $("srcList");
+  box.innerHTML = "";
+  if(!srcs.length){ box.innerHTML='<div class="empty">无源</div>'; return; }
+  srcs.sort((a,b)=>{
+    if((a.fail>0)!==(b.fail>0)) return a.fail>0?-1:1;
+    return b.total-a.total;
+  });
+  for(const s of srcs){
+    if(s.total===0){ continue; }
+    const stateCls = s.fail===0 ? "ok" : (s.ok===0?"fail":"part");
+    const barCls = s.fail===0 ? "" : (s.ok===0?"f":"p");
+    const pct = s.total? Math.round(s.ok/s.total*100):0;
+    const div = document.createElement("div");
+    div.className = "src-item" + (s.name===curSourceName?" active":"");
+    div.innerHTML =
+      '<div style="display:flex;align-items:center;overflow:hidden">'+
+        '<span class="dot '+stateCls+'"></span>'+
+        '<span class="nm" title="'+esc(s.name)+'">'+esc(s.name)+'</span>'+
+      '</div>'+
+      '<div class="bar">'+
+        '<div class="bar-track"><div class="bar-fill '+barCls+'" style="width:'+pct+'%"></div></div>'+
+      '</div>'+
+      '<span class="meta">'+s.ok+'/'+s.total+'</span>';
+    div.onclick = ()=>{ curSourceName=s.name; renderSrcList(); renderSiteTable(); };
+    box.appendChild(div);
+  }
+}
+
+function renderSiteTable(){
+  const title = $("detailTitle");
+  $("siteBody").innerHTML = "";
+  $("emptyHint").style.display = "none";
+  if(!curSourceName){ title.textContent="站点明细（点击左侧源查看）"; return; }
+  const src = (DATA.sources||[]).find(s=>s.name===curSourceName);
+  if(!src){ title.textContent="站点明细"; return; }
+  title.textContent = "站点明细 — "+src.name+"（"+src.total+" 站 · 健康 "+src.ok+" · 失败 "+src.fail+"）";
+
+  const kw = searchFilter.toLowerCase();
+  let rows = (src.sites||[]).filter(x=>{
+    if(statusFilter!=="all" && (x.ok!==(statusFilter==="ok"))) return false;
+    if(kw){
+      const hay=(x.name+" "+(x.api||[]).join(" ")).toLowerCase();
+      if(!hay.includes(kw)) return false;
+    }
+    return true;
+  });
+
+  const tb = $("siteBody");
+  if(!rows.length){ $("emptyHint").style.display="block"; return; }
+  for(const it of rows){
+    const tr=document.createElement("tr");
+    const badge = it.ok?'<span class="badge ok">健康</span>':'<span class="badge fail">失败</span>';
+    const detail = it.ok?'<span class="muted">接口可达</span>':'<span class="err">'+esc(it.error||"未知错误")+'</span>';
+    tr.innerHTML =
+      '<td>'+esc(it.name)+'</td>'+
+      '<td>'+badge+'</td>'+
+      '<td class="api">'+esc((it.api||[]).join("  ·  "))+'</td>'+
+      '<td>'+detail+'</td>';
+    tb.appendChild(tr);
+  }
+}
+
+$("srcSearch").addEventListener("input", renderSrcList);
+$("siteSearch").addEventListener("input", e=>{ searchFilter=e.target.value; renderSiteTable(); });
+document.querySelectorAll("#statusSeg button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.querySelectorAll("#statusSeg button").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    statusFilter=b.dataset.v; renderSiteTable();
+  });
+});
+$("exportCsv").addEventListener("click", ()=>{
+  if(!DATA) return;
+  const lines=[["源","站点","状态","API","详情"]];
+  (DATA.sources||[]).forEach(s=>(s.sites||[]).forEach(x=>
+    lines.push([s.name,x.name,x.ok?"健康":"失败",(x.api||[]).join(" "),x.error||""])));
+  const csv="\ufeff"+lines.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(",")).join("\r\n");
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
+  a.download="merge_health.csv"; a.click();
+});
+
+load();
+</script>
+</body>
+</html>

@@ -15,6 +15,7 @@ CONFIG_FILE = os.path.join(BASE_DIR, "config.ini")
 OUTPUT_FILE = os.path.join(BASE_DIR, "merged.json")
 LIVE_FILE = os.path.join(BASE_DIR, "live.txt")
 REPORT_FILE = os.path.join(BASE_DIR, "health_report.md")
+HEALTH_JSON_FILE = os.path.join(BASE_DIR, "merge_health.json")
 BEIJING_TZ = timezone(timedelta(hours=8))
 UA = {"User-Agent": "okhttp/4.9.3"}
 
@@ -37,6 +38,29 @@ def check_live_url(url, timeout=5):
         return ok
     except Exception:
         return False
+
+def probe_site(site):
+    """对站点的 api/ext/jar 首个 URL 做轻量探活，返回(ok, error)。
+    仅 HTTP GET、5 秒超时、status<400 视为健康；非 URL 或缺失视为未探活（ok=True, note=无URL）。"""
+    def first_url(v):
+        if not isinstance(v, str):
+            return None
+        u = v.split(";")[0].strip()
+        return u if u.startswith(("http://", "https://")) else None
+
+    for f in ("api", "ext", "jar"):
+        u = first_url(site.get(f, ""))
+        if not u:
+            continue
+        try:
+            r = requests.get(u, timeout=5, headers=UA, stream=True)
+            ok = r.status_code < 400
+            err = "" if ok else f"HTTP {r.status_code}"
+            r.close()
+            return ok, err
+        except Exception as e:
+            return False, str(e)[:80]
+    return True, ""
 
 def strip_inline_comment(line):
     in_str = False
@@ -300,8 +324,11 @@ def safe_url(u):
         return ""
     return u
 
-def fetch_recursive(item, depth=0):
+def fetch_recursive(item, depth=0, src=None):
     name, url = item["name"], item["url"]
+    # 顶层来源名：若未指定则用本源的名称（兼容聚合子源继承）
+    if src is None:
+        src = name
     try:
         ok, code, text = http_get(url, timeout=15)
         if not ok: return None, f"HTTP {code}"
@@ -326,7 +353,7 @@ def fetch_recursive(item, depth=0):
                 sn = sub.get("name", "")
                 if not isinstance(sn, str) or not sn:
                     sn = su[:30]
-                result, err = fetch_recursive({"name": sn, "url": su}, depth + 1)
+                result, err = fetch_recursive({"name": sn, "url": su}, depth + 1, src)
                 if err:
                     print(f"    X {sn}: {err}")
                     continue
@@ -356,6 +383,10 @@ def fetch_recursive(item, depth=0):
                 if isinstance(s, dict) and not s.get("jar"):
                     s["jar"] = spider
         site_base_map = {id(s): url for s in sites if isinstance(s, dict)}
+        # 标注每个站点所属顶层来源名（供健康报告 / merge_health 按源统计）
+        for s in sites:
+            if isinstance(s, dict):
+                s["_source"] = src
         parses = data.get("parses", [])
         if not isinstance(parses, list):
             parses = []
@@ -363,6 +394,49 @@ def fetch_recursive(item, depth=0):
         return (sites, parses, spiders, site_base_map), None
     except Exception as e:
         return None, f"处理错误: {str(e)[:60]}"
+
+def build_health_output(all_sites):
+    """生成 merge_health.json：按源分组展示站点成功/失败情况。
+    结构: {"updated_at":..., "sources":[{"name":.., "ok":bool, "site_ok":n, "site_fail":n,
+          "sites":[{"key":..,"name":..,"api":..,"ok":bool,"error":..}]}]}"""
+    srcs = {}
+    for s in all_sites:  # 遍历的每个站点是去重后保留的最终版本
+        if not isinstance(s, dict):
+            continue
+        name = s.get("_source") or "未标注来源"
+        rec = srcs.setdefault(name, [])
+
+        urls = []
+        for f in ("api", "ext", "jar"):
+            v = s.get(f, "")
+            if isinstance(v, str):
+                head = v.split(";")[0].strip()
+                if head:
+                    urls.append(head)
+        rec.append({
+            # 不直接输出 key（可能是敏感/超长），用序号做站内标识
+            "_i": len(rec),
+            "name": s.get("name", ""),
+            "api": urls,
+            "ok": s.get("_pok", True),
+            "error": s.get("_perr", ""),
+        })
+    sources = []
+    for name, sites in srcs.items():
+        ok_n = sum(1 for x in sites if x["ok"])
+        sources.append({
+            "name": name,
+            "total": len(sites),
+            "ok": ok_n,
+            "fail": len(sites) - ok_n,
+            "sites": sites,
+        })
+    payload = {"updated_at": now_str(), "sources": sources}
+    try:
+        with open(HEALTH_JSON_FILE, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"  写 {HEALTH_JSON_FILE} 失败: {e}")
 
 def main():
     t0 = time.time()
@@ -418,16 +492,44 @@ def main():
         if isinstance(s, dict):
             s["name"] = sanitize_site_name(s.get("name", ""))
 
+    # ---- 先探活，再去重 ----
+    # 探活必须发生在去重之前：这样同 key 有多个候选时，
+    # 能用“接口是否可用”优先选优，避免“留下死链、丢掉正常”站点。
+    print("站点探活...")
+    probe_ok = {}; probe_info = {}
+    with ThreadPoolExecutor(max_workers=cfg["concurrency"]) as ex:
+        futs = {ex.submit(probe_site, s): s for s in all_sites if isinstance(s, dict)}
+        for f in as_completed(futs):
+            s = futs[f]
+            try:
+                ok, err = f.result()
+            except Exception as e:
+                ok, err = False, str(e)[:80]
+            probe_ok[id(s)] = ok
+            probe_info[id(s)] = err
+
     # ---- 站点去重 ----
     # TVBox 客户端以 key（无 key 时用 name）作为站点唯一标识加载。
-    # 合并时若无去重，同一 key 会叠加多个源的不同 api/ext/jar，
-    # 导致客户端读到不匹配的组合而“读不出内容”。
-    # 这里按 key/name 去重：同 key 保留一个，并用后出现的项补全其缺失的核心字段。
+    # 同 key 保留“探活通过且更完整”的实现：
+    #   优先级① 探活 ok（接口可用）
+    #   优先级② 字段更完整（spider/api/ext/jar 非空数量更多）
     core_fields = ("spider", "api", "ext", "jar")
     merged_sites = {}
 
+    def set_probe(d, s):
+        d["_pok"] = probe_ok.get(id(s), True)
+        d["_perr"] = probe_info.get(id(s), "")
+
     def completeness(x):
         return sum(1 for f in core_fields if x.get(f) not in (None, "", {}))
+
+    def better(a, b):
+        """a 是否应替换 b。ok 优先于字段完整性。"""
+        pa = probe_ok.get(id(a), True)
+        pb = probe_ok.get(id(b), True)
+        if pa != pb:
+            return pa and not pb
+        return completeness(a) > completeness(b)
 
     for s in all_sites:
         if not isinstance(s, dict):
@@ -435,18 +537,29 @@ def main():
         key = s.get("key") or s.get("name")
         if not key:
             continue
-        prev = merged_sites.get(key)
-        if prev is None:
+        if key not in merged_sites:
             merged_sites[key] = dict(s)
+            set_probe(merged_sites[key], s)
             continue
-        # 同 key：以更完整的版本为底，再用另一份回填其缺失的核心字段
-        more, less = (s, prev) if completeness(s) > completeness(prev) else (prev, s)
-        merged_sites[key] = dict(more)
+        # 同 key：接口可用性优先，其次字段完整性，用更优版本做底
+        if better(s, merged_sites[key]):
+            merged_sites[key] = dict(s)
+            set_probe(merged_sites[key], s)
         for f in core_fields:
-            if merged_sites[key].get(f) in (None, "", {}) and less.get(f) not in (None, "", {}):
-                merged_sites[key][f] = less[f]
+            if merged_sites[key].get(f) in (None, "", {}) and (s.get(f) not in (None, "", {})):
+                merged_sites[key][f] = s[f]
+                # 回填字段可能导致可用性变化，保持以底版本探活结果为准
     all_sites = list(merged_sites.values())
-    print(f"  站点去重: {len(all_sites)} 站")
+    print(f"  站点去重后 {len(all_sites)} 站")
+
+    # 用最终站点的探活结果生成 merge_health.json（从站点自带 _pok/_perr 读取）
+    build_health_output(all_sites)
+    # 移除内部字段与探活标记，避免写入 merged.json
+    for s in all_sites:
+        if isinstance(s, dict):
+            s.pop("_source", None)
+            s.pop("_pok", None)
+            s.pop("_perr", None)
 
     pmerged = {}; porder = []
     for src in all_parses:
