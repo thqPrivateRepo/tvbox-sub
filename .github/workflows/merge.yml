@@ -60,6 +60,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/index.html
+          cp merged.json _site/merged.json
           cp merge_health.json _site/merge_health.json || echo "merge_health.json not generated this run"
 
       - name: Upload Pages artifact
