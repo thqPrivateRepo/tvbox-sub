@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.8
-- 支持多仓嵌套格式（{urls:[{url,name}]}）
+TVBox 订阅源合并与健康检测 v3.9
+- 支持多仓嵌套格式（{urls:[{url,name}]}），自动过滤 // 注释行
 - 点播：多源全部保留不去重、并发检测死链、缓存兜底
 - 报告：按订阅源分组列出站点明细，标注每个站来源和剔除原因
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
@@ -51,6 +51,18 @@ def check_live_url(url, timeout=5):
         return ok
     except Exception:
         return False
+
+def parse_json_lenient(text):
+    """宽容解析 JSON：自动去掉 // 注释行、BOM、首尾空白"""
+    text = text.lstrip("\ufeff").strip()
+    lines = text.splitlines()
+    cleaned = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("//"):
+            continue
+        cleaned.append(line)
+    return json.loads("\n".join(cleaned))
 
 # ============ 站点名敏感词替换 ============
 BLOCK_WORDS = ["访问", "网站", "获取", "接口", "公众号", "starlink", "更多"]
@@ -262,13 +274,13 @@ def load_config():
     }
 
 def fetch_source_recursive(source_item, depth=0):
-    """拉取点播源，支持多仓嵌套格式，返回 (顶层源名, data, err, 站点来源标记列表)"""
+    """拉取点播源，支持多仓嵌套 + // 注释行"""
     name, url = source_item["name"], source_item["url"]
     ok, code, text = http_get(url, timeout=15)
     if not ok:
         return name, None, f"HTTP {code}", []
     try:
-        data = json.loads(text)
+        data = parse_json_lenient(text)
     except Exception as e:
         return name, None, f"JSON解析失败: {e}", []
 
@@ -278,7 +290,7 @@ def fetch_source_recursive(source_item, depth=0):
             return name, None, "多仓嵌套太深", []
         all_sites, all_parses = [], []
         sub_jars = []
-        site_origins = []  # [(site_dict, 来源名)]
+        site_origins = []
         for sub in data["urls"]:
             sub_url = sub.get("url", "")
             sub_name = sub.get("name", sub_url[:20])
@@ -367,9 +379,7 @@ def main():
     all_parses = []
     jar_candidates = []
     errors = []
-    # site_origin: {id(site): 来源名}
     site_origin = {}
-    # source_detail: {顶层源名: {子源名: [站点名列表]}}
     source_detail = {}
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -387,7 +397,6 @@ def main():
                 jar_candidates.append(data["spider"])
             for j in data.get("_sub_jars", []):
                 jar_candidates.append(j)
-            # 记录站点来源
             source_detail[top_name] = {}
             for s, origin in origins:
                 site_origin[id(s)] = origin
@@ -396,11 +405,9 @@ def main():
 
     sites = merge_sites(all_sites)
 
-    # 站点名敏感词替换
     for site in sites:
         old = site.get("name", "")
-        new_name = sanitize_site_name(old)
-        site["name"] = new_name
+        site["name"] = sanitize_site_name(old)
 
     parses = merge_named(all_parses)
     best_jar = pick_best_jar(jar_candidates)
@@ -420,7 +427,6 @@ def main():
             site_results[id(site)] = (ok, issues)
 
     good_sites = []
-    # site_status: {id(site): (是否可用, 原因)}
     site_status = {}
     for idx, site in enumerate(sites):
         ok, issues = site_results.get(id(site), (False, ["检测异常"]))
@@ -450,7 +456,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.8"
+            "version": "3.9"
         }
         new_state["last_good"] = merged
 
@@ -459,7 +465,6 @@ def main():
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(new_state, f, ensure_ascii=False, indent=2)
 
-    # ====== 生成报告 ======
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
         f.write(f"# TVBox 订阅源健康报告\n\n**检测时间**: {now_str()}\n\n")
         f.write(f"**可用站点**: {len(good_sites)} / {len(sites)}\n\n")
@@ -472,14 +477,11 @@ def main():
             for e in errors:
                 f.write(f"- {e}\n")
 
-        # 站点明细：按订阅源分组
         f.write("\n## 站点明细（按订阅源分组）\n\n")
-        # 构建: 顶层源 -> 子源 -> [站点列表]
-        top_to_sites = {}  # {top_name: {origin: [(site_name, ok, reason)]}}
+        top_to_sites = {}
         for site in sites:
             sid = id(site)
             origin = site_origin.get(sid, "未知")
-            # 找到顶层源
             top_name = "未知"
             for tn, subs in source_detail.items():
                 if origin in subs:
