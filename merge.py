@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v4.0
+TVBox 订阅源合并与健康检测 v4.1
+- 相对路径补全：./js/xxx.js、./jar/xxx.jar 等自动补全为完整 URL
 - 强制 UTF-8 解码，修复中文乱码导致的注释行误拆
 - 支持多仓嵌套格式（{urls:[{url,name}]}），自动过滤 // 注释行
 - 点播：多源全部保留不去重、并发检测死链、缓存兜底
@@ -14,6 +15,7 @@ TVBox 订阅源合并与健康检测 v4.0
 import json, os, re, time, random, hashlib, configparser, sys, subprocess
 from datetime import datetime, timezone, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import urljoin
 import requests
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -40,7 +42,6 @@ def http_head(url, timeout=8):
 def http_get(url, timeout=15):
     try:
         r = requests.get(url, timeout=timeout, headers=UA)
-        # 强制 UTF-8 解码，避免中文乱码导致换行符误判
         r.encoding = "utf-8"
         return r.status_code < 400, r.status_code, r.text
     except Exception as e:
@@ -56,7 +57,6 @@ def check_live_url(url, timeout=5):
         return False
 
 def parse_json_lenient(text):
-    """宽容解析 JSON：自动去掉 // 注释行、BOM、首尾空白"""
     text = text.lstrip("\ufeff").strip()
     lines = text.splitlines()
     cleaned = []
@@ -66,6 +66,14 @@ def parse_json_lenient(text):
             continue
         cleaned.append(line)
     return json.loads("\n".join(cleaned))
+
+def resolve_path(path, base_url):
+    """把相对路径补全为完整 URL"""
+    if not isinstance(path, str):
+        return path
+    if path.startswith("./") or path.startswith("../"):
+        return urljoin(base_url, path)
+    return path
 
 # ============ 站点名敏感词替换 ============
 BLOCK_WORDS = ["访问", "网站", "获取", "接口", "公众号", "starlink", "更多"]
@@ -122,7 +130,7 @@ def is_wanted_channel(name):
         return True
     return False
 
-# ============ 直播解析（支持 txt + m3u）============
+# ============ 直播解析 ============
 def parse_live_text(text):
     channels = {}
     lines = text.splitlines()
@@ -276,8 +284,15 @@ def load_config():
         "live_cos_url": s.get("live_cos_url", ""),
     }
 
+def fix_relative_paths(site, base_url):
+    """把站点里的相对路径补全为完整 URL"""
+    for field in ("api", "ext"):
+        val = site.get(field, "")
+        if isinstance(val, str) and (val.startswith("./") or val.startswith("../")):
+            site[field] = urljoin(base_url, val)
+    return site
+
 def fetch_source_recursive(source_item, depth=0):
-    """拉取点播源，支持多仓嵌套 + // 注释行 + UTF-8 编码"""
     name, url = source_item["name"], source_item["url"]
     ok, code, text = http_get(url, timeout=15)
     if not ok:
@@ -287,7 +302,6 @@ def fetch_source_recursive(source_item, depth=0):
     except Exception as e:
         return name, None, f"JSON解析失败: {e}", []
 
-    # 多仓格式：{urls: [{url, name}]}
     if isinstance(data, dict) and "urls" in data and isinstance(data["urls"], list):
         if depth >= 2:
             return name, None, "多仓嵌套太深", []
@@ -314,8 +328,16 @@ def fetch_source_recursive(source_item, depth=0):
                 print(f"    OK {sub_name} ({len(sub_sites)}站)")
         return name, {"sites": all_sites, "parses": all_parses, "spider": None, "_sub_jars": sub_jars}, None, site_origins
 
-    # 标准 TVBox JSON
-    site_origins = [(s, name) for s in data.get("sites", [])]
+    # 标准 TVBox JSON —— 补全相对路径
+    sites = data.get("sites", [])
+    for s in sites:
+        fix_relative_paths(s, url)
+    # spider 也补全
+    if data.get("spider") and isinstance(data["spider"], str):
+        sp = data["spider"]
+        if sp.startswith("./") or sp.startswith("../"):
+            data["spider"] = urljoin(url, sp)
+    site_origins = [(s, name) for s in sites]
     return name, data, None, site_origins
 
 def merge_sites(sites_list):
@@ -339,7 +361,11 @@ def pick_best_jar(jar_list):
     from collections import Counter
     if not jar_list:
         return ""
-    return Counter(jar_list).most_common(1)[0][0]
+    # 过滤掉 png/jpg 等假 jar
+    real_jars = [j for j in jar_list if ".jar" in j.lower()]
+    if not real_jars:
+        return ""
+    return Counter(real_jars).most_common(1)[0][0]
 
 def check_site(site, timeout=8):
     issues = []
@@ -459,7 +485,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "4.0"
+            "version": "4.1"
         }
         new_state["last_good"] = merged
 
