@@ -5,9 +5,9 @@ TVBox 订阅源合并 v4.5
 - 拉取后检查 msg 字段，有则视为失败
 - 站点无 jar 时自动继承所属源的 spider 作为站点级 jar
 - 所有源 spider 相同时才写顶层 spider，否则每个站点带自己的 jar
-- 相对路径补全：api/ext/jar
-- 支持多仓嵌套
-- 直播：只保留央视+卫视，全量线路检测
+- 相对路径补全：api/ext/jar（递归+兜底）
+- 支持多仓嵌套格式
+- 直播：只保留央视+卫视，全量线路检测，全挂频道剔除
 """
 import json, os, re, time, hashlib, configparser, sys, subprocess
 from datetime import datetime, timezone, timedelta
@@ -227,7 +227,7 @@ def fix_site_paths(site, base):
     return site
 
 def fetch_recursive(item, depth=0):
-    """拉取源，返回 (站点列表, 解析器列表, spider, 站点base映射)"""
+    """返回 (站点列表, 解析器列表, spider列表, 站点base映射) 或 (None, 错误信息)"""
     name, url = item["name"], item["url"]
     ok, code, text = http_get(url, timeout=15)
     if not ok: return None, f"HTTP {code}"
@@ -240,7 +240,7 @@ def fetch_recursive(item, depth=0):
     if isinstance(data, dict) and data.get("msg"):
         return None, f"源返回msg: {data['msg']}"
 
-    # 多仓格式
+    # 多仓格式：有 urls 数组
     if isinstance(data, dict) and "urls" in data and isinstance(data["urls"], list):
         if depth >= 2: return None, "嵌套太深"
         all_sites, all_parses = [], []
@@ -253,11 +253,13 @@ def fetch_recursive(item, depth=0):
             if err:
                 print(f"    X {sn}: {err}")
                 continue
-            sub_sites, sub_parses, sub_spider, sub_base = result
+            sub_sites, sub_parses, sub_spiders, sub_base = result
             all_sites.extend(sub_sites)
             all_parses.extend(sub_parses)
-            if sub_spider:
-                spider_set.add(sub_spider)
+            # 修复：sub_spiders 是列表，逐个 add 到 set
+            for sp in sub_spiders:
+                if sp:
+                    spider_set.add(sp)
             for s in sub_sites:
                 site_base_map[id(s)] = su
             print(f"    OK {sn} ({len(sub_sites)}站)")
@@ -277,7 +279,8 @@ def fetch_recursive(item, depth=0):
             if not s.get("jar"):
                 s["jar"] = spider
     site_base_map = {id(s): url for s in sites}
-    return (sites, data.get("parses", []), [spider] if spider else [], site_base_map), None
+    spiders = [spider] if spider else []
+    return (sites, data.get("parses", []), spiders, site_base_map), None
 
 def main():
     t0 = time.time()
@@ -333,13 +336,13 @@ def main():
                 pmerged[sid] = it; porder.append(sid)
     parses = [pmerged[k] for k in porder]
 
-    # spider 逻辑：只有所有源 spider 相同时才写顶层 spider
+    # spider 逻辑：所有源 spider 相同时才写顶层 spider
     global_spider = ""
     if len(all_spiders) == 1:
         global_spider = list(all_spiders)[0]
         print(f"  所有源 spider 一致: {global_spider}")
     elif len(all_spiders) > 1:
-        print(f"  多个不同 spider，不写顶层，各站自带 jar")
+        print(f"  多个不同 spider（{len(all_spiders)}个），不写顶层，各站自带 jar")
     else:
         print(f"  无 spider")
 
