@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.7
+TVBox 订阅源合并与健康检测 v3.8
 - 支持多仓嵌套格式（{urls:[{url,name}]}）
 - 点播：多源全部保留不去重、并发检测死链、缓存兜底
+- 报告：按订阅源分组列出站点明细，标注每个站来源和剔除原因
 - 直播：只保留 CCTV1-17 + CCTV5+ + CCTV4欧洲/美洲 + CCTV4K/8K + 卫视，多线路合并
 - 直播检测：全部线路检测，全挂频道剔除，死线路单独剔除
 - 排序：CCTV 按数字升序，卫视按拼音 A-Z
@@ -261,44 +262,48 @@ def load_config():
     }
 
 def fetch_source_recursive(source_item, depth=0):
-    """拉取点播源，支持多仓嵌套格式"""
+    """拉取点播源，支持多仓嵌套格式，返回 (顶层源名, data, err, 站点来源标记列表)"""
     name, url = source_item["name"], source_item["url"]
     ok, code, text = http_get(url, timeout=15)
     if not ok:
-        return name, None, f"HTTP {code}"
+        return name, None, f"HTTP {code}", []
     try:
         data = json.loads(text)
     except Exception as e:
-        return name, None, f"JSON解析失败: {e}"
+        return name, None, f"JSON解析失败: {e}", []
 
-    # 多仓格式：{urls: [{url, name}]}，递归拉取子源
+    # 多仓格式：{urls: [{url, name}]}
     if isinstance(data, dict) and "urls" in data and isinstance(data["urls"], list):
         if depth >= 2:
-            return name, None, "多仓嵌套太深"
+            return name, None, "多仓嵌套太深", []
         all_sites, all_parses = [], []
         sub_jars = []
+        site_origins = []  # [(site_dict, 来源名)]
         for sub in data["urls"]:
             sub_url = sub.get("url", "")
             sub_name = sub.get("name", sub_url[:20])
             if not sub_url:
                 continue
-            sub_name2, sub_data, sub_err = fetch_source_recursive({"name": sub_name, "url": sub_url}, depth+1)
+            sub_name2, sub_data, sub_err, _ = fetch_source_recursive({"name": sub_name, "url": sub_url}, depth+1)
             if sub_err:
                 print(f"    X {sub_name}: {sub_err}")
                 continue
             if sub_data:
-                all_sites.extend(sub_data.get("sites", []))
+                sub_sites = sub_data.get("sites", [])
+                all_sites.extend(sub_sites)
                 all_parses.extend(sub_data.get("parses", []))
                 if sub_data.get("spider"):
                     sub_jars.append(sub_data["spider"])
-                print(f"    OK {sub_name} ({len(sub_data.get('sites',[]))}站)")
-        return name, {"sites": all_sites, "parses": all_parses, "spider": None, "_sub_jars": sub_jars}, None
+                for s in sub_sites:
+                    site_origins.append((s, sub_name))
+                print(f"    OK {sub_name} ({len(sub_sites)}站)")
+        return name, {"sites": all_sites, "parses": all_parses, "spider": None, "_sub_jars": sub_jars}, None, site_origins
 
     # 标准 TVBox JSON
-    return name, data, None
+    site_origins = [(s, name) for s in data.get("sites", [])]
+    return name, data, None, site_origins
 
 def merge_sites(sites_list):
-    """不去重，保留全部站点"""
     result = []
     for src in sites_list:
         for site in src:
@@ -358,31 +363,44 @@ def main():
     workers = settings["concurrency"]
 
     print("并发拉取点播源...")
-    all_sites, all_parses, jar_candidates = [], [], []
+    all_sites = []
+    all_parses = []
+    jar_candidates = []
     errors = []
+    # site_origin: {id(site): 来源名}
+    site_origin = {}
+    # source_detail: {顶层源名: {子源名: [站点名列表]}}
+    source_detail = {}
+
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futs = {ex.submit(fetch_source_recursive, s): s for s in remote_sources}
         for fut in as_completed(futs):
-            name, data, err = fut.result()
+            top_name, data, err, origins = fut.result()
             if err:
-                errors.append(f"{name}: {err}")
-                print(f"  X {name}: {err}")
+                errors.append(f"{top_name}: {err}")
+                print(f"  X {top_name}: {err}")
                 continue
-            all_sites.append(data.get("sites", []))
+            sites = data.get("sites", [])
+            all_sites.append(sites)
             all_parses.append(data.get("parses", []))
             if data.get("spider"):
                 jar_candidates.append(data["spider"])
-            # 多仓子源的 jar 也收集
             for j in data.get("_sub_jars", []):
                 jar_candidates.append(j)
-            print(f"  OK {name}: {len(data.get('sites',[]))}站")
+            # 记录站点来源
+            source_detail[top_name] = {}
+            for s, origin in origins:
+                site_origin[id(s)] = origin
+                source_detail[top_name].setdefault(origin, []).append(s.get("name", "?"))
+            print(f"  OK {top_name}: {len(sites)}站")
 
     sites = merge_sites(all_sites)
 
     # 站点名敏感词替换
     for site in sites:
         old = site.get("name", "")
-        site["name"] = sanitize_site_name(old)
+        new_name = sanitize_site_name(old)
+        site["name"] = new_name
 
     parses = merge_named(all_parses)
     best_jar = pick_best_jar(jar_candidates)
@@ -399,21 +417,22 @@ def main():
         for fut in as_completed(futs):
             site = futs[fut]
             ok, issues = fut.result()
-            uid = f"{id(site)}"
-            site_results[uid] = (ok, issues)
+            site_results[id(site)] = (ok, issues)
 
-    good_sites, failed_sites = [], []
+    good_sites = []
+    # site_status: {id(site): (是否可用, 原因)}
+    site_status = {}
     for idx, site in enumerate(sites):
-        uid = f"{id(site)}"
-        ok, issues = site_results.get(uid, (False, ["检测异常"]))
+        ok, issues = site_results.get(id(site), (False, ["检测异常"]))
         sk = f"{site.get('key','')}_{idx}"
         prev = state["sites"].get(sk, {"fail_count": 0})
         fc = 0 if ok else prev.get("fail_count", 0) + 1
         new_state["sites"][sk] = {"fail_count": fc, "ok": ok, "issues": issues, "last_check": now_str()}
         if fc < max_fail:
             good_sites.append(site)
+            site_status[id(site)] = (True, "")
         else:
-            failed_sites.append((site, fc, issues))
+            site_status[id(site)] = (False, "; ".join(issues) if issues else f"连续失败{fc}次")
 
     live_cos_url = settings.get("live_cos_url", "")
     lives_field = [{"name": "央视+卫视", "type": 0, "url": live_cos_url}] if live_cos_url else extra_lives
@@ -431,7 +450,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.7"
+            "version": "3.8"
         }
         new_state["last_good"] = merged
 
@@ -440,20 +459,48 @@ def main():
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(new_state, f, ensure_ascii=False, indent=2)
 
+    # ====== 生成报告 ======
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
         f.write(f"# TVBox 订阅源健康报告\n\n**检测时间**: {now_str()}\n\n")
         f.write(f"**可用站点**: {len(good_sites)} / {len(sites)}\n\n")
         f.write(f"**直播**: {live_count} 个频道, {live_line_count} 条线路\n\n")
         f.write(f"**spider jar**: `{best_jar}`\n\n")
         f.write(f"**总耗时**: {int(time.time()-t_start)} 秒\n\n")
+
         if errors:
             f.write("## 拉取失败的点播源\n\n")
-            for e in errors: f.write(f"- {e}\n")
-        if failed_sites:
-            f.write("\n## 已剔除或容忍中的站点\n\n")
-            for site, fc, issues in failed_sites:
-                f.write(f"- **{site.get('name','?')}** (key={site.get('key','?')}) 连续失败={fc}\n")
-                for i in issues: f.write(f"  - {i}\n")
+            for e in errors:
+                f.write(f"- {e}\n")
+
+        # 站点明细：按订阅源分组
+        f.write("\n## 站点明细（按订阅源分组）\n\n")
+        # 构建: 顶层源 -> 子源 -> [站点列表]
+        top_to_sites = {}  # {top_name: {origin: [(site_name, ok, reason)]}}
+        for site in sites:
+            sid = id(site)
+            origin = site_origin.get(sid, "未知")
+            # 找到顶层源
+            top_name = "未知"
+            for tn, subs in source_detail.items():
+                if origin in subs:
+                    top_name = tn
+                    break
+            top_to_sites.setdefault(top_name, {}).setdefault(origin, []).append(
+                (site.get("name", "?"), site_status.get(sid, (True, "")))
+            )
+
+        for top_name, subs in top_to_sites.items():
+            f.write(f"### 订阅源：{top_name}\n\n")
+            for origin, site_list in subs.items():
+                ok_count = sum(1 for _, (ok, _) in site_list if ok)
+                bad_count = len(site_list) - ok_count
+                f.write(f"**{origin}**（共{len(site_list)}站，可用{ok_count}，剔除{bad_count}）\n\n")
+                for sname, (ok, reason) in site_list:
+                    if ok:
+                        f.write(f"- {sname} ✅\n")
+                    else:
+                        f.write(f"- {sname} ❌ 剔除：{reason}\n")
+                f.write("\n")
 
     print(f"=== 完成: 站点{len(good_sites)} 直播{live_count}频道 耗时{int(time.time()-t_start)}秒 ===")
 
