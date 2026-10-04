@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install
-        run: pip install requests coscmd
+        run: pip install requests coscmd pypinyin
 
       - name: Run merge
         run: python merge.py

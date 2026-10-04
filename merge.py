@@ -153,7 +153,7 @@ def get_pinyin_sorter():
         except Exception:
             return lambda name: name
 
-def process_live_sources(live_urls):
+def process_live_sources(live_urls, concurrency=15):
     ws_sort = get_pinyin_sorter()
 
     def cctv_sort_key(name):
@@ -188,7 +188,7 @@ def process_live_sources(live_urls):
     print(f"  检测直播线路（{tb}频道/{tl}线路）...")
     check_urls = [(cn,u) for cn,urls in {**cctv,**ws}.items() for u in urls]
     ch_ok = {}; dead = set()
-    with ThreadPoolExecutor(max_workers=15) as ex:
+    with ThreadPoolExecutor(max_workers=concurrency) as ex:
         futs = {ex.submit(check_live_url,u):(cn,u) for cn,u in check_urls}
         for f in as_completed(futs):
             cn,u = futs[f]
@@ -242,13 +242,13 @@ def load_config():
     s = cp["settings"] if "settings" in cp else {}
     def safe_getint(key, default):
         try:
-            return s.getint(key, default)
+            return int(s.get(key, default))
         except Exception:
             return default
     return {
         "concurrency": safe_getint("concurrency", 15),
-        "wallpaper": s.get("wallpaper","") if isinstance(s, dict) else "",
-        "live_cos_url": s.get("live_cos_url","") if isinstance(s, dict) else "",
+        "wallpaper": s.get("wallpaper", "") or "",
+        "live_cos_url": s.get("live_cos_url", "") or "",
     }
 
 def fix_path_value(val, base):
@@ -336,9 +336,10 @@ def fetch_recursive(item, depth=0):
                 for sp in sub_spiders:
                     sp = safe_spider(sp)
                     if sp: spider_set.add(sp)
-                for s in sub_sites:
-                    if isinstance(s, dict):
-                        site_base_map[id(s)] = su
+                # 子源返回的 sub_base 已映射每个站点到其真实归属源地址，
+                # 这里合并即可，切勿用子源聚合地址覆盖（会导致二次 fix base 错位）
+                if sub_base:
+                    site_base_map.update(sub_base)
                 print(f"    OK {sn} ({len(sub_sites)}站)")
             return (all_sites, all_parses, list(spider_set), site_base_map), None
 
@@ -417,6 +418,36 @@ def main():
         if isinstance(s, dict):
             s["name"] = sanitize_site_name(s.get("name", ""))
 
+    # ---- 站点去重 ----
+    # TVBox 客户端以 key（无 key 时用 name）作为站点唯一标识加载。
+    # 合并时若无去重，同一 key 会叠加多个源的不同 api/ext/jar，
+    # 导致客户端读到不匹配的组合而“读不出内容”。
+    # 这里按 key/name 去重：同 key 保留一个，并用后出现的项补全其缺失的核心字段。
+    core_fields = ("spider", "api", "ext", "jar")
+    merged_sites = {}
+
+    def completeness(x):
+        return sum(1 for f in core_fields if x.get(f) not in (None, "", {}))
+
+    for s in all_sites:
+        if not isinstance(s, dict):
+            continue
+        key = s.get("key") or s.get("name")
+        if not key:
+            continue
+        prev = merged_sites.get(key)
+        if prev is None:
+            merged_sites[key] = dict(s)
+            continue
+        # 同 key：以更完整的版本为底，再用另一份回填其缺失的核心字段
+        more, less = (s, prev) if completeness(s) > completeness(prev) else (prev, s)
+        merged_sites[key] = dict(more)
+        for f in core_fields:
+            if merged_sites[key].get(f) in (None, "", {}) and less.get(f) not in (None, "", {}):
+                merged_sites[key][f] = less[f]
+    all_sites = list(merged_sites.values())
+    print(f"  站点去重: {len(all_sites)} 站")
+
     pmerged = {}; porder = []
     for src in all_parses:
         if not isinstance(src, list): continue
@@ -435,7 +466,7 @@ def main():
         print(f"  多个不同 spider（{len(all_spiders)}个），不写顶层")
 
     print("处理直播...")
-    live_count, live_lines = process_live_sources([lv["url"] for lv in lives])
+    live_count, live_lines = process_live_sources([lv["url"] for lv in lives], cfg["concurrency"])
 
     live_cos = cfg.get("live_cos_url", "")
     lives_field = [{"name": "央视+卫视", "type": 0, "url": live_cos}] if live_cos else lives
