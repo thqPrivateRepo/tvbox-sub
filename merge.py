@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并与健康检测 v3.9
+TVBox 订阅源合并与健康检测 v4.0
+- 强制 UTF-8 解码，修复中文乱码导致的注释行误拆
 - 支持多仓嵌套格式（{urls:[{url,name}]}），自动过滤 // 注释行
 - 点播：多源全部保留不去重、并发检测死链、缓存兜底
 - 报告：按订阅源分组列出站点明细，标注每个站来源和剔除原因
@@ -39,6 +40,8 @@ def http_head(url, timeout=8):
 def http_get(url, timeout=15):
     try:
         r = requests.get(url, timeout=timeout, headers=UA)
+        # 强制 UTF-8 解码，避免中文乱码导致换行符误判
+        r.encoding = "utf-8"
         return r.status_code < 400, r.status_code, r.text
     except Exception as e:
         return False, str(e)[:80], ""
@@ -274,7 +277,7 @@ def load_config():
     }
 
 def fetch_source_recursive(source_item, depth=0):
-    """拉取点播源，支持多仓嵌套 + // 注释行"""
+    """拉取点播源，支持多仓嵌套 + // 注释行 + UTF-8 编码"""
     name, url = source_item["name"], source_item["url"]
     ok, code, text = http_get(url, timeout=15)
     if not ok:
@@ -456,7 +459,7 @@ def main():
             "parses": parses,
             "wallpaper": settings["wallpaper"],
             "update_time": now_str(),
-            "version": "3.9"
+            "version": "4.0"
         }
         new_state["last_good"] = merged
 
