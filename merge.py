@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并 v4.4
-- 点播：全部原样合并，不做死链检测
-- 相对路径补全：api/ext/jar 全字段补全（递归+兜底）
-- 支持多仓嵌套格式
+TVBox 订阅源合并 v4.5
+- 拉取后检查 msg 字段，有则视为失败
+- 站点无 jar 时自动继承所属源的 spider 作为站点级 jar
+- 所有源 spider 相同时才写顶层 spider，否则每个站点带自己的 jar
+- 相对路径补全：api/ext/jar
+- 支持多仓嵌套
 - 直播：只保留央视+卫视，全量线路检测
 """
 import json, os, re, time, hashlib, configparser, sys, subprocess
@@ -210,12 +212,10 @@ def load_config():
     }
 
 def fix_path_value(val, base):
-    """补全单个值的相对路径，处理 jar;md5;xxx 格式"""
     if not isinstance(val, str):
         return val
     if not val.startswith(("./", "../")):
         return val
-    # 处理 jar;md5;xxx 格式
     parts = val.split(";")
     parts[0] = urljoin(base, parts[0])
     return ";".join(parts)
@@ -227,44 +227,57 @@ def fix_site_paths(site, base):
     return site
 
 def fetch_recursive(item, depth=0):
+    """拉取源，返回 (站点列表, 解析器列表, spider, 站点base映射)"""
     name, url = item["name"], item["url"]
     ok, code, text = http_get(url, timeout=15)
-    if not ok: return name, None, f"HTTP {code}", [], []
+    if not ok: return None, f"HTTP {code}"
     try:
         data = parse_json_lenient(text)
     except Exception as e:
-        return name, None, f"JSON错误: {e}", [], []
+        return None, f"JSON错误: {e}"
 
-    if isinstance(data,dict) and "urls" in data and isinstance(data["urls"],list):
-        if depth>=2: return name,None,"嵌套太深",[],[]
-        ss, pp, sj = [], [], []
-        site_bases = []  # [(site, base_url)]
+    # 检查 msg 字段（失败标记）
+    if isinstance(data, dict) and data.get("msg"):
+        return None, f"源返回msg: {data['msg']}"
+
+    # 多仓格式
+    if isinstance(data, dict) and "urls" in data and isinstance(data["urls"], list):
+        if depth >= 2: return None, "嵌套太深"
+        all_sites, all_parses = [], []
+        spider_set = set()
+        site_base_map = {}
         for sub in data["urls"]:
-            su = sub.get("url",""); sn = sub.get("name",su[:20])
+            su = sub.get("url", ""); sn = sub.get("name", su[:20])
             if not su: continue
-            _, sd, se, sb, _ = fetch_recursive({"name":sn,"url":su}, depth+1)
-            if se: print(f"    X {sn}: {se}"); continue
-            if sd:
-                subs = sd.get("sites",[])
-                ss.extend(subs); pp.extend(sd.get("parses",[]))
-                if sd.get("spider"): sj.append(sd["spider"])
-                for s in subs:
-                    site_bases.append((s, su))
-                print(f"    OK {sn} ({len(subs)}站)")
-        return name, {"sites":ss,"parses":pp,"spider":None,"_jars":sj}, None, site_bases, []
+            result, err = fetch_recursive({"name": sn, "url": su}, depth + 1)
+            if err:
+                print(f"    X {sn}: {err}")
+                continue
+            sub_sites, sub_parses, sub_spider, sub_base = result
+            all_sites.extend(sub_sites)
+            all_parses.extend(sub_parses)
+            if sub_spider:
+                spider_set.add(sub_spider)
+            for s in sub_sites:
+                site_base_map[id(s)] = su
+            print(f"    OK {sn} ({len(sub_sites)}站)")
+        return (all_sites, all_parses, list(spider_set), site_base_map), None
 
-    sites = data.get("sites",[])
+    # 标准 TVBox JSON
+    sites = data.get("sites", [])
+    spider = data.get("spider", "")
+    # 补全相对路径
     for s in sites:
         fix_site_paths(s, url)
-    if data.get("spider") and isinstance(data["spider"],str):
-        data["spider"] = fix_path_value(data["spider"], url)
-    site_bases = [(s, url) for s in sites]
-    return name, data, None, site_bases, []
-
-def pick_jar(jars):
-    from collections import Counter
-    real = [j for j in jars if ".jar" in j.lower()]
-    return Counter(real).most_common(1)[0][0] if real else ""
+    if spider and isinstance(spider, str):
+        spider = fix_path_value(spider, url)
+    # 站点没 jar 但有全局 spider → 补到站点
+    if spider:
+        for s in sites:
+            if not s.get("jar"):
+                s["jar"] = spider
+    site_base_map = {id(s): url for s in sites}
+    return (sites, data.get("parses", []), [spider] if spider else [], site_base_map), None
 
 def main():
     t0 = time.time()
@@ -274,79 +287,91 @@ def main():
     print(f"点播源{len(remote)}个, 直播{len(lives)}条")
 
     print("拉取点播源...")
-    all_sites, all_parses, jars, errors = [], [], [], []
-    site_base_map = {}  # id(site) -> base_url
+    all_sites, all_parses = [], []
+    all_spiders = set()
+    site_base_map = {}
+    errors = []
     with ThreadPoolExecutor(max_workers=cfg["concurrency"]) as ex:
-        futs = {ex.submit(fetch_recursive,s):s for s in remote}
+        futs = {ex.submit(fetch_recursive, s): s for s in remote}
         for f in as_completed(futs):
-            tn, data, err, site_bases, _ = f.result()
-            if err: errors.append(f"{tn}: {err}"); print(f"  X {tn}: {err}"); continue
-            sites = data.get("sites",[])
-            all_sites.append(sites); all_parses.append(data.get("parses",[]))
-            if data.get("spider"): jars.append(data["spider"])
-            for j in data.get("_jars",[]): jars.append(j)
-            for s, b in site_bases:
-                site_base_map[id(s)] = b
-            print(f"  OK {tn}: {len(sites)}站")
+            result, err = f.result()
+            if err:
+                errors.append(f"{err}")
+                print(f"  X {err}")
+                continue
+            sites, parses, spiders, bases = result
+            all_sites.extend(sites)
+            all_parses.extend(parses)
+            for sp in spiders:
+                all_spiders.add(sp)
+            site_base_map.update(bases)
+            print(f"  OK: {len(sites)}站")
 
-    sites = []
-    for src in all_sites:
-        sites.extend(src)
-
-    # 兜底：再补一轮相对路径
+    # 兜底补全相对路径
     fixed = 0
-    for s in sites:
+    for s in all_sites:
         base = site_base_map.get(id(s), "")
-        if not base:
-            continue
+        if not base: continue
         for f in ("api", "ext", "jar"):
             v = s.get(f, "")
             if isinstance(v, str) and v.startswith(("./", "../")):
                 s[f] = fix_path_value(v, base)
                 fixed += 1
     if fixed:
-        print(f"  兜底补全了 {fixed} 个相对路径")
+        print(f"  兜底补全 {fixed} 个相对路径")
 
-    for s in sites:
-        s["name"] = sanitize_site_name(s.get("name",""))
+    # 站点名敏感词替换
+    for s in all_sites:
+        s["name"] = sanitize_site_name(s.get("name", ""))
 
+    # 解析器去重
     pmerged = {}; porder = []
     for src in all_parses:
         for it in src:
             sid = hashlib.md5(f"{it.get('name','')}|{it.get('url','')}|{it.get('api','')}".encode()).hexdigest()
-            if sid not in pmerged: pmerged[sid]=it; porder.append(sid)
+            if sid not in pmerged:
+                pmerged[sid] = it; porder.append(sid)
     parses = [pmerged[k] for k in porder]
-    best_jar = pick_jar(jars)
+
+    # spider 逻辑：只有所有源 spider 相同时才写顶层 spider
+    global_spider = ""
+    if len(all_spiders) == 1:
+        global_spider = list(all_spiders)[0]
+        print(f"  所有源 spider 一致: {global_spider}")
+    elif len(all_spiders) > 1:
+        print(f"  多个不同 spider，不写顶层，各站自带 jar")
+    else:
+        print(f"  无 spider")
 
     print("处理直播...")
     live_count, live_lines = process_live_sources([lv["url"] for lv in lives])
 
-    live_cos = cfg.get("live_cos_url","")
-    lives_field = [{"name":"央视+卫视","type":0,"url":live_cos}] if live_cos else lives
+    live_cos = cfg.get("live_cos_url", "")
+    lives_field = [{"name": "央视+卫视", "type": 0, "url": live_cos}] if live_cos else lives
 
     merged = {
-        "spider": best_jar,
-        "sites": sites,
+        "spider": global_spider,
+        "sites": all_sites,
         "lives": lives_field,
         "parses": parses,
         "wallpaper": cfg["wallpaper"],
         "update_time": now_str(),
-        "version": "4.4"
+        "version": "4.5"
     }
-    with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(merged, f, ensure_ascii=False, indent=2)
 
-    with open(REPORT_FILE,"w",encoding="utf-8") as f:
+    with open(REPORT_FILE, "w", encoding="utf-8") as f:
         f.write(f"# TVBox 订阅源报告\n\n**时间**: {now_str()}\n\n")
-        f.write(f"**站点**: {len(sites)}\n\n")
+        f.write(f"**站点**: {len(all_sites)}\n\n")
         f.write(f"**直播**: {live_count}频道/{live_lines}线路\n\n")
-        f.write(f"**spider**: `{best_jar}`\n\n")
+        f.write(f"**spider**: `{global_spider}`\n\n")
         f.write(f"**耗时**: {int(time.time()-t0)}秒\n\n")
         if errors:
             f.write("## 拉取失败的源\n\n")
             for e in errors: f.write(f"- {e}\n")
 
-    print(f"=== 完成: 站点{len(sites)} 直播{live_count}频道 耗时{int(time.time()-t0)}秒 ===")
+    print(f"=== 完成: 站点{len(all_sites)} 直播{live_count}频道 耗时{int(time.time()-t0)}秒 ===")
 
 if __name__ == "__main__":
     main()
