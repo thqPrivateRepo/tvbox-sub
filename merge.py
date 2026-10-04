@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 订阅源合并 v4.2
+TVBox 订阅源合并 v4.4
 - 点播：全部原样合并，不做死链检测
-- 相对路径自动补全为完整 URL
+- 相对路径补全：api/ext/jar 全字段补全（递归+兜底）
 - 支持多仓嵌套格式
-- 直播：只保留央视+卫视，全量线路检测，全挂频道剔除
+- 直播：只保留央视+卫视，全量线路检测
 """
 import json, os, re, time, hashlib, configparser, sys, subprocess
 from datetime import datetime, timezone, timedelta
@@ -47,13 +47,6 @@ def parse_json_lenient(text):
     lines = text.splitlines()
     cleaned = [l for l in lines if not l.strip().startswith("//")]
     return json.loads("\n".join(cleaned))
-
-def resolve_path(path, base_url):
-    if not isinstance(path, str):
-        return path
-    if path.startswith(("./", "../")):
-        return urljoin(base_url, path)
-    return path
 
 BLOCK_WORDS = ["访问", "网站", "获取", "接口", "公众号", "starlink", "更多"]
 def sanitize_site_name(name):
@@ -216,43 +209,57 @@ def load_config():
         "live_cos_url": s.get("live_cos_url",""),
     }
 
-def fix_paths(site, base):
-    for f in ("api","ext"):
-        v = site.get(f,"")
-        if isinstance(v,str) and v.startswith(("./","../")):
-            site[f] = urljoin(base, v)
+def fix_path_value(val, base):
+    """补全单个值的相对路径，处理 jar;md5;xxx 格式"""
+    if not isinstance(val, str):
+        return val
+    if not val.startswith(("./", "../")):
+        return val
+    # 处理 jar;md5;xxx 格式
+    parts = val.split(";")
+    parts[0] = urljoin(base, parts[0])
+    return ";".join(parts)
+
+def fix_site_paths(site, base):
+    for f in ("api", "ext", "jar"):
+        if f in site:
+            site[f] = fix_path_value(site[f], base)
     return site
 
 def fetch_recursive(item, depth=0):
     name, url = item["name"], item["url"]
     ok, code, text = http_get(url, timeout=15)
-    if not ok: return name, None, f"HTTP {code}", []
+    if not ok: return name, None, f"HTTP {code}", [], []
     try:
         data = parse_json_lenient(text)
     except Exception as e:
-        return name, None, f"JSON错误: {e}", []
+        return name, None, f"JSON错误: {e}", [], []
 
     if isinstance(data,dict) and "urls" in data and isinstance(data["urls"],list):
-        if depth>=2: return name,None,"嵌套太深",[]
-        ss, pp, sj, so = [], [], [], []
+        if depth>=2: return name,None,"嵌套太深",[],[]
+        ss, pp, sj = [], [], []
+        site_bases = []  # [(site, base_url)]
         for sub in data["urls"]:
             su = sub.get("url",""); sn = sub.get("name",su[:20])
             if not su: continue
-            _, sd, se, _ = fetch_recursive({"name":sn,"url":su}, depth+1)
+            _, sd, se, sb, _ = fetch_recursive({"name":sn,"url":su}, depth+1)
             if se: print(f"    X {sn}: {se}"); continue
             if sd:
                 subs = sd.get("sites",[])
                 ss.extend(subs); pp.extend(sd.get("parses",[]))
                 if sd.get("spider"): sj.append(sd["spider"])
-                for s in subs: so.append((s,sn))
+                for s in subs:
+                    site_bases.append((s, su))
                 print(f"    OK {sn} ({len(subs)}站)")
-        return name, {"sites":ss,"parses":pp,"spider":None,"_jars":sj}, None, so
+        return name, {"sites":ss,"parses":pp,"spider":None,"_jars":sj}, None, site_bases, []
 
     sites = data.get("sites",[])
-    for s in sites: fix_paths(s, url)
-    if data.get("spider") and isinstance(data["spider"],str) and data["spider"].startswith(("./","../")):
-        data["spider"] = urljoin(url, data["spider"])
-    return name, data, None, [(s,name) for s in sites]
+    for s in sites:
+        fix_site_paths(s, url)
+    if data.get("spider") and isinstance(data["spider"],str):
+        data["spider"] = fix_path_value(data["spider"], url)
+    site_bases = [(s, url) for s in sites]
+    return name, data, None, site_bases, []
 
 def pick_jar(jars):
     from collections import Counter
@@ -268,20 +275,38 @@ def main():
 
     print("拉取点播源...")
     all_sites, all_parses, jars, errors = [], [], [], []
+    site_base_map = {}  # id(site) -> base_url
     with ThreadPoolExecutor(max_workers=cfg["concurrency"]) as ex:
         futs = {ex.submit(fetch_recursive,s):s for s in remote}
         for f in as_completed(futs):
-            tn, data, err, origins = f.result()
+            tn, data, err, site_bases, _ = f.result()
             if err: errors.append(f"{tn}: {err}"); print(f"  X {tn}: {err}"); continue
             sites = data.get("sites",[])
             all_sites.append(sites); all_parses.append(data.get("parses",[]))
             if data.get("spider"): jars.append(data["spider"])
             for j in data.get("_jars",[]): jars.append(j)
+            for s, b in site_bases:
+                site_base_map[id(s)] = b
             print(f"  OK {tn}: {len(sites)}站")
 
     sites = []
     for src in all_sites:
         sites.extend(src)
+
+    # 兜底：再补一轮相对路径
+    fixed = 0
+    for s in sites:
+        base = site_base_map.get(id(s), "")
+        if not base:
+            continue
+        for f in ("api", "ext", "jar"):
+            v = s.get(f, "")
+            if isinstance(v, str) and v.startswith(("./", "../")):
+                s[f] = fix_path_value(v, base)
+                fixed += 1
+    if fixed:
+        print(f"  兜底补全了 {fixed} 个相对路径")
+
     for s in sites:
         s["name"] = sanitize_site_name(s.get("name",""))
 
@@ -306,7 +331,7 @@ def main():
         "parses": parses,
         "wallpaper": cfg["wallpaper"],
         "update_time": now_str(),
-        "version": "4.2"
+        "version": "4.4"
     }
     with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
         json.dump(merged, f, ensure_ascii=False, indent=2)
